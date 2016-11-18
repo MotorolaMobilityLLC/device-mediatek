@@ -54,7 +54,7 @@ endif
 MTK_PATH_PLATFORM := $(MTK_PATH_SOURCE)/platform/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')
 MTK_PATH_KERNEL := kernel
 GOOGLE_RELEASE_RIL := no
-BUILD_NUMBER := $(shell date +%s)
+BUILD_NUMBER := $(shell date +%m%d%H%M)
 
 #Enable HWUI by default
 USE_OPENGL_RENDERER := true
