@@ -503,7 +503,8 @@ service nvram_daemon /vendor/bin/nvram_daemon
     group system
     oneshot
 
-service fuelgauged /system/bin/fuelgauged
+#yangchao,for meta read battery
+service fuelgauged /vendor/bin/fuelgauged
     class main
 
 service mobile_log_d /vendor/bin/mobile_log_d
