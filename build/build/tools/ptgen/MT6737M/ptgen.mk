@@ -7,8 +7,12 @@ endif
 ifndef MTK_PTGEN_OUT_DIR
   $(error MTK_PTGEN_OUT_DIR is not defined)
 endif
-
+#jijin.wang add for flashlight calibration
+ifdef MTK_LCT_CUSTOM_CAMERA
+MTK_PTGEN_PERL := device/mediatek/build/build/tools/ptgen/$(MTK_PTGEN_CHIP)/lct_ptgen.pl
+else
 MTK_PTGEN_PERL := device/mediatek/build/build/tools/ptgen/$(MTK_PTGEN_CHIP)/ptgen.pl
+endif
 MTK_PTGEN_XLS := $(wildcard device/mediatek/build/build/tools/ptgen/$(MTK_PTGEN_CHIP)/*.xls)
 MTK_PTGEN_COMMAND := \
 	PLATFORM=${MTK_PTGEN_CHIP} \
