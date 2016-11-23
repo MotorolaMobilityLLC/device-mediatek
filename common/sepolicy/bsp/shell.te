@@ -120,3 +120,4 @@ allow shell init_thh_service_exec:file rx_file_perms;
 allow shell init_thh_service_exec:dir r_dir_perms;
 allow shell init_thh_service_exec:file {execute execute_no_trans};
 
+

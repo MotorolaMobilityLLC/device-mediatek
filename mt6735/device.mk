@@ -1348,10 +1348,20 @@ endif
 endif
 
 ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
+  PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
   PRODUCT_COPY_FILES += device/mediatek/mt6735/init.microtrust.rc:root/init.microtrust.rc
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/soter.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.raw:mtk
+ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent:mtk
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/alipayapp:$(TARGET_COPY_OUT_VENDOR)/thh/alipayapp:mtk
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent:mtk
+
+#PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/arm64-v8a/libmtee.so:/system/lib64/libmtee.so
+#PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/armeabi/libmtee.so:/system/lib/libmtee.so
+#PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/arm64-v8a/libteeclientjni.so:/system/lib64/libteeclientjni.so
+#PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/armeabi/libteeclientjni.so:/system/lib/libteeclientjni.so
+#PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/org.ifaa.android.manager.permissions.xml:/system/etc/permissions/org.ifaa.android.manager.permissions.xml
   PRODUCT_PACKAGES += keystore.mt6735
   PRODUCT_PACKAGES += keystore.mt6737t
   PRODUCT_PACKAGES += keystore.mt6735m
