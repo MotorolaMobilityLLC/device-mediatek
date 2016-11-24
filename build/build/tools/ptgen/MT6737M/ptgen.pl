@@ -183,6 +183,7 @@ sub InitGlobalValue
     $ArgList{FACTORY_RESET_PROTECTION_SUPPORT} = $ENV{MTK_FACTORY_RESET_PROTECTION_SUPPORT};
     $ArgList{EFUSE_WRITER_SUPPORT} = $ENV{MTK_EFUSE_WRITER_SUPPORT};
     $ArgList{MTK_A1_FEATURE} = $ENV{MTK_A1_FEATURE};
+    $ArgList{LCT_OEM_PARTITION} = $ENV{LCT_OEM_PARTITION_SUPPORT};
     $ArgList{MTK_TC1_FEATURE}            = $ENV{MTK_TC1_FEATURE};
 
     if ($ArgList{EMMC_SUPPORT} eq "yes")
@@ -562,14 +563,17 @@ sub ProcessRawPartitionLayoutData
                 $partition_idx--;
             }
         }
-        if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "oem")
-        {
-            if ($ArgList{MTK_A1_FEATURE} ne "yes")
-            {
-                splice @partition_layout_process, $partition_idx, 1;
-                $partition_idx--;
-            }
-        }
+		if ($ArgList{LCT_OEM_PARTITION} eq "yes")
+		{
+			if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "oem")
+			{
+				if ($ArgList{MTK_A1_FEATURE} ne "yes")
+				{
+					splice @partition_layout_process, $partition_idx, 1;
+					$partition_idx--;
+				}
+			}
+		}
     if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "misc2")
     {
         if ($ArgList{MTK_TC1_FEATURE} ne "yes")
