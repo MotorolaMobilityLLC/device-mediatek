@@ -490,14 +490,15 @@ sub ProcessRawPartitionLayoutData
                 $partition_idx--;
             }
         }
-        if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "persist")
-        {
-            if ($ArgList{PERSIST_PARTITION_SUPPORT} ne "yes" && $ArgList{DRM_KEY_MNG_SUPPORT} ne "yes")
-            {
-                splice @partition_layout_process, $partition_idx, 1;
-                $partition_idx--;
-            }
-        }
+	#jijin.wang add persist partition
+        #if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "persist")
+        #{
+        #    if ($ArgList{PERSIST_PARTITION_SUPPORT} ne "yes" && $ArgList{DRM_KEY_MNG_SUPPORT} ne "yes")
+        #    {
+        #        splice @partition_layout_process, $partition_idx, 1;
+        #        $partition_idx--;
+        #    }
+        #}
         if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "tee1")
         {
             if ($ArgList{TRUSTONIC_TEE_ATF_SUPPORT} ne "yes" && $ArgList{TRUSTONIC_TEE_TEE_SUPPORT} ne "yes")
