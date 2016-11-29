@@ -2720,3 +2720,7 @@ endif
 
 # Add WallpaperPicker
 PRODUCT_PACKAGES += WallpaperPicker
+
+PRODUCT_PACKAGES += mbm_spy
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsds
+PRODUCT_COPY_FILES +=device/moto/mot6737/init.oem.hw.sh:root/init.oem.hw.sh

@@ -1580,3 +1580,20 @@ on property:ro.hw.dualsim=true
 
 on property:ro.hw.dualsim=false
    setprop persist.radio.multisim.config ss
+
+# Write utag from property
+service mbm_spy /system/bin/mbm_spy
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start mbm_spy
+
+service oem-hw-sh /init.oem.hw.sh
+    seclabel u:r:init_hw:s0
+    class core
+    user root
+    oneshot
