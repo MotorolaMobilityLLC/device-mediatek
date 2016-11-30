@@ -1361,7 +1361,6 @@ ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
   PRODUCT_PACKAGES += gatekeeper.mt6737t
   PRODUCT_PACKAGES += gatekeeper.mt6735m
   PRODUCT_PACKAGES += gatekeeper.mt6737m
-  PRODUCT_PACKAGES += gatekeeper.mt6753
 endif
 
 # userspace sysenv
