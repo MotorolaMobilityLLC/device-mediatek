@@ -452,4 +452,6 @@
 /(system\/vendor|vendor)/bin/pvrsrvctl u:object_r:pvrsrvctl_exec:s0
 /(system\/vendor|vendor)/etc/sensor(/.*)?        u:object_r:system_sensor_data_file:s0
 /(system\/vendor|vendor)/bin/sysenv_daemon u:object_r:sysenv_daemon_exec:s0
-
+# START, sunyue5 add for override wifi nvram
+/system/bin/override_nvram      u:object_r:override_nvram_exec:s0
+# END, sunyue5 add for override wifi nvram

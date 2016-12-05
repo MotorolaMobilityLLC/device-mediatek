@@ -2659,6 +2659,9 @@ ifeq (yes,$(strip $(MTK_RUNNING_BOOSTER_SUPPORT)))
     endif
 endif
 
+# sunyue5 add override wifi dac
+PRODUCT_PACKAGES += override_nvram
+
 # Add for Display HDR feature
 ifeq ($(strip $(MTK_HDR_VIDEO_SUPPORT)), yes)
   product_property_overrides += ro.mtk_hdr_video_support=1
