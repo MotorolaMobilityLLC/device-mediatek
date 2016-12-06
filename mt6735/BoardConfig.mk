@@ -136,4 +136,7 @@ BOARD_SEPOLICY_DIRS += \
 endif
 endif
 
+BOARD_SEPOLICY_DIRS += \
+	device/moto/mot6737/sepolicy
+
 MTK_GPU_VERSION := mali midgard r12p1
