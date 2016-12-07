@@ -792,7 +792,7 @@ MTK_MODEM_MAP_X_5_TO_YY := lwg ltg sglte
 $(foreach x,1 2,\
   $(if $(filter-out 0,$(strip $(MTK_MD$(x)_SUPPORT))),\
     $(foreach yy,$(MTK_MODEM_MAP_X_$(x)_TO_YY),\
-      $(foreach z,n,\
+      $(foreach z,1 2 3,\
         $(if $(wildcard $(MTK_MODEM_LOCAL_PATH)/modem_$(x)_$(yy)_$(z).img),\
           $(eval MTK_MODEM_FIRMWARE_FILES += modem_$(x)_$(yy)_$(z).img)\
           $(if $(filter l%g sglte ul%g,$(yy)),\
@@ -815,7 +815,7 @@ $(foreach x,1 2,\
 $(foreach x,3,\
   $(if $(filter-out 0,$(strip $(MTK_MD$(x)_SUPPORT))),\
     $(foreach yy,$(MTK_MODEM_MAP_X_$(x)_TO_YY),\
-      $(foreach z,n,\
+      $(foreach z,1 2 3,\
         $(if $(wildcard $(MTK_MODEM_LOCAL_PATH)/modem_$(x)_$(yy)_$(z).img),\
           $(eval MTK_MODEM_FIRMWARE_FILES += modem_$(x)_$(yy)_$(z).img)\
         )\
@@ -841,7 +841,7 @@ $(foreach x,3,\
 $(foreach x,5,\
   $(if $(filter-out 0,$(strip $(MTK_MD$(x)_SUPPORT))),\
     $(foreach yy,$(MTK_MODEM_MAP_X_$(x)_TO_YY),\
-      $(foreach z,n,\
+      $(foreach z,1 2 3,\
         $(if $(wildcard $(MTK_MODEM_LOCAL_PATH)/modem_$(x)_$(yy)_$(z).img),\
           $(eval MTK_MODEM_FIRMWARE_FILES += modem_$(x)_$(yy)_$(z).img)\
           $(eval MTK_MODEM_FIRMWARE_FILES += dsp_$(x)_$(yy)_$(z).bin)\
