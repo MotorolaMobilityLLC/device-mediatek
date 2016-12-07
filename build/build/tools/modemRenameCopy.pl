@@ -99,6 +99,17 @@ if ((exists $feature_table{"Android.mk"}) && ($feature_table{"Android.mk"} ne ""
 		die "[Error] Cannot write $dest_folder/Android.mk";
 	}
 }
+#add by zhaofei
+my $file_elf = `ls $project_path/bin/*elf`;
+chomp($file_elf);
+print "===== \n$file_elf\n=====\n";
+copy($file_elf,"$dest_folder/");
+
+my $l1_file_elf = `ls $project_path/l1core/bin/*elf`;
+chomp($l1_file_elf);
+print "===== \n$l1_file_elf\n=====\n";
+copy($l1_file_elf,"$dest_folder/");
+#end add
 
 print "\n\n[NOTICE]\n";
 print "The modem files were renamed and copied to folder [\"$dest_folder\"].\n";
