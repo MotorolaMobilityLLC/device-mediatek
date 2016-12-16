@@ -646,6 +646,8 @@ on boot
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
+    # swtp feature to detect RF cable status
+    chown system system /sys/class/switch/rfswitch/state
 
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
