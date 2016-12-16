@@ -975,7 +975,7 @@ MTK_MODEM_MDDB_SYMBOL_LINK := yes
 endif
 endif
 MTK_MODEM_MDDB_FILES_2 := $(filter-out $(MTK_MODEM_MDDB_FILES_1),$(MTK_MODEM_MDDB_FILES))
-$(foreach item,$(MTK_MODEM_MDDB_FILES_1),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR_ETC)/mddb,mkdir -p $(TARGET_OUT_ETC);ln -snf /vendor/etc/mddb $(TARGET_OUT_ETC)/mddb)))
+$(foreach item,$(MTK_MODEM_MDDB_FILES_1),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR_ETC)/mddb,mkdir -p $(TARGET_OUT_ETC);ln -snf ../vendor/etc/mddb $(TARGET_OUT_ETC)/mddb)))
 $(foreach item,$(MTK_MODEM_MDDB_FILES_2),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR_ETC)/mddb)))
 $(foreach item,$(MTK_MODEM_FILTER_FILES),$(eval $(call mtk-install-modem,$(item),$(TARGET_OUT_VENDOR)/firmware/customfilter)))
 $(foreach item,$(MTK_MODEM_PARTITION_FILES),$(eval $(call mtk-install-modem,$(item),$(PRODUCT_OUT))))
