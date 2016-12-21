@@ -1891,8 +1891,9 @@ ifeq ($(strip $(MTK_MULTICORE_OBSERVER_APP)), yes)
   PRODUCT_PACKAGES += MultiCoreObserver
 endif
 
+#lenovo-sw jiangyy3 remove ApplicationsProvider
 # for Search, ApplicationsProvider provides apps search
-PRODUCT_PACKAGES += ApplicationsProvider
+#PRODUCT_PACKAGES += ApplicationsProvider
 
 # Live wallpaper configurations
 # #workaround: disable it directly since device.mk can't get the value of TARGET_BUILD_PDK
