@@ -114,7 +114,7 @@ ifeq ($(strip $(MTK_BSP_PACKAGE)), yes)
         endif
     endif
 endif
-#begin lenovo jiangyy3 remove MtkMms
+#begin lenovo jiangyy3 remove Mtk apps
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
         ifneq ($(strip $(MTK_A1_FEATURE)), yes)
@@ -128,15 +128,16 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         endif
     endif
 endif
-#end lenovo jiangyy3 remove MtkMms
+
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
-        PRODUCT_PACKAGES += MtkCalendar
-        PRODUCT_PACKAGES += MtkBrowser
-        PRODUCT_PACKAGES += MtkQuickSearchBox
+        #PRODUCT_PACKAGES += MtkCalendar
+        #PRODUCT_PACKAGES += MtkBrowser
+        #PRODUCT_PACKAGES += MtkQuickSearchBox
         PRODUCT_PACKAGES += MtkWebView
     endif
 endif
+#end lenovo jiangyy3 remove Mtk apps
 
 # Telephony begin
 PRODUCT_PACKAGES += muxreport
