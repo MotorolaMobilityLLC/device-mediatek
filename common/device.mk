@@ -114,21 +114,21 @@ ifeq ($(strip $(MTK_BSP_PACKAGE)), yes)
         endif
     endif
 endif
-
+#begin lenovo jiangyy3 remove MtkMms
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
         ifneq ($(strip $(MTK_A1_FEATURE)), yes)
             ifndef MTK_TB_WIFI_3G_MODE
-                PRODUCT_PACKAGES += MtkMms
+                #PRODUCT_PACKAGES += MtkMms
             else
                 ifeq ($(strip $(MTK_TB_WIFI_3G_MODE)), 3GDATA_SMS)
-                    PRODUCT_PACKAGES += MtkMms
+                    #PRODUCT_PACKAGES += MtkMms
                 endif
             endif
         endif
     endif
 endif
-
+#end lenovo jiangyy3 remove MtkMms
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
         PRODUCT_PACKAGES += MtkCalendar
@@ -1611,17 +1611,19 @@ ifeq (OP09_SPEC0212_SEGDEFAULT,$(OPTR_SPEC_SEG_DEF))
   PRODUCT_PROPERTY_OVERRIDES += ro.config.pppoe_enable=1
 endif
 # for 3rd party app
+#Lenovo jiangyy3 Remove unnecessary prebuilts
 ifeq ($(strip $(OPTR_SPEC_SEG_DEF)),NONE)
   ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
     ifneq ($(strip $(MTK_A1_FEATURE)), yes)
-      PRODUCT_PACKAGES += TouchPal
-      PRODUCT_PACKAGES += YahooNewsWidget
+      #PRODUCT_PACKAGES += TouchPal
+      #PRODUCT_PACKAGES += YahooNewsWidget
     endif
   endif
 endif
 
 #For 3rd party NLP provider
-PRODUCT_PACKAGES += Baidu_Location
+#Lenovo jiangyy3 Remove unnecessary prebuilts
+#PRODUCT_PACKAGES += Baidu_Location
 PRODUCT_PACKAGES += liblocSDK6c
 PRODUCT_PACKAGES += libnetworklocation
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
