@@ -1044,9 +1044,9 @@ ifneq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
         ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), ss)
             PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
         else ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsds)
-            PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9,9
+            PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9,1
         else ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsda)
-            PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9,9
+            PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9,1
         else ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), tsts)
             PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9,9,9
         else ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), qsqs)
