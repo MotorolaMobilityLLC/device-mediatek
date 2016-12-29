@@ -1266,7 +1266,6 @@ PRODUCT_PACKAGES += libsec
 PRODUCT_PACKAGES += sbchk
 
 PRODUCT_BRAND := alps
-PRODUCT_MANUFACTURER := alps
 
 # for USB Accessory Library/permission
 # Mark for early porting in JB
