@@ -78,6 +78,19 @@
 #define SENSOR_TYPE_STATIONARY          (45)
 #define SENSOR_STRING_TYPE_STATIONARY               "android.sensor.stationary"
 
+#ifdef CONFIG_MOTO_AOD_BASE_ON_AP_SENSORS
+#define SENSOR_TYPE_FLAT_UP                    (SENSOR_TYPE_DEVICE_PRIVATE_BASE + 1)
+#define SENSOR_STRING_TYPE_FLAT_UP             "com.motorola.sensor.flat_up"
+
+#define SENSOR_TYPE_FLAT_DOWN                  (SENSOR_TYPE_DEVICE_PRIVATE_BASE + 2)
+#define SENSOR_STRING_TYPE_FLAT_DOWN           "com.motorola.sensor.flat_down"
+
+#define SENSOR_TYPE_STOWED                     (SENSOR_TYPE_DEVICE_PRIVATE_BASE + 3)
+#define SENSOR_STRING_TYPE_STOWED              "com.motorola.sensor.stowed"
+
+#define SENSOR_TYPE_MOTO_GLANCE_GESTURE        (SENSOR_TYPE_DEVICE_PRIVATE_BASE + 12)
+#define SENSOR_STRING_TYPE_MOTO_GLANCE_GESTURE "com.motorola.sensor.glance"
+#endif
 /*---------------------------------------------------------------------------*/
 #define ID_BASE							0
 #define ID_ACCELEROMETER				(ID_BASE+SENSOR_TYPE_ACCELEROMETER-1)
@@ -119,7 +132,18 @@
 #define ID_BRINGTOSEE                                   (ID_BASE+SENSOR_TYPE_BRINGTOSEE-1)
 #define ID_ANSWER_CALL                                   (ID_BASE+SENSOR_TYPE_ANSWER_CALL-1)
 #define ID_STATIONARY                                   (ID_BASE+SENSOR_TYPE_STATIONARY-1)
+
+#ifndef CONFIG_MOTO_AOD_BASE_ON_AP_SENSORS
 #define ID_SENSOR_MAX_HANDLE	  (ID_BASE+SENSOR_TYPE_STATIONARY)
+#else
+#define ID_FU (ID_STATIONARY+1)
+#define ID_FD (ID_STATIONARY+2)
+#define ID_S (ID_STATIONARY+3)
+#define ID_MOTO_GLANCE_GESTURE (ID_STATIONARY+4)
+
+#define ID_SENSOR_MAX_HANDLE	  (ID_MOTO_GLANCE_GESTURE+1)
+#endif
+
 #define ID_NONE							    (ID_SENSOR_MAX_HANDLE+1)
 
 #define ID_OFFSET                           (1)
