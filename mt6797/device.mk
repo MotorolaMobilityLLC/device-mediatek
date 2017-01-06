@@ -425,6 +425,8 @@ PRODUCT_PACKAGES += memtrack.mt6797
 PRODUCT_PACKAGES += memtrack.mt6797m
 PRODUCT_PACKAGES += memtrack.mt6753
 PRODUCT_PACKAGES += mbimd
+PRODUCT_PACKAGES += fingerprintd
+PRODUCT_PACKAGES += fingerprint.default
 
 ifndef MTK_TB_WIFI_3G_MODE
 	PRODUCT_PACKAGES += Mms
