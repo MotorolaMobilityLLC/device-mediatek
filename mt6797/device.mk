@@ -1257,7 +1257,9 @@ endif
 
 PRODUCT_COPY_FILES += device/mediatek/mt6797/meta_init.modem.rc:root/meta_init.modem.rc
 PRODUCT_COPY_FILES += device/mediatek/mt6797/meta_init.rc:root/meta_init.rc
-PRODUCT_COPY_FILES += device/mediatek/mt6797/init.mt6797.usb.rc:root/init.mt6797.usb.rc
+#lenovo sw yexh1 use lenovo.mt6797.usb.rc instead of mtk origin file
+PRODUCT_COPY_FILES += device/mediatek/mt6797/lenovo.mt6797.usb.rc:root/init.mt6797.usb.rc
+#lenovo sw yexh1 end
 PRODUCT_COPY_FILES += device/mediatek/mt6797/init.recovery.mt6797.rc:root/init.recovery.mt6797.rc
 PRODUCT_COPY_FILES += device/mediatek/mt6797/egl.cfg:$(TARGET_COPY_OUT_VENDOR)/lib/egl/egl.cfg:mtk
 ifneq ($(strip $(MTK_EMMC_SUPPORT)), yes)
