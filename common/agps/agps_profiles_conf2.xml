@@ -325,18 +325,6 @@
         enable/disable SIB8/SIB16
         available value: true (default), false
 
-    glonass_satellite_enable:
-        enable/disable Glonass Satellite if hardware can support Glonass
-        available value: true (default), false
-
-    beidou_satellite_enable:
-        enable/disable Beidou Satellite if hardware can support Beidou
-        available value: true (default), false
-
-    galileo__satellite_enable:
-        enable/disable Galileo Satellite if hardware can support Galileo
-        available value: true (default), false
-
     a_glonass_satellite_enable:
         enable/disable Glonass aiding if hardware can support A-Glonass
         available value: true (default), false
@@ -352,9 +340,6 @@
   -->
   <gnss_setting
     sib8_16_enable="true"
-    glonass_satellite_enable="true"
-    beidou_satellite_enable="true"
-    galileo_satellite_enable="true"
     a_glonass_satellite_enable="true"
     a_beidou_satellite_enable="false"
     a_galileo_satellite_enable="false"

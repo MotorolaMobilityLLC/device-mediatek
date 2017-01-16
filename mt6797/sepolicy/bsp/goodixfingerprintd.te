@@ -49,6 +49,12 @@ r_dir_file(goodixfingerprintd, goodixfingerprintd_data_file)
 allow goodixfingerprintd goodixfingerprintd_data_file:dir ra_dir_perms;
 allow goodixfingerprintd goodixfingerprintd_data_file:file create_file_perms;
 
+# for trustonic mobicore
+allow goodixfingerprintd mobicore:unix_stream_socket connectto;
+allow goodixfingerprintd mobicore_user_device:chr_file rw_file_perms;
+allow goodixfingerprintd mobicore_data_file:dir {search};
+allow goodixfingerprintd mobicore_data_file:chr_file rw_file_perms;
+allow goodixfingerprintd mobicore_data_file:file {read write open getattr};
 
 # for beanpod teei_fp_device
 allow goodixfingerprintd teei_fp_device:chr_file rw_file_perms;

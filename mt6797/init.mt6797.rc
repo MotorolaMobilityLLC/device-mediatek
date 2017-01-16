@@ -648,6 +648,10 @@ on boot
     chmod 0660 /proc/ppm/policy/userlimit_cpu_core
     chown system system /proc/ppm/policy/userlimit_cpu_freq
     chmod 0660 /proc/ppm/policy/userlimit_cpu_freq
+    chown system system /proc/ppm/policy/forcelimit_cpu_core
+    chmod 0660 /proc/ppm/policy/forcelimit_cpu_core
+    chown system system /proc/ppm/policy/hica_is_limit_big_freq
+    chmod 0660 /proc/ppm/policy/hica_is_limit_big_freq
     chown system system /proc/ppm/dump_cluster_0_dvfs_table
     chmod 0440 /proc/ppm/dump_cluster_0_dvfs_table
     chown system system /proc/ppm/dump_cluster_1_dvfs_table
@@ -666,10 +670,22 @@ on boot
     chmod 0660 /proc/cpufreq/cpufreq_power_mode
     chown system system /proc/cpufreq/enable_hw_gov
     chmod 0660 /proc/cpufreq/enable_hw_gov
+    chown system system /proc/cpufreq/cpufreq_smart_detect
+    chmod 0660 /proc/cpufreq/cpufreq_smart_detect
 
 # BW monitor
     chown system system /proc/fliper
     chmod 0664 /proc/fliper
+
+# perfmgr
+    chown system system /proc/perfmgr/boost/cpuset_pid
+    chmod 0660 /proc/perfmgr/boost/cpuset_pid
+    chown system system /proc/perfmgr/boost/force_sp
+    chmod 0660 /proc/perfmgr/boost/force_sp
+    chown system system /proc/perfmgr/boost/force_vr
+    chmod 0660 /proc/perfmgr/boost/force_vr
+    chown system system /proc/perfmgr/boost/force_cpuset
+    chmod 0660 /proc/perfmgr/boost/force_cpuset
 
 ##Netlog tool
    #change permissions about terminal
@@ -1392,8 +1408,8 @@ service poad /vendor/bin/poad
 #monitor battery status
 service batterywarning /vendor/bin/batterywarning
     class main
-    user shell
-    group shell
+    user system
+    group system
 
 
 #service BGW /vendor/xbin/BGW
@@ -1540,21 +1556,6 @@ on property:service.mbim.enable=0
 
 on property:service.mbim.enable=1
     start mbimd
-
-# android log much detect
-on property:ro.build.type=eng
-    setprop persist.logmuch.detect false
-
-on property:ro.build.type=userdebug
-    setprop persist.logmuch.detect false
-
-on property:persist.logmuch.detect=*
-    start logd
-    start logd-reinit
-
-on property:logmuch.detect.value=*
-    start logd
-    start logd-reinit
 
 # Thermal Indicator Service
 
