@@ -827,6 +827,24 @@ on property:debug.MB.prdebug=0
 service met_log_d /vendor/bin/met_log_d
     class main
 
+#Begin qiaoshan enable aplogd
+on property:persist.log.aplogd.enable=1
+    start aplogd
+
+on property:persist.log.aplogd.enable=0
+    stop aplogd
+
+service aplogd /system/bin/aplogd
+    class late_start
+    #user log
+    #group log system sdcard_rw sdcard_r media_rw mount
+    # The user and group definitions above are intentionally disabled and left
+    # only as documentation. It actually starts as root and immediately drops
+    # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
+    # for kernel logging.
+    disabled
+#End qiaoshan enable aplogd
+
 #Begin qiaoshan enable moto bug2go-bugreport
 # bugreport is triggered by holding down volume down, volume up and power
 #service bugreport /system/bin/dumpstate -d -p -B \
