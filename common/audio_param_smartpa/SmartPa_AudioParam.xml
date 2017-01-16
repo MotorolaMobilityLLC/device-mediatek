@@ -15,8 +15,8 @@
 			<Param name="spk_lib_path" value="libtfa9887_interface.so"/>
 			<Param name="spk_lib64_path" value="libtfa9887_interface.so"/>
 			<Param name="codec_ctl_name" value=""/>
-			<Param name="is_i2s_init_before_amp_on" value="0"/>
 			<Param name="is_apll_needed" value="1"/>
+			<Param name="is_i2s_need_in_init" value="1"/>
 		</ParamUnit>
 		<ParamUnit param_id="1">
 			<Param name="have_dsp" value="1"/>
@@ -26,8 +26,8 @@
 			<Param name="spk_lib_path" value="libtfa9890_interface.so"/>
 			<Param name="spk_lib64_path" value="libtfa9890_interface.so"/>
 			<Param name="codec_ctl_name" value=""/>
-			<Param name="is_i2s_init_before_amp_on" value="0"/>
 			<Param name="is_apll_needed" value="1"/>
+			<Param name="is_i2s_need_in_init" value="1"/>
 		</ParamUnit>
 		<ParamUnit param_id="2">
 			<Param name="have_dsp" value="0"/>
@@ -37,8 +37,8 @@
 			<Param name="spk_lib_path" value=""/>
 			<Param name="spk_lib64_path" value=""/>
 			<Param name="codec_ctl_name" value="Spk_Enable"/>
-			<Param name="is_i2s_init_before_amp_on" value="0"/>
 			<Param name="is_apll_needed" value="0"/>
+			<Param name="is_i2s_need_in_init" value="0"/>
 		</ParamUnit>
 		<ParamUnit param_id="3">
 			<Param name="have_dsp" value="1"/>
@@ -48,8 +48,8 @@
 			<Param name="spk_lib_path" value="librt_extamp_intf.so"/>
 			<Param name="spk_lib64_path" value="librt_extamp_intf.so"/>
 			<Param name="codec_ctl_name" value=""/>
-			<Param name="is_i2s_init_before_amp_on" value="1"/>
 			<Param name="is_apll_needed" value="1"/>
+			<Param name="is_i2s_need_in_init" value="0"/>
 		</ParamUnit>
 	</ParamUnitPool>
 </AudioParam>

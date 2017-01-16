@@ -44,6 +44,11 @@ allow radio cdma_prop:property_service set;
 # Purpose : for app labled by radio to connenct to md_monitor
 allow radio md_monitor:unix_stream_socket connectto;
 
+# Date : 2016/12/1
+# Operation : MDM IT with Swift app
+# Purpose : for app labled by radio to auto start md_monitor
+set_prop(radio, mdmmonitor_prop);
+
 # Date : WK14.38 2016/06/28
 # Operation : Migration
 # Purpose : for engineermode

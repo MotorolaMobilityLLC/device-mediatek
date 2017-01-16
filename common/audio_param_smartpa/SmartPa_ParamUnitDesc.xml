@@ -16,7 +16,7 @@
 		<Param name="spk_lib_path" type="string"/>
 		<Param name="spk_lib64_path" type="string"/>
 		<Param name="codec_ctl_name" type="string"/>
-		<Param name="is_i2s_init_before_amp_on" type="int"/>
 		<Param name="is_apll_needed" type="int"/>
+		<Param name="is_i2s_need_in_init" type="int"/>
 	</ParamUnit>
 </ParamUnitDesc>

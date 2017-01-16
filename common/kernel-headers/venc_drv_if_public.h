@@ -347,6 +347,8 @@ typedef enum __VENC_DRV_SET_TYPE_T {
 	VENC_DRV_SET_TYPE_CONFIG_QP,            /* /< Set init QP */
 	VENC_DRV_SET_TYPE_RFS_ON,                   /* /< ViLTE RFS enable */
 	VENC_DRV_SET_TYPE_IDR_FRAME_INTERVAL,     /* /< Set IDR Frame interval */
+	VENC_DRV_SET_TYPE_OPERATION_RATE,       /* /< Set Operation Rate*/
+	VENC_DRV_SET_TYPE_SET_KERNEL_LOG_COUNT, /* /< Set kernel log count> */
 	VENC_DRV_SET_TYPE_MAX = 0xFFFFFFFF      /* /< Max VENC_DRV_SET_TYPE_T value */
 } VENC_DRV_SET_TYPE_T;
 

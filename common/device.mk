@@ -2526,6 +2526,128 @@ endif
 # Add for sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += ro.sys.sdcardfs=1
 
+# Telephony RIL log configurations
+ifeq ($(strip $(MTK_TELEPHONY_CONN_LOG_CTRL_SUPPORT)), yes)
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.tel_log_ctrl=1
+ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
+  # user/userdebug load
+  # V/D/(I/W/E)
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.C2K_RIL-DATA=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GsmCdmaPhone=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SSDecisonMaker=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GsmMmiCode=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpSsController=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-SS=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RILMD2-SS=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DataSubSelector=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DcFcMgr=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DC-1=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DC-2=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RetryManager=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IccProvider=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IccPhoneBookIM=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.AdnRecordCache=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.AdnRecordLoader=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.AdnRecord=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-PHB=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-SMS=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DupSmsFilterExt=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ConSmsFwkExt=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DataOnlySmsFwk=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.VT=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsVTProvider=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IccCardProxy=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IsimFileHandler=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IsimRecords=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SIMRecords=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SpnOverride=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.UiccCard=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.UiccController=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-SIM=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.MtkAgpsHelper=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.CountryDetector=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.NetworkStats=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.NetworkPolicy=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.NetworkIdentity=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsService=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IMS_RILA=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.IMSRILRequest=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsManager=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsApp=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsBaseCommands=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsCall=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsPhone=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsPhoneCall=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsPhoneBase=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsCallSession=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsCallProfile=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsEcbm=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsEcbmProxy=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.OperatorUtils=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.WfoApp=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GbaApp=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GbaBsfProcedure=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GbaBsfResponse=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GbaDebugParam=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GbaService=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SresResponse=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsUtService=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SimservType=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SimservsTest=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ImsUt=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SSDecisonMaker=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SuppSrvConfig=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ECCCallHelper=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GsmConnection=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.TelephonyConf=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.TeleConfCtrler=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.TelephonyConn=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.TeleConnService=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ECCRetryHandler=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ECCNumUtils=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ECCRuleHandler=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SuppMsgMgr=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ECCSwitchPhone=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GsmCdmaConn=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.GsmCdmaPhone=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.Phone=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-CC=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpCallControl=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpAudioControl=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RadioManager=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL_Mux=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-OEM=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL_UIM_SOCKET=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RILD=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-RP=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxMessage=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxDebugInfo=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxTimer=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxObject=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SlotQueueEntry=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxAction=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RFX=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpRadioMessage=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpModemMessage=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.PhoneFactory=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ProxyController=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SpnOverride=I
+else
+  # eng load
+  # V/(D/I/W/E)
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=D
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=D
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.C2K_RIL-DATA=D
+endif
+# endif for TARGET_BUILD_VARIANT
+else
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=D
+endif
+# endif for MTK_TELEPHONY_CONN_LOG_CTRL_SUPPORT
+
 # Add for CMCC Light Customization Support
 ifeq ($(strip $(CMCC_LIGHT_CUST_SUPPORT)), yes)
     PRODUCT_PROPERTY_OVERRIDES += ro.cmcc_light_cust_support=1
@@ -2593,3 +2715,6 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         PRODUCT_PACKAGES += EmergencyInfo
     endif
 endif
+
+# Add WallpaperPicker
+PRODUCT_PACKAGES += WallpaperPicker

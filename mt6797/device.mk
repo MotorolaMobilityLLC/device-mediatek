@@ -1018,6 +1018,10 @@ else
   ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# OEM Unlock reporting
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.oem_unlock_supported=1
+
 ifeq ($(strip $(GEMINI)), yes)
   ifeq ($(OPTR_SPEC_SEG_DEF),NONE)
     PRODUCT_PACKAGES += StkSelection
@@ -1351,6 +1355,9 @@ ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
   #PRODUCT_PACKAGES += libfingerprint_tac
   PRODUCT_PACKAGES   += keystore.mt6797
   PRODUCT_PACKAGES   += gatekeeper.mt6797
+ifeq ($(strip $(MICROTRUST_TUI_SUPPORT)), yes)
+  PRODUCT_PACKAGES += utr_tui_manager utr_tui_daemon libutr_tui_tac libutr_tui_jni  libutr_tui_daemon
+endif
 endif
 
 # userspace sysenv

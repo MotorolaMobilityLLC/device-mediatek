@@ -97,4 +97,4 @@ allow em_svr proc_ged:file {open read write ioctl getattr};
 
 # Date : WK16.43
 # Purpose: for log setting
-allow em_svr toolbox_exec:file getattr;
+allow em_svr toolbox_exec:file { execute getattr read open execute_no_trans };

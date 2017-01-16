@@ -49,16 +49,24 @@ r_dir_file(goodixfingerprintd, goodixfingerprintd_data_file)
 allow goodixfingerprintd goodixfingerprintd_data_file:dir ra_dir_perms;
 allow goodixfingerprintd goodixfingerprintd_data_file:file create_file_perms;
 
+# for trustonic mobicore
 allow goodixfingerprintd mobicore:unix_stream_socket connectto;
 allow goodixfingerprintd mobicore_user_device:chr_file rw_file_perms;
+allow goodixfingerprintd mobicore_data_file:dir {search};
+allow goodixfingerprintd mobicore_data_file:chr_file rw_file_perms;
+allow goodixfingerprintd mobicore_data_file:file {read write open getattr};
 
 #for netlink use
 allow goodixfingerprintd self:netlink_socket { read bind create write getattr setopt };
 
 #for factory test
-#allow factory goodixfingerprintd_device:chr_file rw_file_perms;
+allow factory goodixfingerprintd_device:chr_file rw_file_perms;
+allow factory self:netlink_socket { read bind create write getattr setopt };
 
 allow system_app goodix_fingerprint_service:service_manager { add find };
 allow untrusted_app goodix_fingerprint_service:service_manager { find };
 binder_call(system_app, goodixfingerprintd);
 binder_call(goodixfingerprintd, system_app);
+# allow sdcard access right
+allow goodixfingerprintd media_rw_data_file:dir { search write add_name };
+allow goodixfingerprintd media_rw_data_file:file { create write open read getattr };
