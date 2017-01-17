@@ -85,3 +85,7 @@
 /(system\/vendor|vendor)/bin/guiext-server u:object_r:guiext-server_exec:s0
 
 /(system\/vendor|vendor)/app/mcRegistry(/.*)? u:object_r:mobicore_data_file:s0
+
+##########################
+#####exfat
+/system/bin/fsck\.exfat   --    u:object_r:fsck_exec:s0

@@ -3,3 +3,4 @@
 # ============
 
 genfscon proc /secmem0 u:object_r:proc_secmem:s0
+genfscon exfat / u:object_r:vfat:s0
