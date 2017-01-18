@@ -1,0 +1,5 @@
+#=============allow nvram==============
+# nvram_country
+# For:Country Code
+# Autor:liweixin
+type nvram_country_prop,property_type;

@@ -1,0 +1,5 @@
+#=============allow nvram================
+# nvram_country
+# For:Country Code
+# Autor:liweixin
+allow system_app nvram_country_prop:property_service set;

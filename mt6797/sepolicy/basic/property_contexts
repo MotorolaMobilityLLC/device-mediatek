@@ -1,0 +1,9 @@
+#=============allow nvram================
+# nvram_country
+# For:Country Code
+# Autor:liweixin
+ctl.nvram_country             u:object_r:nvram_country_prop:s0
+ro.product.countrycode        u:object_r:nvram_country_prop:s0
+ro.lenovo.easyimage.code         u:object_r:nvram_country_prop:s0
+ro.product.locale.language       u:object_r:nvram_country_prop:s0
+ro.product.locale.region         u:object_r:nvram_country_prop:s0
