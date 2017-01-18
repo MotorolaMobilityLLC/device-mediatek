@@ -98,7 +98,6 @@ allow system_app logmuch_prop:property_service set;
 # Date: 2016/11/10
 # Purpose: [MDM] Modem monitor config
 # Package Name: com.mediatek.mdmconfig
-#allow system_app mdmmonitor_prop:property_service set;
 set_prop(system_app, mdmmonitor_prop);
 
 # Date : 2016/07/29

@@ -241,6 +241,14 @@ allow meta_tst sysfs:file rw_file_perms;
 #s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0
 allow meta_tst system_file:dir r_file_perms;
 
+# Date: WK16.18
+# Purpose: for CCCI reboot modem
+allow meta_tst gsm0710muxd_device:chr_file rw_file_perms;
+
+# Date: WK16.20
+# Purpose: meta_tst set sys.usb.config
+set_prop(meta_tst, system_radio_prop);
+
 #Date: W16.33
 # Purpose:  N Migration For CCT
 allow meta_tst media_rw_data_file:dir search;
