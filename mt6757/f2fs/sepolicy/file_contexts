@@ -1,0 +1,2 @@
+/system/bin/mkfs.f2fs           u:object_r:mkfs_exec:s0
+
