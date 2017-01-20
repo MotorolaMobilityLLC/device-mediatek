@@ -231,6 +231,30 @@
       sha_version="1"
   />
 
+  <!-- Begin zhangsx10, IKANGEROW-480 IUSACELL/NIIMX SUPL config -->
+  <!-- IUSACELL 334050 -->
+  <supl_profile name="IUSACELL 334050"
+      addr="supl.iusacell.com"
+      port="7275"
+      tls="true"
+      mcc_mnc="334050"
+      supl_version="1"
+      tls_version="1"
+      sha_version="0"
+  />
+
+  <!-- IUSACELL 334090 -->
+  <supl_profile name="IUSACELL 334090"
+      addr="supl.iusacell.com"
+      port="7275"
+      tls="true"
+      mcc_mnc="334090"
+      supl_version="1"
+      tls_version="1"
+      sha_version="0"
+  />
+  <!-- End IKANGEROW-480 -->
+
   <!-- cdma_profile
 
     name:
