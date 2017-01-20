@@ -66,6 +66,8 @@ type ampc0_device, dev_type;
 type mmp_device, dev_type;
 type ttyGS_device, dev_type;
 type CAM_CAL_DRV_device, dev_type;
+type GT24c64_CAM_CAL_DRV_device, dev_type;
+type GT24c32_CAM_CAL_DRV_device, dev_type;
 type CAM_CAL_DRV1_device, dev_type;
 type CAM_CAL_DRV2_device, dev_type;
 type MTK_SMI_device, dev_type;
