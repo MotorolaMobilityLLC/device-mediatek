@@ -99,6 +99,8 @@
 /dev/SUBAF(/.*)? u:object_r:SUBAF_device:s0
 /dev/cache(/.*)? u:object_r:cache_device:s0
 /dev/CAM_CAL_DRV(/.*)? u:object_r:CAM_CAL_DRV_device:s0
+/dev/GT24c64_CAM_CAL_DRV(/.*)? u:object_r:GT24c64_CAM_CAL_DRV_device:s0
+/dev/GT24c32_CAM_CAL_DRV(/.*)? u:object_r:GT24c32_CAM_CAL_DRV_device:s0
 /dev/CAM_CAL_DRV1(/.*)? u:object_r:CAM_CAL_DRV1_device:s0
 /dev/CAM_CAL_DRV2(/.*)? u:object_r:CAM_CAL_DRV2_device:s0
 /dev/camera-fdvt(/.*)? u:object_r:camera_fdvt_device:s0
