@@ -1,0 +1,36 @@
+##########################################
+# nvram_country
+# For:Country Code
+# Autor:liweixin
+type nvram_country ,domain;
+type nvram_country_exec , exec_type, file_type;
+unix_socket_connect(nvram_country,property,init);
+init_daemon_domain(nvram_country)
+allow nvram_country system_file:file execute_no_trans;
+#allow nvram_country labeledfs:filesystem { mount unmount };
+#allow nvram_country shell_data_file:dir create_dir_perms;
+#allow nvram_country shell_data_file:file create_file_perms;
+allow nvram_country rootfs:lnk_file getattr;
+allow nvram_country sysfs:file read;
+allow nvram_country sysfs:file open;
+allow nvram_country self:capability dac_override;
+
+# Date:2016.03.18
+# For some things I don't konw
+# Autor: liunianliang
+allow nvram_country device:dir write;
+allow nvram_country kmsg_device:chr_file write;
+allow nvram_country nvdata_file:dir search;
+allow nvram_country nvram_data_file:lnk_file read;
+allow nvram_country kmsg_device:chr_file open;
+allow nvram_country nvdata_file:dir create_dir_perms;
+allow nvram_country nvdata_file:file create_file_perms;
+allow nvram_country block_device:dir search;
+allow nvram_country nvram_device:blk_file { read write };
+allow nvram_country nvram_device:blk_file open;
+allow nvram_country property_socket:sock_file write;
+allow nvram_country init:unix_stream_socket connectto;
+allow nvram_country nvram_country_prop:property_service set;
+
+# Set properties.
+#set_prop(nvram_country, nvram_country_prop)

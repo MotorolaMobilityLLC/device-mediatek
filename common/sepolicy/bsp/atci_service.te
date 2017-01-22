@@ -127,6 +127,8 @@ allow atci_service nvcfg_file:dir { search write open read add_name create };
 allow atci_service nvcfg_file:file { read write getattr open create };
 allow atci_service property_socket:sock_file write;
 allow atci_service CAM_CAL_DRV_device:chr_file { read write ioctl open};
+allow atci_service GT24c64_CAM_CAL_DRV_device:chr_file { read write ioctl open};
+allow atci_service GT24c32_CAM_CAL_DRV_device:chr_file { read write ioctl open};
 allow atci_service init:unix_stream_socket connectto;
 allow atci_service mtk_em_prop:property_service set;
 

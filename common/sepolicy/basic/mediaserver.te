@@ -185,6 +185,8 @@ allow mediaserver uhid_device:chr_file rw_file_perms;
 # Operation : Migration
 # Purpose : Camera EEPROM Calibration
 allow mediaserver CAM_CAL_DRV_device:chr_file rw_file_perms;
+allow mediaserver GT24c64_CAM_CAL_DRV_device:chr_file rw_file_perms;
+allow mediaserver GT24c32_CAM_CAL_DRV_device:chr_file rw_file_perms;
 allow mediaserver CAM_CAL_DRV1_device:chr_file rw_file_perms;
 allow mediaserver CAM_CAL_DRV2_device:chr_file rw_file_perms;
 

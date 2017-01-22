@@ -32,3 +32,9 @@
 /dev/block/platform/mtk-msdc\.0/[0-9]+\.msdc0/by-name/metadata          u:object_r:metadata_block_device:s0
 
 /dev/gps_emi(/.*)? u:object_r:gps_emi_device:s0
+
+##########################################
+# nvram_country
+# For:Country Code
+# Autor:liweixin
+/system/bin/nvram_country u:object_r:nvram_country_exec:s0
