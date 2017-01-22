@@ -31,6 +31,10 @@ allow nvram_country nvram_device:blk_file open;
 allow nvram_country property_socket:sock_file write;
 allow nvram_country init:unix_stream_socket connectto;
 allow nvram_country nvram_country_prop:property_service set;
+allow nvram_country country_data_file:dir search;
+allow nvram_country country_data_file:file { read write };
+allow nvram_country country_data_file:file open;
+allow nvram_country country_data_file:file getattr;
 
 # Set properties.
 #set_prop(nvram_country, nvram_country_prop)

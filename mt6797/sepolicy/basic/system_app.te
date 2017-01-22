@@ -3,3 +3,9 @@
 # For:Country Code
 # Autor:liweixin
 allow system_app nvram_country_prop:property_service set;
+
+allow system_app nvram_country_prop:file open;
+allow system_app nvram_country_prop:file read;
+allow system_app nvram_country_prop:file getattr;
+allow system_app country_data_file:dir create_dir_perms;
+allow system_app country_data_file:file create_file_perms;

@@ -38,3 +38,4 @@
 # For:Country Code
 # Autor:liweixin
 /system/bin/nvram_country u:object_r:nvram_country_exec:s0
+/data/country(/.*)? u:object_r:country_data_file:s0
