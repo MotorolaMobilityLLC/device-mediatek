@@ -1779,6 +1779,11 @@ ifeq ($(strip $(MTK_USER_ROOT_SWITCH)), yes)
   PRODUCT_PROPERTY_OVERRIDES += ro.mtk_user_root_switch=1
 endif
 
+#lenovo-sw fangzf1 add for dolby begin
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_dolby_dap_support=1
+$(call inherit-product, vendor/dolby/device/dax2_bullhead_sw/dax2_bullhead_sw.mk)
+#lenovo-sw fangzf1 add end
+
 ifeq ($(strip $(MTK_DOLBY_DAP_SUPPORT)), yes)
 PRODUCT_COPY_FILES += frameworks/av/media/libeffects/data/audio_effects_dolby.conf:system/etc/audio_effects.conf
 PRODUCT_COPY_FILES += $(MTK_PROJECT_FOLDER)/dolby/ds1-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ds1-default.xml:mtk
