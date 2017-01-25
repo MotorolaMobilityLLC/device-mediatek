@@ -458,6 +458,9 @@ PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/aee-config
 endif
 
 # mtklog config
+ifeq ($(HQ_FACTORY_BUILD),yes)
+PRODUCT_COPY_FILES += device/mediatek/common/mtklog/mtklog-config-basic-user.prop:$(TARGET_COPY_OUT_VENDOR)/etc/mtklog-config.prop:mtk
+else
 ifeq ($(strip $(MTK_BASIC_PACKAGE)), yes)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_COPY_FILES += device/mediatek/common/mtklog/mtklog-config-basic-eng.prop:$(TARGET_COPY_OUT_VENDOR)/etc/mtklog-config.prop:mtk
@@ -469,6 +472,7 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_COPY_FILES += device/mediatek/common/mtklog/mtklog-config-bsp-eng.prop:$(TARGET_COPY_OUT_VENDOR)/etc/mtklog-config.prop:mtk
 else
 PRODUCT_COPY_FILES += device/mediatek/common/mtklog/mtklog-config-bsp-user.prop:$(TARGET_COPY_OUT_VENDOR)/etc/mtklog-config.prop:mtk
+endif
 endif
 endif
 
