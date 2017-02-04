@@ -135,12 +135,15 @@ static int Is_FCC(char *country)
 int main(void)
 {
 #if 0
+    char carrier[PROPERTY_VALUE_MAX] = {0};
     char country[PROPERTY_VALUE_MAX] = {0};
-    property_get("ro.lenovo.easyimage.code", country, NULL);
+    int size = 0;
+    property_get("ro.carrier", carrier, NULL);
     usleep(1000000);
-    if (strcmp(country, "") != 0) {
-        country[0] = toupper(country[0]);
-        country[1] = toupper(country[1]);
+    if (strcmp(carrier, "") != 0) {
+        size = strlen(carrier);
+        country[0] = toupper(carrier[size-2]);
+        country[1] = toupper(carrier[size-1]);
         override_countryCode(country);
     }
     if (Is_FCC(country)) {
