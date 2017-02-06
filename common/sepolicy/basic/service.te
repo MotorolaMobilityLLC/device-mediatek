@@ -8,3 +8,6 @@
 type nvram_agent_service, service_manager_type;
 type mtk_codec_service_service, service_manager_type;
 
+##Lenovo-sw zhongling1 add for panelservice
+type mot_panel_service, service_manager_type, system_server_service;
+type mot_system_service, service_manager_type, system_server_service;
