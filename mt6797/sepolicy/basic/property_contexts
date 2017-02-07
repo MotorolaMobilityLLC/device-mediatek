@@ -1,5 +1,5 @@
 #=============allow nvram================
-# nvram_country
+# nvram_country HQ_COUNTRY_CODE_SUPPORT
 # For:Country Code
 # Autor:liweixin
 ctl.nvram_country                u:object_r:nvram_country_prop:s0
