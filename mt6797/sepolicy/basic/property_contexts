@@ -1,9 +1,11 @@
 #=============allow nvram================
-# nvram_country
+# nvram_country HQ_COUNTRY_CODE_SUPPORT
 # For:Country Code
 # Autor:liweixin
-ctl.nvram_country             u:object_r:nvram_country_prop:s0
-ro.product.countrycode        u:object_r:nvram_country_prop:s0
+ctl.nvram_country                u:object_r:nvram_country_prop:s0
+ro.product.countrycode           u:object_r:nvram_country_prop:s0
+ro.carrier                       u:object_r:nvram_country_prop:s0
+ro.boot.hardware.sku             u:object_r:nvram_country_prop:s0
 ro.lenovo.easyimage.code         u:object_r:nvram_country_prop:s0
 ro.product.locale.language       u:object_r:nvram_country_prop:s0
 ro.product.locale.region         u:object_r:nvram_country_prop:s0

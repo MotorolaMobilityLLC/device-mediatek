@@ -34,7 +34,8 @@
 /dev/gps_emi(/.*)? u:object_r:gps_emi_device:s0
 
 ##########################################
-# nvram_country
+# nvram_country HQ_COUNTRY_CODE_SUPPORT
 # For:Country Code
 # Autor:liweixin
 /system/bin/nvram_country u:object_r:nvram_country_exec:s0
+/data/country(/.*)? u:object_r:country_data_file:s0
