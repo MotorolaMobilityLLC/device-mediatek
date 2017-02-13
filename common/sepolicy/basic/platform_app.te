@@ -62,5 +62,10 @@ allow platform_app mdlog_data_file:dir rw_dir_perms;
 # Package: com.mediatek.mtklogger
 allow platform_app mnld:unix_stream_socket connectto;
 
+# Date : 2017/02/13
+# Operation : read state of gpio
+# Purpose : read state of gpio
+# Package: com.android.telecomm
+allow platform_app sys_class_misc_mtgpio_pin:file r_file_perms;
 # require process owner to review.
 allow platform_app system_app_service:service_manager find;
