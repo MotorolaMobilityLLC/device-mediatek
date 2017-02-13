@@ -1384,6 +1384,8 @@ endif
 # userspace sysenv
 PRODUCT_PACKAGES += libsysenv
 PRODUCT_PACKAGES += sysenv_daemon
+#add motcamera wanggl3 2016-12-5
+PRODUCT_PACKAGES += MotCamera
 
 #inherit common platform
 $(call inherit-product, device/mediatek/common/device.mk)
