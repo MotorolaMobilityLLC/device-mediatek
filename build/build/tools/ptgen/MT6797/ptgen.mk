@@ -12,7 +12,7 @@ endif
 ifeq ($(LENOVO_RADIO_SECURE),yes)
     MTK_EFUSE_ENABLE := yes
 endif
-$(info "MTK_EFUSE_ENABLE is:$(LENOVO_RADIO_SECURE)")
+#$(info "MTK_EFUSE_ENABLE is:$(LENOVO_RADIO_SECURE)")
 
 MTK_PTGEN_PERL := device/mediatek/build/build/tools/ptgen/$(MTK_PTGEN_CHIP)/ptgen.pl
 MTK_PTGEN_XLS := $(wildcard device/mediatek/build/build/tools/ptgen/$(MTK_PTGEN_CHIP)/*.xls)
