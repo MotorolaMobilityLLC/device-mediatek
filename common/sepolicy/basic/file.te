@@ -226,5 +226,8 @@ type debugfs_ged, fs_type, debugfs_type;
 # /sys/kernel/debug/ion/ion_mm_heap
 type debugfs_ion_mm_heap, fs_type, debugfs_type;
 
+#begin: add by suochuanqi 20170213 for gpio /sys/class/misc/mtgpio/pin
+type sys_class_misc_mtgpio_pin, fs_type,sysfs_type;
+#end: add by suochuanqi 20170213 for gpio /sys/class/misc/mtgpio/pin
 # vtservice data file
 type vtservice_data_file, file_type, data_file_type;
