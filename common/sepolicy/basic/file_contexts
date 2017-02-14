@@ -370,9 +370,6 @@
 /sys/mtk_ssw(/.*)? u:object_r:sysfs_ssw:s0
 /sys/bus/platform/drivers/dev_info/dev_info u:object_r:sysfs_devinfo:s0
 
-#begin: add by suochuanqi 20170213 for gpio /sys/class/misc/mtgpio/pin
-/sys/class/misc/mtgpio/pin u:object_r:sys_class_misc_mtgpio_pin:s0
-#end: add by suochuanqi 20170213 for gpio /sys/class/misc/mtgpio/pin
 #############################
 # debugfs files
 #
