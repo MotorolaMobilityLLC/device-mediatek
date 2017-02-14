@@ -11,7 +11,7 @@
 /data/misc/aee_interim(/.*)? u:object_r:coredump_file:s0
 /data/ipsec(/.*)? u:object_r:wod_ipsec_conf_file:s0
 /data/ipsec/wo(/.*)? u:object_r:wod_apn_conf_file:s0
-
+/data/chargeonlymode u:object_r:chargeonly_data_file:s0
 ##########################
 # Devices
 #
@@ -68,6 +68,7 @@
 /(system\/vendor|vendor)/bin/mcDriverDaemon u:object_r:mobicore_exec:s0
 /(system\/vendor|vendor)/bin/aal u:object_r:aal_exec:s0
 /(system\/vendor|vendor)/bin/kpoc_charger u:object_r:kpoc_charger_exec:s0
+/system/bin/charge_only_mode u:object_r:charge_only_exec:s0
 /(system\/vendor|vendor)/bin/launchpppoe u:object_r:launchpppoe_exec:s0
 /(system\/vendor|vendor)/bin/mmp u:object_r:mmp_exec:s0
 /(system\/vendor|vendor)/bin/mpud6050 u:object_r:mpud6050_exec:s0
