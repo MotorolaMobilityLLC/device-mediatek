@@ -96,6 +96,18 @@ allow system_app thermal_manager_data_file:dir { search getattr open read write 
 # allow system_app logmuch_prop:property_service set;
 
 
+# Battery tracer
+allow system_app sysfs_thermal:dir r_dir_perms;
+allow system_app sysfs_thermal:{ file lnk_file } r_file_perms;
+allow system_app sysfs:dir r_dir_perms;
+allow system_app sysfs:file r_file_perms;
+# Battery tracer scans /proc/<pid>/cmdline and /proc/<pid>/stat
+# Allow this on internal userdebug/eng builds only.
+userdebug_or_eng(`
+allow system_app domain:dir r_dir_perms;
+allow system_app domain:file r_file_perms;
+')
+
 # Date: 2016/11/10
 # Purpose: [MDM] Modem monitor config
 # Package Name: com.mediatek.mdmconfig
