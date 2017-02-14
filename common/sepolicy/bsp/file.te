@@ -26,3 +26,4 @@ type wod_action_socket, file_type;
 type wod_sim_socket, file_type;
 type wod_ipsec_socket, file_type;
 type wod_dns_socket, file_type;
+type chargeonly_data_file, file_type, data_file_type;
