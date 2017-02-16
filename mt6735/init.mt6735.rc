@@ -1574,3 +1574,9 @@ on property:debug.mtk.thermalindicator=0
 
 on property:debug.mtk.thermalindicator=1
 	start ThermalIndicator
+
+on property:ro.hw.dualsim=true
+   setprop persist.radio.multisim.config dsds
+
+on property:ro.hw.dualsim=false
+   setprop persist.radio.multisim.config ss
