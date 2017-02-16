@@ -105,7 +105,11 @@ def generate_updatelist(scatter_file, update_list):
 def copy_files(src_dir, dst_dir, src_filename, tgt_filename=None):
   if not os.path.exists(dst_dir):
     os.makedirs(dst_dir)
-  verified_filename = os.path.splitext(src_filename)[0] + "-verified" + os.path.splitext(src_filename)[1]
+
+  ### IKANGEROW-542, miaotao1, copy from verify-image
+  #verified_filename = os.path.splitext(src_filename)[0] + "-verified" + os.path.splitext(src_filename)[1]
+  verified_filename = os.path.join("verify-image",src_filename)
+  
   src = os.path.join(src_dir, verified_filename) if os.path.isfile(os.path.join(src_dir, verified_filename)) else os.path.join(src_dir, src_filename)
   dst = os.path.join(dst_dir, src_filename) if tgt_filename is None else os.path.join(dst_dir, tgt_filename)
   print "[OTA Preprocess] Copy from %s to %s" % (src, dst)
@@ -147,6 +151,10 @@ def main(argv):
   # copy image files needed by update list to IMAGES/ in intermediates folder, note that add_img_to_target_files.py need to be performed with -a option after this step
   for filename in partition_map:
     copy_files(out_folder, os.path.join(zip_root_folder, "IMAGES"), filename)
+
+
+  ### IKANGEROW-542, miaotao1, Copy trustzone.bin from unsigned dir
+  shutil.copy(out_folder + "/unsigned-image/trustzone.bin", zip_root_folder + "/IMAGES/trustzone.bin")
 
 if __name__ == '__main__':
   main(sys.argv[1:])
