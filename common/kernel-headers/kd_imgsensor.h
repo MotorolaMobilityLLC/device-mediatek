@@ -217,6 +217,7 @@ NSFeature :  : RAWSensorInfo < _id >  :  : getFlickerPara \
 #if defined(MTK_LCT_CUSTOM_CAMERA)/*jijin.wang add for LCT*/
 #define HI553_SENSOR_ID                         0x0553
 #endif
+#define HI556_SENSOR_ID                         0x0556
 /*MT*/
 #define MT9D011_SENSOR_ID                       0x1511
 #define MT9D111_SENSOR_ID                       0x1511
