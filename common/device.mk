@@ -2727,3 +2727,8 @@ PRODUCT_COPY_FILES +=device/moto/mot6737/init.oem.hw.sh:root/init.oem.hw.sh
 
 PRODUCT_PACKAGES += \
     flashall_mtk
+
+# exFAT support
+PRODUCT_PACKAGES += \
+    mkfs.exfat \
+    fsck.exfat
