@@ -68,6 +68,7 @@ allow atci_service camera_isp_device:chr_file { read write ioctl open };
 allow atci_service camera_sysram_device:chr_file { read ioctl open };
 allow atci_service camera_tsf_device:chr_file rw_file_perms;
 allow atci_service kd_camera_flashlight_device:chr_file { read write ioctl open };
+allow atci_service ccu_device:chr_file { read write ioctl open };
 allow atci_service MTK_SMI_device:chr_file { open read write ioctl };
 allow atci_service system_server:binder call;
 allow atci_service system_data_file:dir { write remove_name add_name };
@@ -140,3 +141,10 @@ allow atci_service shell_exec:file { read execute open execute_no_trans };
 # Purpose : Update camera flashlight driver device file
 allow atci_service flashlight_device:chr_file { read write ioctl open };
 
+# Date : WK17.02
+# Operation : New CCT
+# Purpose : ATCI service accessing fifo for CCT operation
+allow atci_service cct_data_file:fifo_file { create open read write unlink };
+allow atci_service debug_prop:property_service set;
+allow atci_service proc_ged:file { open read };
+allow atci_service system_prop:property_service set;

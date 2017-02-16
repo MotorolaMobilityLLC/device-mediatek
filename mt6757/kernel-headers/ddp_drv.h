@@ -76,6 +76,10 @@ typedef struct
 #define CCORR_COEF_CNT 4 /* ccorr feature */
 #define S_GAIN_BY_Y_CONTROL_CNT 5
 #define S_GAIN_BY_Y_HUE_PHASE_CNT 20
+#define LSP_CONTROL_CNT 8
+#define COLOR_3D_CNT 4 /* color 3D feature */
+#define COLOR_3D_WINDOW_CNT 3
+#define COLOR_3D_WINDOW_SIZE 45
 
 enum TONE_ENUM {
     PURP_TONE = 0,
@@ -93,6 +97,7 @@ typedef struct {
     unsigned int u4Contrast;   // 0 : min , 9 : max.
     unsigned int u4Brightness; // 0 : min , 9 : max.
     unsigned int u4Ccorr;      /* 0 : min , 3 : max. ccorr feature */
+    unsigned int u4ColorLUT;       /* 0 : min , 3 : max.  ccorr feature */
 } DISP_PQ_PARAM;
 
 typedef struct {
@@ -142,6 +147,8 @@ typedef struct{
     unsigned int S_GAIN_BY_Y  [S_GAIN_BY_Y_CONTROL_CNT][S_GAIN_BY_Y_HUE_PHASE_CNT];
     unsigned int S_GAIN_BY_Y_EN;
     unsigned int LSP_EN;
+    unsigned int LSP[LSP_CONTROL_CNT];
+    unsigned int COLOR_3D[COLOR_3D_CNT][COLOR_3D_WINDOW_CNT][COLOR_3D_WINDOW_SIZE];
 } DISPLAY_PQ_T;
 
 typedef struct {
@@ -157,9 +164,7 @@ typedef struct {
     unsigned int SKIN_TONE_H  [SKIN_TONE_SIZE];
     unsigned int GRASS_TONE_H [GRASS_TONE_SIZE];
     unsigned int SKY_TONE_H   [SKY_TONE_SIZE];
-    unsigned int S_GAIN_BY_Y  [S_GAIN_BY_Y_CONTROL_CNT][S_GAIN_BY_Y_HUE_PHASE_CNT];
-    unsigned int S_GAIN_BY_Y_EN;
-    unsigned int LSP_EN;
+    unsigned int COLOR_3D[COLOR_3D_WINDOW_CNT][COLOR_3D_WINDOW_SIZE];
 } DISPLAY_COLOR_REG_T;
 
 typedef struct{

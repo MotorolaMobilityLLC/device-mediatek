@@ -183,6 +183,7 @@ allow factory humidity_device:chr_file r_file_perms;
 allow factory camera_isp_device:chr_file rw_file_perms;
 allow factory camera_pipemgr_device:chr_file r_file_perms;
 allow factory camera_sysram_device:chr_file r_file_perms;
+allow factory ccu_device:chr_file rw_file_perms;
 allow factory MAINAF_device:chr_file rw_file_perms;
 allow factory MAIN2AF_device:chr_file rw_file_perms;
 allow factory SUBAF_device:chr_file rw_file_perms;
@@ -245,6 +246,12 @@ allow factory gps_data_file:file create_file_perms;
 
 #Purpose: For fingerprint test
 allow factory goodixfingerprintd_device:chr_file { read ioctl open };
+
+# Date: WK16.33
+#Purpose: for unmount sdcardfs and stop services which are using data partition
+allow factory sdcard_type:filesystem unmount;
+allow factory toolbox_exec:file { read open getattr execute execute_no_trans };
+allow factory ctl_default_prop:property_service set;
 
 # Date : WK16.35
 # Operation : Migration

@@ -97,6 +97,13 @@ allow mediacodec proc_thermal:dir search;
 #allow mediacodec thermal_manager_data_file:dir { rw_dir_perms setattr };
 allow mediacodec thermal_manager_data_file:dir search;
 allow mediacodec thermal_manager_data_file:file { read write open lock };
+#allow mediacodec default_prop:property_service set;
+allow mediacodec proc_thermal:file { read write };
+allow mediacodec proc_mtktz:file write;
+allow mediacodec proc_thermal:file open;
+allow mediacodec thermal_manager_data_file:file { getattr setattr };
+allow mediacodec proc_mtktz:file getattr;
+
 
 # Date : WK14.46
 # Operation : Migration

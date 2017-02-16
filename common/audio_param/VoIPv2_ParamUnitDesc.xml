@@ -26,7 +26,7 @@
         </CategoryType>
     </CategoryTypeList>
     <ParamUnit>
-        <Param name="speech_mode_para" type="ushort_array">
+        <Param name="speech_mode_para" type="uint_array">
             <!-- Gain -->
             <Field name="DL Digital Gain" array_index="7" bit="4,7"              check_list="0,0dB,1,1dB,2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB"/>
             <Field name="UL Digital Gain" array_index="7" bit="0,3"              check_list="0,0dB,1,1dB,2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB"/>

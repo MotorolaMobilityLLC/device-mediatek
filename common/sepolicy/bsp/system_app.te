@@ -93,7 +93,7 @@ allow system_app thermal_manager_data_file:dir { search getattr open read write 
 # Stage: Migration
 # Purpose: [BtLogger] btTool log reduction detect
 # Package Name: com.mediatek.bluetooth.dtt
-allow system_app logmuch_prop:property_service set;
+# allow system_app logmuch_prop:property_service set;
 
 
 # Date: 2016/11/10

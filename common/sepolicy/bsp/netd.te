@@ -51,3 +51,10 @@ set_prop(netd,mtk_net_ipv6_prop)
 # Purpose : nsiot set property
 # Owner : kang ouyang
 allow netd system_prop:property_service set;
+
+# Date:W16.44
+# Operation : Migration
+# Purpose :  Property to save current WIFI FW path for Hotspot Manager
+# Owner   :  Tingting lei
+#============= netd ================
+allow netd mtk_wifi_prop:property_service set;

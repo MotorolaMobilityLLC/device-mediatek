@@ -17,7 +17,8 @@ typedef enum {
 	ION_MM_SET_DEBUG_INFO,
 	ION_MM_GET_DEBUG_INFO,
 	ION_MM_SET_SF_BUF_INFO,
-	ION_MM_GET_SF_BUF_INFO
+	ION_MM_GET_SF_BUF_INFO,
+	ION_MM_CONFIG_BUFFER_EXT
 } ION_MM_CMDS;
 
 typedef enum {
@@ -49,6 +50,7 @@ typedef enum {
 #define ION_FLAG_MM_HEAP_INIT_ZERO (1 << 16)
 #define ION_FLAG_MM_HEAP_SEC_PA (1 << 18)
 
+#define ION_FLAG_GET_FIXED_PHYS 0x103
 
 typedef struct ion_sys_cache_sync_param {
 	union {
@@ -143,6 +145,8 @@ typedef struct ion_mm_config_buffer_param {
 	int eModuleID;
 	unsigned int security;
 	unsigned int coherent;
+	unsigned int reserve_iova_start;
+	unsigned int reserve_iova_end;
 } ion_mm_config_buffer_param_t;
 
 typedef struct __ion_mm_buf_debug_info {

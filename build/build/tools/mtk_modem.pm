@@ -597,6 +597,16 @@ sub get_modem_file_mapping
 				$catcher_suffix =~ s/catcher_filter(_\S+)\.bin/$1/;
 				&set_modem_name($ref_hash_filelist, [$file], 0, "catcher_filter", $modem_bin_suffix . $catcher_suffix, ".bin");
 			}
+			foreach my $file (&find_modem_glob($path_of_database . "MDDB*.XML"))
+			{
+				push(@checklist_of_general, $file);
+			}
+			foreach my $file (&find_modem_glob($path_of_database . "MDDB*.XML.GZ"))
+			{
+				my $filename = basename($file);
+				$filename =~ s/\.XML\.GZ$//;
+				&set_modem_name($ref_hash_filelist, [$file], 0, $filename, $modem_bin_suffix, ".XML.GZ");
+			}
 			$ref_hash_feature->{"Android.mk"} = &gen_android_mk_v2();
 		}
 		elsif (($ref_hash_feature->{"image_type"} >= 1) and ($ref_hash_feature->{"image_type"} <= 7))

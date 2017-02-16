@@ -23,11 +23,38 @@ on post-fs-data
     write /proc/bootprof "start teei cfg (on post-fs-data)"
     mkdir /data/thh
     mkdir /data/thh/system
+    mkdir /data/thh/tee_00
+    mkdir /data/thh/tee_01
+    mkdir /data/thh/tee_02
+    mkdir /data/thh/tee_03
+    mkdir /data/thh/tee_04
+    mkdir /data/thh/tee_05
+    mkdir /data/thh/tee_06
+    mkdir /data/thh/tee
+    mkdir /data/thh/tee/tas
     chmod 0755 /data/thh
     chown system system /data/thh
     chmod 0755 /data/thh/system
+    chown system system /data/thh/tee_00
+    chmod 0755 /data/thh/tee_01
+    chown system system /data/thh/tee_01
+    chmod 0755 /data/thh/tee_02
+    chown system system /data/thh/tee_02
+    chmod 0755 /data/thh/tee_03
+    chown system system /data/thh/tee_03
+    chmod 0755 /data/thh/tee_04
+    chown system system /data/thh/tee_04
+    chmod 0755 /data/thh/tee_05
+    chown system system /data/thh/tee_05
+    chmod 0755 /data/thh/tee_06
+    chown system system /data/thh/tee_06
+    chmod 0755 /data/thh/tee
+    chown system system /data/thh/tee
+    chmod 0755 /data/thh/tee/tas
+    chown system system /data/thh/tee/tas
     chown system system /data/thh/system
     write /proc/bootprof "start teei cfg end (on post-fs-data)"
+    restorecon_recursive /data/thh
     setprop soter.encrypt.state OK
     write /proc/bootprof "start teei cfg end (set soter property)"
 

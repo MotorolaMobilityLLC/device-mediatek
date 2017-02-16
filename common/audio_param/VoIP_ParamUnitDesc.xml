@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ParamUnitDesc tab_name="VoIP" version="1.0">
+<ParamUnitDesc tab_name="VoIP" version="1.0" feature_option="!MTK_AURISYS_FRAMEWORK_SUPPORT">
 	<CategoryTypeList>
 		<CategoryType name="Profile" wording="Device">
 			<CategoryGroup name="Handset">

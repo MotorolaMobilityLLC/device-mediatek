@@ -53,6 +53,10 @@ else ifeq ($(strip $(MTK_AUDIO_SPEAKER_PATH)),smartpa_richtek_rt5509)
     PRODUCT_PACKAGES += librt_extamp_intf
     PRODUCT_COPY_FILES += \
         vendor/mediatek/proprietary/hardware/smartpa/richtek/rt5509_calibration:$(TARGET_COPY_OUT_VENDOR)/bin/rt5509_calibration:mtk
+    PRODUCT_COPY_FILES += \
+        device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/rt5509_param:$(TARGET_COPY_OUT_VENDOR)/etc/rt5509_param:mtk
+    PRODUCT_COPY_FILES += \
+        $(call add-to-product-copy-files-if-exists, $(MTK_TARGET_PROJECT_FOLDER)/rt5509_param:$(TARGET_COPY_OUT_VENDOR)/etc/rt5509_param:mtk)
 endif
 
 PRODUCT_COPY_FILES += device/mediatek/common/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml:mtk
@@ -311,8 +315,13 @@ PRODUCT_BOOT_JARS += \
 
 # OP01 RCS runtime option
 PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs=1
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_cloudmsg=0
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_burnmsg=0
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_qrcodevcard=0
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_plugincenter=0
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_circle=0
 PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_richscreen=0
-PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_emotshop=1
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_emotshop=0
 PRODUCT_PROPERTY_OVERRIDES += ro.mtk_op01_rcs_cloudft=0
 endif
 
@@ -452,20 +461,6 @@ endif
 # prebuilt interface
 $(call inherit-product-if-exists, vendor/mediatek/common/device-vendor.mk)
 
-# AEE Config
-ifeq ($(HAVE_AEE_FEATURE),yes)
-  ifneq ($(MTK_CHIPTEST_INT),yes)
-    ifneq ($(wildcard vendor/mediatek/proprietary/external/aee_config_internal/init.aee.mtk.rc),)
-$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee_config_internal/aee.mk)
-    else
-$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee/config_external/aee.mk)
-    endif
-  else
-$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee/config_external/aee.mk)
-  endif
-PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/aee-config:$(TARGET_COPY_OUT_VENDOR)/etc/aee-config:mtk
-endif
-
 # mtklog config
 ifeq ($(strip $(MTK_BASIC_PACKAGE)), yes)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -604,42 +599,7 @@ else
     endif
 endif
 
-ifeq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
-  PRODUCT_PACKAGES += \
-    libmdloggerrecycle \
-    libmemoryDumpEncoder \
-    mdlogger
-ifneq ($(strip $(MTK_MD1_SUPPORT)),)
-ifneq ($(strip $(MTK_MD1_SUPPORT)),0)
-  PRODUCT_PACKAGES += emdlogger1
-endif
-endif
-ifneq ($(strip $(MTK_MD2_SUPPORT)),)
-ifneq ($(strip $(MTK_MD2_SUPPORT)),0)
-  PRODUCT_PACKAGES += emdlogger2
-endif
-endif
-ifneq ($(strip $(MTK_MD5_SUPPORT)),)
-ifneq ($(strip $(MTK_MD5_SUPPORT)),0)
-  PRODUCT_PACKAGES += emdlogger5
-endif
-endif
-#  $(call inherit-product-if-exists, vendor/mediatek/proprietary/protect-app/external/emdlogger/usb_port.mk)
-  ifneq ($(wildcard device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop),)
-   PRODUCT_COPY_FILES += device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop:$(TARGET_COPY_OUT_VENDOR)/etc/emdlogger_usb_config.prop:mtk
-  endif
-endif
-
-ifneq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
-
 ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
-  PRODUCT_PACKAGES += libmdloggerrecycle
-endif
-
-endif
-
-ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
-    PRODUCT_PACKAGES += emdlogger3
     PRODUCT_PACKAGES += c2k-ril-prop
 endif
 
@@ -1595,14 +1555,6 @@ ifeq ($(strip $(MTK_A1_FEATURE)), yes)
   PRODUCT_PROPERTY_OVERRIDES += ro.mtk_a1_feature=1
 endif
 
-ifeq ($(strip $(HAVE_AEE_FEATURE)), yes)
-  PRODUCT_PROPERTY_OVERRIDES += ro.have_aee_feature=1
-  PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/bin/debuggerd:system/bin/debuggerd:mtk
-  ifeq ($(MTK_K64_SUPPORT), yes)
-    PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/bin/debuggerd64:system/bin/debuggerd64:mtk
-  endif
-endif
-
 ifneq ($(strip $(SIM_ME_LOCK_MODE)),)
   PRODUCT_PROPERTY_OVERRIDES += ro.sim_me_lock_mode=$(strip $(SIM_ME_LOCK_MODE))
 else
@@ -2351,15 +2303,6 @@ ifeq ($(strip $(MTK_DYNAMIC_SBP_SUPPORT)), yes)
   PRODUCT_PROPERTY_OVERRIDES += persist.mtk_dynamic_ims_switch=0
 endif
 
-# Add for ModemMonitor(MDM) framework
-ifeq ($(strip $(MTK_MODEM_MONITOR_SUPPORT)),yes)
-  PRODUCT_PROPERTY_OVERRIDES += ro.mtk_modem_monitor_support=1
-  PRODUCT_PACKAGES += \
-    md_monitor \
-    md_monitor_ctrl \
-    MDMLSample    \
-    MDMConfig
-endif
 
 # Add for BRM superset
 ifeq ($(strip $(RELEASE_BRM)), yes)
@@ -2740,4 +2683,247 @@ else
   # V/(D/I/W/E)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.CdmaMoSms=D
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.CdmaMtSms=D
+endif
+
+# MTK internal load or customer eng/userdebug load will buildin log daemon.
+# Customer user load default not have MTK log daemon.
+# If customer user load want buildin the log daemon, You need set
+# MTK_LOG_CUSTOMER_SUPPORT_ALL to yes, it will buildin log daemon as internal load.
+# Each log daemon is decided by its feature option.
+# Case: MTK internal load
+ifeq ($(strip $(MTK_INTERNAL)),yes)
+  ifeq ($(strip $(MTK_LOG_SUPPORT_GPS)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=0
+  else
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=1
+  endif
+  ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += MTKLogger
+    ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
+      PRODUCT_PACKAGES += BtTool
+    endif
+  endif
+  ifeq ($(strip $(MTK_NETWORK_LOG_SUPPORT)),yes)
+    PRODUCT_PACKAGES += netdiag
+  endif
+  PRODUCT_PACKAGES += tcpdump
+  ifeq ($(strip $(MTK_LOG_SUPPORT_MOBILE_LOG)),yes)
+    PRODUCT_PACKAGES += mobile_log_d
+  endif
+# Add for ModemMonitor(MDM) framework
+  ifeq ($(strip $(MTK_MODEM_MONITOR_SUPPORT)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_modem_monitor_support=1
+    PRODUCT_PACKAGES += \
+      md_monitor \
+      md_monitor_ctrl \
+      MDMLSample \
+      MDMConfig
+  endif
+  ifeq ($(strip $(MTK_AEE_SUPPORT)),yes)
+    HAVE_AEE_FEATURE = yes
+  else
+    HAVE_AEE_FEATURE = no
+  endif
+# Case: Customer eng/userdebug load
+else ifneq ($(strip $(TARGET_BUILD_VARIANT)),user)
+  ifeq ($(strip $(MTK_LOG_SUPPORT_GPS)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=0
+  else
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=1
+  endif
+  ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += MTKLogger
+    ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
+      PRODUCT_PACKAGES += BtTool
+    endif
+  endif
+  ifeq ($(strip $(MTK_NETWORK_LOG_SUPPORT)),yes)
+    PRODUCT_PACKAGES += netdiag
+  endif
+  PRODUCT_PACKAGES += tcpdump
+  ifeq ($(strip $(MTK_LOG_SUPPORT_MOBILE_LOG)),yes)
+    PRODUCT_PACKAGES += mobile_log_d
+  endif
+# Add for ModemMonitor(MDM) framework
+  ifeq ($(strip $(MTK_MODEM_MONITOR_SUPPORT)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_modem_monitor_support=1
+    PRODUCT_PACKAGES += \
+      md_monitor \
+      md_monitor_ctrl \
+      MDMLSample \
+      MDMConfig
+  endif
+  ifeq ($(strip $(MTK_AEE_SUPPORT)),yes)
+    HAVE_AEE_FEATURE = yes
+  else
+    HAVE_AEE_FEATURE = no
+  endif
+# Case: Customer user load and MTK_LOG_CUSTOMER_SUPPORT = yes
+else ifeq ($(strip $(MTK_LOG_CUSTOMER_SUPPORT)),yes)
+  ifeq ($(strip $(MTK_LOG_SUPPORT_GPS)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=0
+  else
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=1
+  endif
+  ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += MTKLogger
+    ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
+      PRODUCT_PACKAGES += BtTool
+    endif
+  endif
+  ifeq ($(strip $(MTK_NETWORK_LOG_SUPPORT)),yes)
+    PRODUCT_PACKAGES += netdiag
+    PRODUCT_PACKAGES += tcpdump
+  endif
+  ifeq ($(strip $(MTK_LOG_SUPPORT_MOBILE_LOG)),yes)
+    PRODUCT_PACKAGES += mobile_log_d
+  endif
+# Add for ModemMonitor(MDM) framework
+  ifeq ($(strip $(MTK_MODEM_MONITOR_SUPPORT)),yes)
+    PRODUCT_PROPERTY_OVERRIDES += ro.mtk_modem_monitor_support=1
+    PRODUCT_PACKAGES += \
+      md_monitor \
+      md_monitor_ctrl \
+      MDMLSample \
+      MDMConfig
+  endif
+  ifeq ($(strip $(MTK_AEE_SUPPORT)),yes)
+    HAVE_AEE_FEATURE = yes
+  else
+    HAVE_AEE_FEATURE = no
+  endif
+# Other Case: Customer user load and MTK_LOG_CUSTOMER_SUPPORT = no
+else
+  PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=1
+  HAVE_AEE_FEATURE = no
+endif
+
+# AEE Config
+ifeq ($(HAVE_AEE_FEATURE),yes)
+  ifneq ($(MTK_CHIPTEST_INT),yes)
+    ifneq ($(wildcard vendor/mediatek/proprietary/external/aee_config_internal/init.aee.mtk.rc),)
+$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee_config_internal/aee.mk)
+    else
+$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee/config_external/aee.mk)
+    endif
+  else  # MTK_CHEPTEST_INT
+$(call inherit-product-if-exists, vendor/mediatek/proprietary/external/aee/config_external/aee.mk)
+  endif  # MTK_CHEPTEST_INT
+PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/aee-config:$(TARGET_COPY_OUT_VENDOR)/etc/aee-config:mtk
+
+PRODUCT_PROPERTY_OVERRIDES += ro.have_aee_feature=1
+PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/bin/debuggerd:system/bin/debuggerd:mtk
+  ifeq ($(MTK_K64_SUPPORT), yes)
+    PRODUCT_COPY_FILES += vendor/mediatek/proprietary/external/aee/binary/bin/debuggerd64:system/bin/debuggerd64:mtk
+  endif
+# MRDUMP
+PRODUCT_PACKAGES += \
+    libmrdump \
+    mrdump_tool \
+    ksyms-query
+endif
+
+# Modem log daemon built in according to feature option flow.
+ifeq ($(strip $(MTK_INTERNAL)),yes)
+  ifeq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += \
+      libmdloggerrecycle \
+      libmemoryDumpEncoder \
+      mdlogger
+    ifneq ($(strip $(MTK_MD1_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD1_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger1
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD2_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD2_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger2
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD5_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD5_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger5
+      endif
+    endif
+    #  $(call inherit-product-if-exists, vendor/mediatek/proprietary/protect-app/external/emdlogger/usb_port.mk)
+    ifneq ($(wildcard device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop),)
+      PRODUCT_COPY_FILES += device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop:$(TARGET_COPY_OUT_VENDOR)/etc/emdlogger_usb_config.prop:mtk
+    endif
+  endif
+  ifneq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+      PRODUCT_PACKAGES += libmdloggerrecycle
+    endif
+  endif
+  ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+    PRODUCT_PACKAGES += emdlogger3
+  endif
+else ifneq ($(strip $(TARGET_BUILD_VARIANT)),user)
+  ifeq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += \
+      libmdloggerrecycle \
+      libmemoryDumpEncoder \
+      mdlogger
+    ifneq ($(strip $(MTK_MD1_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD1_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger1
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD2_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD2_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger2
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD5_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD5_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger5
+      endif
+    endif
+    #  $(call inherit-product-if-exists, vendor/mediatek/proprietary/protect-app/external/emdlogger/usb_port.mk)
+    ifneq ($(wildcard device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop),)
+      PRODUCT_COPY_FILES += device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop:$(TARGET_COPY_OUT_VENDOR)/etc/emdlogger_usb_config.prop:mtk
+    endif
+  endif
+  ifneq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+      PRODUCT_PACKAGES += libmdloggerrecycle
+    endif
+  endif
+  ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+    PRODUCT_PACKAGES += emdlogger3
+  endif
+else ifeq ($(strip $(MTK_LOG_CUSTOMER_SUPPORT)),yes)
+  ifeq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    PRODUCT_PACKAGES += \
+      libmdloggerrecycle \
+      libmemoryDumpEncoder \
+      mdlogger
+    ifneq ($(strip $(MTK_MD1_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD1_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger1
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD2_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD2_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger2
+      endif
+    endif
+    ifneq ($(strip $(MTK_MD5_SUPPORT)),)
+      ifneq ($(strip $(MTK_MD5_SUPPORT)),0)
+        PRODUCT_PACKAGES += emdlogger5
+      endif
+    endif
+    #  $(call inherit-product-if-exists, vendor/mediatek/proprietary/protect-app/external/emdlogger/usb_port.mk)
+    ifneq ($(wildcard device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop),)
+      PRODUCT_COPY_FILES += device/mediatek/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')/emdlogger_usb_config.prop:$(TARGET_COPY_OUT_VENDOR)/etc/emdlogger_usb_config.prop:mtk
+    endif
+  endif
+  ifneq ($(strip $(MTK_MDLOGGER_SUPPORT)),yes)
+    ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+      PRODUCT_PACKAGES += libmdloggerrecycle
+    endif
+  endif
+  ifeq ($(strip $(RAT_CONFIG_C2K_SUPPORT)),yes)
+    PRODUCT_PACKAGES += emdlogger3
+  endif
 endif

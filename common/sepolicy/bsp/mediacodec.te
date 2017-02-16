@@ -40,3 +40,9 @@ allow mediacodec debugfs_fb:dir search;
 # Operation : Migration
 # Purpose : Add permission for gpu access
 allow mediacodec dri_device:chr_file { read write open ioctl };
+
+# Date : WK16.50
+# Operation : video codec driver
+# Purpose : Add permission for thermal function access
+allow mediacodec proc_mtktz:dir search;
+allow mediacodec proc_mtktz:file { read open };

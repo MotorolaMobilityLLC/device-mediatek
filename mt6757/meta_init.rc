@@ -401,6 +401,8 @@ on boot
     hostname localhost
     domainname localdomain
 
+    setprop logmuch.detect.value 10000
+
 #INTERNAL_START
     class_start default
 #INTERNAL_END
@@ -496,8 +498,8 @@ service nvram_daemon /vendor/bin/nvram_daemon
     group system
     oneshot
 
-service fuelgauged /system/bin/fuelgauged
-    class main
+service fuelgauged /vendor/bin/fuelgauged
+    class core
 
 service mobile_log_d /vendor/bin/mobile_log_d
     class main

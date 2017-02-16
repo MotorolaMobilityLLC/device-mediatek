@@ -6,6 +6,7 @@
 # Operation : Migration
 # Purpose : camera devices access.
 allow mediaserver camera_isp_device:chr_file rw_file_perms;
+allow mediaserver ccu_device:chr_file rw_file_perms;
 allow mediaserver kd_camera_hw_device:chr_file rw_file_perms;
 allow mediaserver self:capability { setuid ipc_lock sys_nice };
 allow mediaserver sysfs_wake_lock:file rw_file_perms;

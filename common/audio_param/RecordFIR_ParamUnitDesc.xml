@@ -24,6 +24,7 @@
 				<Category name="5-pole HS+ANC" wording="5-pole headset(ANC ON)" feature_option="MTK_HEADSET_ACTIVE_NOISE_CANCELLATION"/>
 			</CategoryGroup>
 			<Category name="BT earphone" wording="Bluetooth"/>
+			<Category name="USB" wording="USB" feature_option="MTK_AURISYS_FRAMEWORK_SUPPORT"/>
 		</CategoryType>
 	</CategoryTypeList>
 	<ParamUnit>

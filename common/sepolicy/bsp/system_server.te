@@ -79,3 +79,8 @@ allow system_app netd_socket:sock_file write;
 # Operation : Migration
 # Purpose : Add permission for gpu access
 allow system_server dri_device:chr_file { read write open ioctl };
+
+# Date : 2017/01/18
+# Operation : Fix ALPS03101444
+# Purpose : Allow BluetoothManagerService to set nvram daemon property
+allow system_server service_nvram_init_prop:property_service set;

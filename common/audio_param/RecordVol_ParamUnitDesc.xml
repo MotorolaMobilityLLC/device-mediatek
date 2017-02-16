@@ -12,6 +12,7 @@
 			<Category name="CUSTOMIZATION2" alias="Customization2"/>
 			<Category name="CUSTOMIZATION3"/>
 			<Category name="FastRecord"/>
+			<Category name="Unprocessed"/>
 		</CategoryType>
 		<CategoryType name="Profile">
 			<Category name="Handset" wording="Receiver" alias="RCV,SPK,HP,3-pole HS"/>

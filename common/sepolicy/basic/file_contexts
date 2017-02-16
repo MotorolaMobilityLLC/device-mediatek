@@ -107,6 +107,7 @@
 /dev/camera-tsf(/.*)? u:object_r:camera_tsf_device:s0
 /dev/camera-pipemgr(/.*)? u:object_r:camera_pipemgr_device:s0
 /dev/camera-sysram(/.*)? u:object_r:camera_sysram_device:s0
+/dev/ccu(/.*)? u:object_r:ccu_device:s0
 /dev/ccci_monitor     u:object_r:ccci_monitor_device:s0
 /dev/ccci.* u:object_r:ccci_device:s0
 /dev/cpu_dma_latency(/.*)? u:object_r:cpu_dma_latency_device:s0
@@ -339,6 +340,7 @@
 /dev/m_step_c_misc(/.*)? u:object_r:m_step_c_misc_device:s0
 /dev/m_tilt_misc(/.*)? u:object_r:m_tilt_misc_device:s0
 /dev/m_fusion_misc(/.*)? u:object_r:m_fusion_misc_device:s0
+/dev/m_bio_misc(/.*)? u:object_r:m_bio_misc_device:s0
 
 # block partition definitions
 /dev/block/mmcblk0boot0 u:object_r:preloader_block_device:s0

@@ -79,6 +79,12 @@
 #define SENSOR_STRING_TYPE_STATIONARY               "android.sensor.stationary"
 #define SENSOR_TYPE_RGBW          	(46)
 #define SENSOR_STRING_TYPE_RGBW                     "android.sensor.rgbw"
+#define SENSOR_TYPE_EKG          (47)
+#define SENSOR_STRING_TYPE_EKG                      "android.sensor.ekg"
+#define SENSOR_TYPE_PPG1          (48)
+#define SENSOR_STRING_TYPE_PPG1                     "android.sensor.ppg1"
+#define SENSOR_TYPE_PPG2          (49)
+#define SENSOR_STRING_TYPE_PPG2                     "android.sensor.ppg2"
 /*---------------------------------------------------------------------------*/
 #define ID_BASE							0
 #define ID_ACCELEROMETER				(ID_BASE+SENSOR_TYPE_ACCELEROMETER-1)
@@ -121,7 +127,10 @@
 #define ID_ANSWER_CALL                                   (ID_BASE+SENSOR_TYPE_ANSWER_CALL-1)
 #define ID_STATIONARY                                   (ID_BASE+SENSOR_TYPE_STATIONARY-1)
 #define ID_RGBW						(ID_BASE+SENSOR_TYPE_RGBW-1)
-#define ID_SENSOR_MAX_HANDLE	  (ID_BASE+SENSOR_TYPE_RGBW)
+#define ID_EKG                                          (ID_BASE+SENSOR_TYPE_EKG-1)
+#define ID_PPG1                                         (ID_BASE+SENSOR_TYPE_PPG1-1)
+#define ID_PPG2                                         (ID_BASE+SENSOR_TYPE_PPG2-1)
+#define ID_SENSOR_MAX_HANDLE	  (ID_BASE+SENSOR_TYPE_PPG2)
 #define ID_NONE							    (ID_SENSOR_MAX_HANDLE+1)
 
 #define ID_OFFSET                           (1)
@@ -196,6 +205,9 @@
 #define BARO_PL_DEV_NAME                	"m_baro_pl"
 #define BARO_INPUTDEV_NAME              "m_baro_input"
 #define BARO_MISC_DEV_NAME              "m_baro_misc"
+#define BIO_PL_DEV_NAME                 "m_bio_pl"
+#define BIO_INPUTDEV_NAME               "m_bio_input"
+#define BIO_MISC_DEV_NAME               "m_bio_misc"
 
 #define STEP_C_PL_DEV_NAME                "m_step_c_pl"
 #define STEP_C_INPUTDEV_NAME              "m_step_c_input"

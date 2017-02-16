@@ -147,3 +147,8 @@ allow system_app vfat:dir create;
 # Operation : SQC
 # Purpose : Allow Permission control to use service manager
 allow system_app mtk_permcontrol_service:service_manager add;
+
+# Date : WK16.43
+# Operation : SQC
+# Purpose : OP02Plugin Set persist.radio.user.select.data for data logic.
+allow system_app radio_prop:property_service set;

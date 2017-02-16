@@ -252,3 +252,25 @@ allow meta_tst flashlight_device:chr_file rw_file_perms;
 #ino=4561 scontext=u:r:meta_tst:s0 tcontext=u:object_r:para_block_device:s0 tclass=blk_file permissive=0
 allow meta_tst para_block_device:blk_file { read write open };
 
+#Date: W16.46
+# Purpose : Allow meta_tst stop service which occupy data partition.
+# Detail avc log: avc: denied { getattr } for path="/system/bin/toolbox" dev="mmcblk0p26" ino=348
+#scontext=u:r:meta_tst:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=0
+allow meta_tst sdcard_type:filesystem unmount;
+allow meta_tst toolbox_exec:file { getattr execute execute_no_trans read open };
+allow meta_tst media_rw_data_file:dir search;
+allow meta_tst storage_stub_file:dir search;
+
+#Date: W16.50
+# Purpose : Allow meta_tst stop service which occupy data partition.
+# Detail avc log: avc: denied { getattr } for path="/system/bin/toolbox" dev="mmcblk0p26" ino=348
+#scontext=u:r:meta_tst:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=0
+allow meta_tst ctl_default_prop:property_service set;
+
+# Date: WK16.55
+# Operation : Migration
+# Purpose : Camera
+allow meta_tst CAM_CAL_DRV_device:chr_file rw_file_perms;
+allow meta_tst media_rw_data_file:file w_file_perms;
+allow meta_tst nvcfg_file:file rw_file_perms;
+allow meta_tst proc_ged:file read;

@@ -17,6 +17,7 @@
 			<Category name="Customization2" visible="false" />
 			<Category name="CUSTOMIZATION3"/>
 			<Category name="FastRecord" visible="false"/>
+			<Category name="Unprocessed"/>
 		</CategoryType>
 		<CategoryType name="Profile" wording="Device">
 			<Category name="Handset"/>

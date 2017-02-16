@@ -552,6 +552,16 @@
       roaming_protocol="IPV4V6"
   />
 
+  <apn carrier="SFR IMS"
+      mcc="208"
+      mnc="10"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="SFR webphone"
       mcc="208"
       mnc="10"
@@ -2814,6 +2824,8 @@
       mnc="05"
       apn="internet"
       type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="Elisa MMS"
@@ -2824,6 +2836,35 @@
       mmsproxy="213.161.41.57"
       mmsport="80"
       type="mms"
+  />
+
+  <apn carrier="Elisa IMS"
+      mcc="244"
+      mnc="05"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="Elisa XCAP"
+      mcc="244"
+      mnc="05"
+      apn="xcap"
+      type="xcap"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="Elisa XCAP over WIFI"
+      mcc="244"
+      mnc="05"
+      apn="xcap"
+      type="xcap"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask="18"
   />
 
   <apn carrier="NSN Internet"
@@ -4766,23 +4807,15 @@
       type="default,supl,mms"
   />
 
-  <apn carrier="myBlue Pix"
+  <apn carrier="ATT Nextgenphone"
       mcc="310"
       mnc="030"
-      apn="mmswap.centennialwireless.com"
-      mmsc="http://mms.myblue.com/servlets/mms"
-      mmsproxy="63.99.231.135"
-      mmsport="8080"
-      type="mms"
-  />
-
-  <apn carrier="Internet"
-      mcc="310"
-      mnc="030"
-      apn="private.centennialwireless.com"
-      user="privuser"
-      password="priv"
-      type="default,supl"
+      apn="nxtgenphone"
+      protocol="IPV4V6"
+      mmsc="http://mmsc.mobile.att.net"
+      mmsproxy="proxy.mobile.att.net"
+      mmsport="80"
+      type="default,supl,mms,hipri,fota,xcap"
   />
 
   <apn carrier="IMS"
@@ -5015,6 +5048,15 @@
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="mht"
+      mcc="310"
+      mnc="150"
+      apn="mht"
+      type="dun"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
   <apn carrier="T-Mobile US 160"
@@ -5340,6 +5382,17 @@
       type="ia"
       protocol="IPV6"
       roaming_protocol="IP"
+  />
+
+  <apn carrier="ATT Nextgenphone"
+      mcc="310"
+      mnc="280"
+      apn="nxtgenphone"
+      protocol="IPV4V6"
+      mmsc="http://mmsc.mobile.att.net"
+      mmsproxy="proxy.mobile.att.net"
+      mmsport="80"
+      type="default,supl,mms,hipri,fota,xcap"
   />
 
   <apn carrier="IMS"
@@ -6261,13 +6314,14 @@
     type="mms"
   />
 
-  <apn carrier="IMS"
+  <apn carrier="Telcel IMS"
       mcc="334"
       mnc="020"
       apn="ims"
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Telcel XCAP"
@@ -10431,6 +10485,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10439,6 +10494,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10447,6 +10503,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10455,6 +10512,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10463,6 +10521,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10471,6 +10530,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10479,6 +10539,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10487,6 +10548,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10495,6 +10557,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10503,6 +10566,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
 
@@ -10512,6 +10576,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10520,6 +10585,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10528,6 +10594,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10536,6 +10603,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10544,6 +10612,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
 
@@ -10553,6 +10622,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10561,6 +10631,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10568,6 +10639,7 @@
       mnc="870"
       apn="IMS"
       type="ims"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10576,6 +10648,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10584,6 +10657,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
 
@@ -10593,6 +10667,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Ims"
@@ -10601,6 +10676,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Uninor MMS"
@@ -11471,6 +11547,7 @@
       type="ims"
       protocol="IP"
       roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="3G"
@@ -13567,13 +13644,55 @@
       type="mms"
   />
 
-  <apn carrier="ims"
+  <apn carrier="AIS Internet"
+      mcc="520"
+      mnc="03"
+      apn="internet"
+      authtype="0"
+      type="default,supl"
+  />
+
+  <apn carrier="AIS MMS"
+      mcc="520"
+      mnc="03"
+      apn="multimedia"
+      mmsc="http://mms.mobilelife.co.th"
+      mmsproxy="203.170.229.34"
+      mmsport="8080"
+      type="mms"
+  />
+
+  <apn carrier="AIS IMS"
       mcc="520"
       mnc="03"
       apn="ims"
       type="ims"
       protocol="IPV6"
-      roaming_protocol="IPV4"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="TRUE-H Internet"
+      mcc="520"
+      mnc="04"
+      apn="internet"
+      user="true"
+      password="true"
+      type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="TRUE-H MMS"
+      mcc="520"
+      mnc="04"
+      apn="hmms"
+      user="true"
+      password="true"
+      mmsc="http://mms.trueh.com:8002/"
+      mmsproxy="10.4.7.39"
+      mmsport="8080"
+      type="mms"
   />
 
   <apn carrier="IMS"
@@ -14617,6 +14736,7 @@
       type="ims"
       protocol="IP"
       roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
 <apn carrier="8•ta" 
@@ -14650,6 +14770,16 @@
       mmsproxy="196.31.116.250"
       mmsport="8080"
       type="mms"
+  />
+
+  <apn carrier="Cell C IMS"
+      mcc="655"
+      mnc="07"
+      apn="ims"
+      type="ims"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Virgin Mobile SA Internet"

@@ -34,6 +34,7 @@
 		<Param path="Customization2" param_id="2"/>
 		<Param path="CUSTOMIZATION3" param_id="2"/>
 		<Param path="FastRecord" param_id="2"/>
+		<Param path="Unprocessed" param_id="2"/>
 
 		<Param path="BT earphone" param_id="0"/>
 		<Param path="ASR,BT earphone" param_id="0"/>

@@ -37,9 +37,9 @@
 		<Param path="CUSTOMIZATION2,HS5POLE" param_id="3"/>
 		<Param path="CUSTOMIZATION2,HS5POLE_ANC" param_id="3"/>
 
-		<Param path="CUSTOMIZATION3,Handset" param_id="1"/>
-		<Param path="CUSTOMIZATION3,Headset" param_id="1"/>
-		<Param path="CUSTOMIZATION2,USB" param_id="1"/>
+		<Param path="CUSTOMIZATION3,Handset" param_id="2"/>
+		<Param path="CUSTOMIZATION3,Headset" param_id="2"/>
+		<Param path="CUSTOMIZATION3,USB" param_id="1"/>
 		<Param path="CUSTOMIZATION3,HS5POLE" param_id="3"/>
 		<Param path="CUSTOMIZATION3,HS5POLE_ANC" param_id="3"/>
 
@@ -48,6 +48,8 @@
 		<Param path="FastRecord,USB" param_id="1"/>
 		<Param path="FastRecord,HS5POLE" param_id="3"/>
 		<Param path="FastRecord,HS5POLE_ANC" param_id="3"/>
+
+		<Param path="Unprocessed" param_id="1"/>
 	</ParamTree>
 	<ParamUnitPool>
 		<ParamUnit param_id="0">

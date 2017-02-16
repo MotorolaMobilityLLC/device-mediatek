@@ -222,7 +222,6 @@ PRODUCT_PACKAGES += dhcp6c.script
 PRODUCT_PACKAGES += dhcp6cctlkey
 PRODUCT_PACKAGES += libblisrc
 PRODUCT_PACKAGES += libifaddrs
-PRODUCT_PACKAGES += mobile_log_d
 PRODUCT_PACKAGES += libmobilelog_jni
 PRODUCT_PACKAGES += libaudio.r_submix.default
 PRODUCT_PACKAGES += libaudio.r_submix.mt6757
@@ -340,8 +339,6 @@ PRODUCT_PACKAGES += libMtkOmxFlacDec
 PRODUCT_PACKAGES += ppp_dt
 PRODUCT_PACKAGES += power.default
 PRODUCT_PACKAGES += libdiagnose
-PRODUCT_PACKAGES += netdiag
-PRODUCT_PACKAGES += tcpdump
 PRODUCT_PACKAGES += MPED
 PRODUCT_PACKAGES += libmpe.sensorlistener.so
 PRODUCT_PACKAGES += libmpe.driver.so
@@ -466,6 +463,7 @@ PRODUCT_PACKAGES += perfservtouchfilter.txt
 PRODUCT_PACKAGES += perfservscntbl.txt
 PRODUCT_PACKAGES += perfservboosttbl.txt
 PRODUCT_PACKAGES += perfcontable.txt
+PRODUCT_PACKAGES += perfcontable_p25.txt
 PRODUCT_PACKAGES += Videos
 PRODUCT_PACKAGES += sn
 PRODUCT_PACKAGES += lcdc_screen_cap
@@ -640,10 +638,6 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   $(call inherit-product-if-exists, vendor/mediatek/proprietary/external/mtknfc/mtknfc.mk)
 endif
 
-ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
-  PRODUCT_PACKAGES += MTKLogger
-  PRODUCT_PACKAGES += BtTool
-endif
 
 ifeq ($(strip $(MTK_SPECIFIC_SM_CAUSE)), yes)
   PRODUCT_PROPERTY_OVERRIDES += ril.specific.sm_cause=1
@@ -733,6 +727,11 @@ else
   else
     PRODUCT_PACKAGES += Stk1
   endif
+endif
+
+ifeq ($(strip $(MTK_BSP_PACKAGE)),yes)
+  PRODUCT_PACKAGES += perfd
+  PRODUCT_PACKAGES += libperfservd
 endif
 
 ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
@@ -1059,6 +1058,10 @@ else
   ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# OEM Unlock reporting
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.oem_unlock_supported=1
+
 ifeq ($(strip $(GEMINI)), yes)
   ifeq ($(OPTR_SPEC_SEG_DEF),NONE)
     PRODUCT_PACKAGES += StkSelection
@@ -1298,6 +1301,14 @@ ifeq ($(strip $(MTK_FAT_ON_NAND)),yes)
 PRODUCT_COPY_FILES += device/mediatek/mt6757/init.fon.rc:root/init.fon.rc
 endif
 
+ifeq ($(strip $(MTK_SENSOR_BIO)),yes)
+PRODUCT_COPY_FILES += device/mediatek/mt6757/init.sensor_bio.rc:root/init.sensor_bio.rc
+endif
+
+ifneq ($(strip $(MTK_SENSOR_BIO)),yes)
+PRODUCT_COPY_FILES += device/mediatek/mt6757/init.sensor.rc:root/init.sensor.rc
+endif
+
 PRODUCT_COPY_FILES += device/mediatek/mt6757/meta_init.modem.rc:root/meta_init.modem.rc
 PRODUCT_COPY_FILES += device/mediatek/mt6757/meta_init.rc:root/meta_init.rc
 PRODUCT_COPY_FILES += device/mediatek/mt6757/init.mt6757.usb.rc:root/init.mt6757.usb.rc
@@ -1393,11 +1404,17 @@ ifeq ($(strip $(MTK_TEE_TRUSTED_UI_SUPPORT)), yes)
   PRODUCT_PACKAGES += libTlcPinpad
 endif
 
+ifneq ($(MTK_AUDIO_TUNING_TOOL_VERSION),)
+  ifneq ($(strip $(MTK_AUDIO_TUNING_TOOL_VERSION)),V1)
+    MTK_AUDIO_PARAM_DIR_LIST += device/mediatek/mt6757/audio_param
+  endif
+endif
+
 ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
 PRODUCT_COPY_FILES += 	device/mediatek/mt6757/init.microtrust.rc:root/init.microtrust.rc
 PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/soter.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.raw:mtk
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
 PRODUCT_PACKAGES   += 	keystore.mt6757
 PRODUCT_PACKAGES   += 	gatekeeper.mt6757
 endif
@@ -1433,24 +1450,35 @@ ifeq ($(strip $(MTK_EXTERNAL_DONGLE_SUPPORT)), yes)
     $(call inherit-product-if-exists, frameworks/opt/tedongle/tedonglePermission.mk)
 endif
 
-ifeq ($(strip $(MTK_AUDIO_SPEAKER_PATH)),smartpa_richtek_rt5509)
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/rt5509_param:system/etc/rt5509_param
-PRODUCT_COPY_FILES += \
-        $(call add-to-product-copy-files-if-exists, device/mediatek/$(MTK_TARGET_PROJECT)/rt5509_param:system/etc/rt5509_param)
-endif
-
 # for logd filter
 ifeq ($(OPTR_SPEC_SEG_DEF),OP03_SPEC0200_SEGDEFAULT)
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PROPERTY_OVERRIDES += persist.log.tag=I
-else
-PRODUCT_PROPERTY_OVERRIDES += persist.log.tag=M
 endif
-else
-PRODUCT_PROPERTY_OVERRIDES += persist.log.tag=M
 endif
 
 PRODUCT_PACKAGES += libabfadp
+
+#CCU dependencies
+PRODUCT_PACKAGES += libccu_bin.pm
+PRODUCT_PACKAGES += libccu_bin.dm
+PRODUCT_PACKAGES += libccu_imx214mipimono.pm
+PRODUCT_PACKAGES += libccu_imx214mipimono.dm
+PRODUCT_PACKAGES += libccu_imx338mipiraw.pm
+PRODUCT_PACKAGES += libccu_imx338mipiraw.dm
+PRODUCT_PACKAGES += libccu_imx386mipiraw.pm
+PRODUCT_PACKAGES += libccu_imx386mipiraw.dm
+PRODUCT_PACKAGES += libccu_imx398mipiraw.pm
+PRODUCT_PACKAGES += libccu_imx398mipiraw.dm
+PRODUCT_PACKAGES += libccu_ov8858mipiraw.pm
+PRODUCT_PACKAGES += libccu_ov8858mipiraw.dm
+PRODUCT_PACKAGES += libccu_s5k4e6mipiraw.pm
+PRODUCT_PACKAGES += libccu_s5k4e6mipiraw.dm
+
+# for new CCT
+PRODUCT_PACKAGES += libcam.hal3a.cctsvr
+PRODUCT_PACKAGES += libcam.hal3a.automation
+PRODUCT_PACKAGES += camtool
 
 ADDITIONAL_DEFAULT_PROPERTIES += persist.radio.lte.chip=0
 
