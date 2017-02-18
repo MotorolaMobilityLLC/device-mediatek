@@ -98,8 +98,3 @@ allow surfaceflinger {
 # 2. allow SF to adjust vsync offset in freemode
 allow surfaceflinger debugfs_ged:file { open write read getattr};
 allow surfaceflinger debugfs_ged:dir { search };
-
-# Date:W16.44
-# Operation : Migration
-# Purpose : Allow system server to connectto perfd
-allow surfaceflinger perfd:unix_stream_socket connectto;

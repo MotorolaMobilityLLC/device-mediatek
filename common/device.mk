@@ -134,6 +134,7 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         PRODUCT_PACKAGES += MtkCalendar
         PRODUCT_PACKAGES += MtkBrowser
         PRODUCT_PACKAGES += MtkQuickSearchBox
+        PRODUCT_PACKAGES += MtkWebView
     endif
 endif
 
@@ -2092,6 +2093,9 @@ ifneq ($(MTK_AUDIO_TUNING_TOOL_VERSION),)
     AUDIO_PARAM_OPTIONS_LIST += 5_POLE_HS_SUPPORT=$(MTK_HEADSET_ACTIVE_NOISE_CANCELLATION)
     MTK_AUDIO_PARAM_DIR_LIST += device/mediatek/common/audio_param
     #MTK_AUDIO_PARAM_FILE_LIST += SOME_ZIP_FILE
+    ifeq ($(strip $(MTK_USB_PHONECALL)),AP)
+      AUDIO_PARAM_OPTIONS_LIST += MTK_USB_PHONECALL=yes
+    endif
 
     # speaker path customization for gain table
     ifeq ($(strip $(MTK_AUDIO_SPEAKER_PATH)),int_spk_amp)
@@ -2300,7 +2304,11 @@ endif
 # Add for Dynamic-SBP
 ifeq ($(strip $(MTK_DYNAMIC_SBP_SUPPORT)), yes)
   PRODUCT_PROPERTY_OVERRIDES += persist.radio.mtk_dsbp_support=1
-  PRODUCT_PROPERTY_OVERRIDES += persist.mtk_dynamic_ims_switch=0
+endif
+
+# Add for Dynamic IMS switch support
+ifeq ($(strip $(MTK_DYNAMIC_IMS_SWITCH_SUPPORT)), yes)
+  PRODUCT_PROPERTY_OVERRIDES += persist.mtk_dynamic_ims_switch=1
 endif
 
 
@@ -2633,6 +2641,9 @@ endif
 ifeq (yes,$(strip $(MTK_RUNNING_BOOSTER_SUPPORT)))
     PRODUCT_PROPERTY_OVERRIDES += persist.runningbooster.support=1
     PRODUCT_PACKAGES += DuraSpeed
+    PRODUCT_PACKAGES += mediatek-feature-runningbooster
+    PRODUCT_COPY_FILES += frameworks/base/core/java/com/mediatek/runningbooster/com.mediatek.runningbooster.xml:system/etc/permissions/com.mediatek.runningbooster.xml
+    PRODUCT_COPY_FILES += frameworks/base/core/java/com/mediatek/runningbooster/platform_list.txt:system/etc/runningbooster/platform_list.txt
     ifeq (yes,$(strip $(MTK_RUNNING_BOOSTER_UPGRADE)))
         PRODUCT_PROPERTY_OVERRIDES += persist.runningbooster.upgrade=1
     endif
@@ -2671,6 +2682,9 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         PRODUCT_PACKAGES += EmergencyInfo
     endif
 endif
+
+# Add WallpaperPicker
+PRODUCT_PACKAGES += WallpaperPicker
 
 # Log control for SMS
 ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)

@@ -21,6 +21,8 @@
 		<Param path="WB,MagiConference,GSM" param_id="0"/>
 		<Param path="NB,HAC,GSM" param_id="1"/>
 		<Param path="WB,HAC,GSM" param_id="1"/>
+		<Param path="NB,Usb_Headset,GSM" param_id="2"/>
+		<Param path="WB,Usb_Headset,GSM" param_id="2"/>
 		<Param path="NB,Lpbk_Handset,GSM" param_id="2"/>
 		<Param path="WB,Lpbk_Handset,GSM" param_id="2"/>
 		<Param path="NB,Lpbk_Headset,GSM" param_id="2"/>

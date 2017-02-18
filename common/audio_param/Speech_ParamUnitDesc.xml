@@ -26,6 +26,9 @@
                 <Category name="BT_Earphone" wording="BT_NREC_On"/>
                 <Category name="BT_NREC_Off"/>
             </CategoryGroup>
+           <CategoryGroup name="USB Device">
+                <Category name="Usb_Headset" wording="USB Headset" feature_option="MTK_USB_PHONECALL"/>
+            </CategoryGroup>
             <CategoryGroup name="Loopback" feature_option="MTK_AUDIO_SPH_LPBK_PARAM">
                 <Category name="Lpbk_Handset" wording="Handset"/>
                 <Category name="Lpbk_Headset" wording="Headset"/>

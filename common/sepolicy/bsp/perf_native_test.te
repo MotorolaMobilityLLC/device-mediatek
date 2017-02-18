@@ -1,9 +1,0 @@
-# ==============================================================================
-# Type Declaration
-# ==============================================================================
-type perf_native_test, domain;
-
-# Date:W16.44
-# Operation : Migration
-# Purpose : Allow system server to connectto perfd
-allow perf_native_test perfd:unix_stream_socket connectto;

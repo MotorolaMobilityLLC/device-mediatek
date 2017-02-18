@@ -80,7 +80,7 @@
 				<Field audio_type="VoIP" param="voip_mode_para" name="Stationary noise weight"/>
 			</FieldList>
 			<CategoryPathList>
-				<Category path="Handset 2mic NR"/>
+				<Category path="Handset"/>
 			</CategoryPathList>
 		</Feature>
 	</TreeRoot>

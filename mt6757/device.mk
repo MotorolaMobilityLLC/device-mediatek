@@ -729,11 +729,6 @@ else
   endif
 endif
 
-ifeq ($(strip $(MTK_BSP_PACKAGE)),yes)
-  PRODUCT_PACKAGES += perfd
-  PRODUCT_PACKAGES += libperfservd
-endif
-
 ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
   PRODUCT_PACKAGES += EngineerMode
   PRODUCT_PACKAGES += EngineerModeSim

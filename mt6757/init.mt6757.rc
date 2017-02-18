@@ -65,8 +65,8 @@ on late-init
 
 on charger
     mount ext4 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system /system ro wait
-    exec /system/bin/e2fsck -f -p /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache
-    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache /cache rw wait
+    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
+    mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
@@ -859,10 +859,6 @@ service bugreport /system/bin/dumpstate -d -p -B \
 on property:sys.boot_completed=1
     start ged_srv
 
-# start perfd
-on property:sys.boot_completed=1
-    start perfd
-
 on property:sys.boot_completed=1
     # restore perf. parameters
     write /proc/ppm/policy/userlimit_min_cpu_freq "1 -1"
@@ -1173,13 +1169,6 @@ service ipod /vendor/bin/ipod
     group root
     disabled
 
-service perfd /vendor/bin/perfd
-    class core
-    user system
-    group system readproc
-    socket perfd stream 0666 perfd perfd
-    disabled
-
 service extmdlogger /vendor/bin/extmdlogger
     class main
     user shell
@@ -1435,8 +1424,8 @@ service poad /vendor/bin/poad
 #monitor battery status
 service batterywarning /vendor/bin/batterywarning
     class main
-    user shell
-    group shell
+    user system
+    group system
 
 
 
@@ -1474,11 +1463,9 @@ on property:persist.mediatek.fg.disable=1
 
 on property:persist.mediatek.fg.force25c=1
     write /sys/devices/platform/battery_meter/FG_drv_force25c 1
-    write /sys/bus/platform/devices/battery/Battery_Temperature 25
 
 on property:persist.mediatek.fg.force25c=0
     write /sys/devices/platform/battery_meter/FG_drv_force25c 0
-    write /sys/bus/platform/devices/battery/Battery_Temperature 65535
 
 on property:persist.mediatek.fg.log.enable=1
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
@@ -1487,6 +1474,23 @@ on property:persist.mediatek.fg.log.enable=1
 
 service kpoc_charger /vendor/bin/kpoc_charger
     class charger
+# Battery info
+on property:persist.mediatek.fg.disable=1
+    write /sys/devices/platform/battery_meter/FG_daemon_disable 1
+
+on property:persist.mediatek.fg.force25c=1
+    write /sys/devices/platform/battery_meter/FG_drv_force25c 1
+
+on property:persist.mediatek.fg.force25c=0
+    write /sys/devices/platform/battery_meter/FG_drv_force25c 0
+
+on property:persist.mediatek.fg.log.enable=1
+    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
+    write /proc/sys/kernel/printk 8
+
+service kpoc_charger /vendor/bin/kpoc_charger
+    class charger
+
 ###########add for 3Gdongle
 
 on boot
