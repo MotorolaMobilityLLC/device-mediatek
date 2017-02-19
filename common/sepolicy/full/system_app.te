@@ -148,7 +148,25 @@ allow system_app vfat:dir create;
 # Purpose : Allow Permission control to use service manager
 allow system_app mtk_permcontrol_service:service_manager add;
 
+
 # Date : WK16.43
 # Operation : SQC
 # Purpose : OP02Plugin Set persist.radio.user.select.data for data logic.
 allow system_app radio_prop:property_service set;
+
+#Added by dingying
+allow system_app sysfs_ledwhite:file rw_file_perms;
+allow system_app sysfs_ledwhite:file { write };
+
+allow system_app sysfs_fingerprint_file:file rw_file_perms;
+
+allow system_app proc_boardid_info:file rw_file_perms;
+
+allow system_app proc_camera_flash:file rw_file_perms;
+
+allow system_app vibrator_file:file rw_file_perms;
+
+#gouxinyue
+allow system_app hotknot_file:file rw_file_perms;
+#gouxinyue
+allow system_app ftxxxx:file { write read open};

@@ -84,6 +84,10 @@ allow system_server mtk_volte_prop:property_service set;
 allow system_server mtk_wfc_prop:property_service set;
 allow system_server mtk_vt_prop:property_service set;
 
+#Added by liuzhnehe for leds permission
+allow system_server sysfs_ledwhite:file rw_file_perms;
+allow system_server sysfs_ledwhite:file { write };
+
 # Date: W16.21
 # Operation : Migration
 # Purpose : Allow system server to read/write /sys/kernel/debug/binder/* for ANR mechanism

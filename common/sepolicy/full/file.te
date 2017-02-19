@@ -14,6 +14,24 @@ type volte_stack_socket, file_type;
 type sysfs_gsensor_file, file_type,sysfs_type;
 type sysfs_msensor_file, file_type,sysfs_type;
 type bmm050_sensor_log_file, file_type,data_file_type;
+#Added by dingying for system leds
+type sysfs_ledwhite, fs_type, sysfs_type;
+
+#Added by dingying for camera flash
+type proc_camera_flash, fs_type, sysfs_type;
+
+#Added by dingying for fpc
+type sysfs_fingerprint_file, fs_type, sysfs_type;
+
+#Added by dingying for sku info
+type proc_boardid_info, fs_type, sysfs_type;
+
+#Added by dingying for vibrator
+type vibrator_file, fs_type,sysfs_type;
+
+#gouxinyue for tp 
+type hotknot_file, fs_type,sysfs_type;
+type ftxxxx, fs_type,sysfs_type;
 
 # ==============================================
 # MTK Policy Rule

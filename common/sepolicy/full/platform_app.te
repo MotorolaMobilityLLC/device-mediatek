@@ -145,3 +145,7 @@ unix_socket_connect(platform_app, rild_embms, rilproxy)
 # Purpose: comply with Vzw eMBMS operator requirement
 allow platform_app embms_library_file:file create_file_perms;
 allow platform_app embms_library_file:dir rw_dir_perms;
+
+#gouxinyue
+allow platform_app hotknot_file:file { write read open};
+

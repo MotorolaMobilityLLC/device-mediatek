@@ -29,6 +29,20 @@
 /sys/devices/platform/gsensor/driver(/.*)?	u:object_r:sysfs_gsensor_file:s0
 /sys/devices/platform/msensor/driver(/.*)?	u:object_r:sysfs_msensor_file:s0
 
+#Added by dingying for system leds
+/sys/devices/platform/1100f000.i2c/i2c-5/5-0034/rt5081_pmu_rgbled/leds/rt5081_pmu_led4/brightness  u:object_r:sysfs_ledwhite:s0
+/sys/devices/platform/1100f000.i2c/i2c-5/5-0034/rt5081_pmu_rgbled/leds/rt5081_pmu_led3/brightness  u:object_r:sysfs_ledwhite:s0
+#Added by dingying for fpc
+/sys/class/goodix_fp/goodix_fp/device/fingerprint_id u:object_r:sysfs_fingerprint_file:s0	
+
+#Added by dingying for vibrator
+/sys/module/vibrator_drv/parameters/lct_vibr_factory_flag u:object_r:vibrator_file:s0
+
+#gouxinyue for tp 
+/proc/hotknot u:object_r:hotknot_file:s0
+/proc/ftxxxx-debug u:object_r:ftxxxx:s0
+	
+
 #############################
 # Data files
 #
