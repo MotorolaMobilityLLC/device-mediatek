@@ -397,6 +397,7 @@ NSFeature :  : RAWSensorInfo < _id >  :  : getFlickerPara \
 #if defined(MTK_LCT_CUSTOM_CAMERA)/*jijin.wang add for LCT*/
 #define SENSOR_DRVNAME_HI553_MIPI_RAW           "hi553mipiraw"
 #endif
+#define SENSOR_DRVNAME_HI556_MIPI_RAW           "hi556mipiraw"
 /*MT*/
 #define SENSOR_DRVNAME_MT9P012_RAW              "mt9p012"
 #define SENSOR_DRVNAME_MT9P015_RAW              "mt9p015"
