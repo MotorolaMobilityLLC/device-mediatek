@@ -21,6 +21,10 @@ set_prop(msensord, ctl_msensord_prop)
 # set the ctl.xxxd property
 set_prop(msensord, ctl_akmd8963_prop)
 set_prop(msensord, ctl_akmd09911_prop)
+# add by wangshuai for add new service
+set_prop(msensord, ctl_memsicd3630x_prop)
+set_prop(msensord, ctl_qmcX983d_prop)
+#end
 set_prop(msensord, ctl_s62xd_prop)
 set_prop(msensord, ctl_geomagneticd_prop)
 set_prop(msensord, ctl_orientationd_prop)

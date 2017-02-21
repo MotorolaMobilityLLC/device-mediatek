@@ -1264,6 +1264,20 @@ service memsicd3416x /vendor/bin/memsicd3416x
 	 user system
     group system
     class main
+
+service memsicd3630x /vendor/bin/memsicd3630x
+     disabled
+	 user system
+    group system
+    class main
+
+service qmcX983d /vendor/bin/qmcX983d
+     disabled
+	 user system
+    group system
+    class main
+	oneshot	   
+
 service akmd8975 /vendor/bin/akmd8975
     disabled
     user system

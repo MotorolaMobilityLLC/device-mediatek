@@ -440,6 +440,8 @@
 /(system\/vendor|vendor)/bin/ccci_mdinit u:object_r:ccci_mdinit_exec:s0
 /(system\/vendor|vendor)/bin/akmd09911 u:object_r:akmd09911_exec:s0
 /(system\/vendor|vendor)/bin/akmd8963 u:object_r:akmd8963_exec:s0
+/(system\/vendor|vendor)/bin/memsicd3630x u:object_r:memsicd3630x_exec:s0
+/(system\/vendor|vendor)/bin/qmcX983d u:object_r:qmcX983d_exec:s0
 
 /(system\/vendor|vendor)/xbin/MPED u:object_r:MPED_exec:s0
 /(system\/vendor|vendor)/xbin/mtkFlpDaemon u:object_r:mtkFlpDaemon_exec:s0

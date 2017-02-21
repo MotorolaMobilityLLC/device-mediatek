@@ -92,6 +92,10 @@ type ctl_msensord_prop, property_type;
 type ctl_s62xd_prop, property_type;
 type ctl_akmd8963_prop, property_type;
 type ctl_akmd09911_prop, property_type;
+# add by wangshuai for add new service
+type ctl_memsicd3630x_prop, property_type;
+type ctl_qmcX983d_prop, property_type;
+#end
 type ctl_geomagneticd_prop, property_type;
 type ctl_orientationd_prop, property_type;
 type ctl_emcsmdlogger_prop, property_type;

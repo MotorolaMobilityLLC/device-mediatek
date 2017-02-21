@@ -88,6 +88,10 @@ ctl.msensord     u:object_r:ctl_msensord_prop:s0
 ctl.s62xd     u:object_r:ctl_s62xd_prop:s0
 ctl.akmd8963     u:object_r:ctl_akmd8963_prop:s0
 ctl.akmd09911     u:object_r:ctl_akmd09911_prop:s0
+# add by wangshuai for add new service
+ctl.memsicd3630x     u:object_r:ctl_memsicd3630x_prop:s0
+ctl.qmcX983d    u:object_r:ctl_qmcX983d_prop:s0
+#end
 ctl.geomagneticd     u:object_r:ctl_geomagneticd_prop:s0
 ctl.orientationd     u:object_r:ctl_orientationd_prop:s0
 ctl.emdlogger5       u:object_r:ctl_emcsmdlogger_prop:s0
