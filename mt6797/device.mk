@@ -417,6 +417,7 @@ PRODUCT_PACKAGES += perfservapplist.txt
 PRODUCT_PACKAGES += perfservtouchfilter.txt
 PRODUCT_PACKAGES += perfservscntbl.txt
 PRODUCT_PACKAGES += perfservboosttbl.txt
+PRODUCT_PACKAGES += perfcontable.txt
 PRODUCT_PACKAGES += Videos
 PRODUCT_PACKAGES += sn
 PRODUCT_PACKAGES += lcdc_screen_cap

@@ -32,6 +32,15 @@
 /sys/devices/platform/gsensor/driver(/.*)?	u:object_r:sysfs_gsensor_file:s0
 /sys/devices/platform/msensor/driver(/.*)?	u:object_r:sysfs_msensor_file:s0
 
+# CPUFREQ
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/cpuinfo_cur_freq	u:object_r:sysfs_cpu_freq:s0
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/cpuinfo_max_freq	u:object_r:sysfs_cpu_freq:s0
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/cpuinfo_min_freq	u:object_r:sysfs_cpu_freq:s0
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/scaling_cur_freq	u:object_r:sysfs_cpu_freq:s0
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/scaling_max_freq	u:object_r:sysfs_cpu_freq:s0
+/sys/devices/system/cpu/cpu[0-9]+/cpufreq/scaling_min_freq	u:object_r:sysfs_cpu_freq:s0
+
+
 #############################
 # Data files
 #

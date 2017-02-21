@@ -97,3 +97,4 @@ allow surfaceflinger {
 # 1. Hwc writes mhl 4k information to debug node of GED
 # 2. allow SF to adjust vsync offset in freemode
 allow surfaceflinger debugfs_ged:file { open write read getattr};
+allow surfaceflinger debugfs_ged:dir { search };

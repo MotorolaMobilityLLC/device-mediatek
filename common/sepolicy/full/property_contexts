@@ -105,3 +105,6 @@ persist.imstestmode.support u:object_r:ims_mode_prop:s0
 
 #=============3g vt property===========
 persist.3gvt.em_eng_config u:object_r:mtk_em_3gvt_prop:s0
+
+#=============allow Rild ctrl ePDG PDN interface prop=============
+ril.epdg.interface.ctrl u:object_r:ril_epdg_interface_ctrl_prop:s0
