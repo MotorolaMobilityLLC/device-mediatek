@@ -2252,20 +2252,21 @@ endif
 # Add for Automatic Setting for heapgrowthlimit & heapsize
 RESOLUTION_HXW=$(shell expr $(LCM_HEIGHT) \* $(LCM_WIDTH))
 
-ifeq ($(shell test $(RESOLUTION_HXW) -ge 0 && test $(RESOLUTION_HXW) -lt 1000000 && echo true), true)
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=128m
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=256m
-endif
+# disable MTK rule for dalvik vm heap
+#ifeq ($(shell test $(RESOLUTION_HXW) -ge 0 && test $(RESOLUTION_HXW) -lt 1000000 && echo true), true)
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=128m
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=256m
+#endif
 
-ifeq ($(shell test $(RESOLUTION_HXW) -ge 1000000 && test $(RESOLUTION_HXW) -lt 3500000 && echo true), true)
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=192m
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=384m
-endif
+#ifeq ($(shell test $(RESOLUTION_HXW) -ge 1000000 && test $(RESOLUTION_HXW) -lt 3500000 && echo true), true)
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=192m
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=384m
+#endif
 
-ifeq ($(shell test $(RESOLUTION_HXW) -ge 3500000 && echo true), true)
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=384m
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=768m
-endif
+#ifeq ($(shell test $(RESOLUTION_HXW) -ge 3500000 && echo true), true)
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapgrowthlimit=384m
+#PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.heapsize=768m
+#endif
 
 # Add for Hardware Fused Location Related Modules
 PRODUCT_PACKAGES += slpd
