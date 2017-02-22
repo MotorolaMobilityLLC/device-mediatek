@@ -170,3 +170,6 @@ allow system_app vibrator_file:file rw_file_perms;
 allow system_app hotknot_file:file rw_file_perms;
 #gouxinyue
 allow system_app ftxxxx:file { write read open};
+
+#add by wangshuai for gyro cali
+allow system_app em_svr:unix_stream_socket { connectto };
