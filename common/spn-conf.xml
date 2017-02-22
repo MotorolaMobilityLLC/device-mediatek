@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
-   Lenovo SPN version: V5.3
+   Lenovo SPN version: V5.5
 -->
 <spnOverrides version="1">
 <spnOverride numeric="3100" spn="NEPW"/>
@@ -1268,4 +1268,5 @@
 <spnOverride numeric="64303" spn="Movitel"/>
 <spnOverride numeric="65514" spn="Noetel"/>
 <spnOverride numeric="65519" spn="iburst"/>
+<spnOverride numeric="334090" spn="AT&amp;T"/>
 </spnOverrides>
