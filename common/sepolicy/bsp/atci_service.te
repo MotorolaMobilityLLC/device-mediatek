@@ -133,7 +133,10 @@ allow atci_service mtk_em_prop:property_service set;
 # Date : 2016/03/02
 # Operation : M-Migration
 # Purpose : to support ATCI touch tool
-allow atci_service shell_exec:file { read execute open execute_no_trans };
+# BEGIN Lenovo lubm1 2017-02-23 IKANGEROW-1128 AT+CTSA=1,20,50 through atci leads to tombstone.
+allow atci_service shell_exec:file { getattr read execute open execute_no_trans };
+allow atci_service toolbox_exec:file { getattr read execute open execute_no_trans};
+# END IKANGEROW-1128
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
