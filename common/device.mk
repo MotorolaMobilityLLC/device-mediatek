@@ -2322,7 +2322,11 @@ endif
 # Add for Dynamic-SBP
 ifeq ($(strip $(MTK_DYNAMIC_SBP_SUPPORT)), yes)
   PRODUCT_PROPERTY_OVERRIDES += persist.radio.mtk_dsbp_support=1
-  PRODUCT_PROPERTY_OVERRIDES += persist.mtk_dynamic_ims_switch=0
+endif
+
+# Add for Dynamic IMS switch support
+ifeq ($(strip $(MTK_DYNAMIC_IMS_SWITCH_SUPPORT)), yes)
+  PRODUCT_PROPERTY_OVERRIDES += persist.mtk_dynamic_ims_switch=1
 endif
 
 # Add for ModemMonitor(MDM) framework

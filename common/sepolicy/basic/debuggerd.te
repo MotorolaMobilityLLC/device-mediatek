@@ -235,6 +235,7 @@ allow debuggerd sysfs_zram:file { read getattr open };
 # shrinker_debug, rcu, ged
 allow debuggerd debugfs_wakeup_sources:file { read open };
 allow debuggerd debugfs_dmlog_debug:file { read open };
+allow debuggerd debugfs_page_owner_slim_debug:file { read open };
 allow debuggerd debugfs_shrinker_debug:file { read open };
 allow debuggerd debugfs_rcu:file { read open };
 allow debuggerd debugfs_rcu:dir search;

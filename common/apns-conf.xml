@@ -4415,6 +4415,25 @@
       type="mms"
   />
 
+  <apn carrier="Turkcell VoLTE"
+      mcc="286"
+      mnc="01"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="Turkcell Xcap"
+      mcc="286"
+      mnc="01"
+      apn="xcap"
+      type="xcap"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="Vodafone Internet"
       mcc="286"
       mnc="02"
@@ -4436,14 +4455,23 @@
       type="mms"
   />
 
- <apn carrier="IMS"
+ <apn carrier="Vodafone IMS"
       mcc="286"
       mnc="02"
       apn="ims"
       type="ims"
-      protocol="IPV4V6"
-      roaming_protocol="IPV4V6"
+      protocol="IP"
+      roaming_protocol="IP"
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="Vodafone Turkey Xcap"
+      mcc="286"
+      mnc="02"
+      apn="hos"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
   <apn carrier="Avea Internet"
@@ -4463,6 +4491,16 @@
       mmsproxy="213.161.151.201"
       mmsport="8080"
       type="mms"
+  />
+
+  <apn carrier="Avea IMS"
+      mcc="286"
+      mnc="03"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Avea Xcap"
@@ -4899,7 +4937,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -4997,7 +5034,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -5190,7 +5226,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -5549,7 +5584,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -5643,7 +5677,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -5809,7 +5842,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -5960,7 +5992,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -6110,7 +6141,6 @@
       type="emergency"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17"
   />
 
   <apn carrier="ATT SOS(wifi)"
@@ -10713,6 +10743,7 @@
       apn="IMS"
       type="ims"
       protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
 

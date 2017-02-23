@@ -501,6 +501,8 @@ on boot
     hostname localhost
     domainname localdomain
 
+    setprop logmuch.detect.value 10000
+
     #INTERNAL_START
     # Start default class, this line is very important!!
     class_start default

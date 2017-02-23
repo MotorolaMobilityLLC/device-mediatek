@@ -388,6 +388,7 @@
 /sys/kernel/debug/dynamic_debug(/.*)? u:object_r:debugfs_dynamic_debug:s0
 /sys/kernel/debug/wakeup_sources u:object_r:debugfs_wakeup_sources:s0
 /sys/kernel/debug/dmlog u:object_r:debugfs_dmlog_debug:s0
+/sys/kernel/debug/page_owner_slim u:object_r:debugfs_page_owner_slim_debug:s0
 /sys/kernel/debug/shrinker u:object_r:debugfs_shrinker_debug:s0
 /sys/kernel/debug/rcu(/.*)? u:object_r:debugfs_rcu:s0
 /sys/kernel/debug/ged(/.*)? u:object_r:debugfs_ged:s0
