@@ -80,3 +80,4 @@ allow ipsec wod_ipsec_conf_file:dir { write read open search remove_name add_nam
 # Purpose : set alarm for DPD
 allow ipsec self:capability2 wake_alarm;
 
+allow ipsec devpts:chr_file { open read write };

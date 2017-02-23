@@ -85,3 +85,6 @@ type ims_mode_prop, property_type, mtk_core_property_type;
 
 #=============allow EM set 3g vt property=============
 type mtk_em_3gvt_prop, property_type, mtk_core_property_type;
+
+#=============allow Rild ctrl ePDG PDN interface prop=============
+type ril_epdg_interface_ctrl_prop, property_type, mtk_core_property_type;
