@@ -10,6 +10,7 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.bluetooth.xml:
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
 ifneq ($(strip $(CUSTOM_KERNEL_STEP_COUNTER)),)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml
@@ -1348,15 +1349,15 @@ endif
 endif
 
 ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
-  PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
   PRODUCT_COPY_FILES += device/mediatek/mt6735/init.microtrust.rc:root/init.microtrust.rc
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/soter.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.raw:mtk
  PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent:mtk
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
 #PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/alipayapp:$(TARGET_COPY_OUT_VENDOR)/thh/alipayapp:mtk
+#PRODUCT_COPY_FILES +=  vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/tee:$(TARGET_COPY_OUT_VENDOR)/thh/tee:mtk
 #PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent:mtk
-
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6735/teei/soter.min.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.min.raw:mtk
 #PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/arm64-v8a/libmtee.so:/system/lib64/libmtee.so
 #PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/armeabi/libmtee.so:/system/lib/libmtee.so
 #PRODUCT_COPY_FILES +=	frameworks/base/packages/ifaa-manager/others/arm64-v8a/libteeclientjni.so:/system/lib64/libteeclientjni.so
