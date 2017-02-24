@@ -7,7 +7,9 @@
 # Purpose: Microtrust teei_daemon service
 type teei_daemon, domain;
 type teei_daemon_exec, exec_type, file_type;
+#add gouxinyue for tee sdk
 type teei_client_device, dev_type;
+#end
 
 allow teei_daemon self:capability sys_module;
 allow teei_daemon teei_config_device:chr_file rw_file_perms;

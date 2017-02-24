@@ -6,6 +6,9 @@
 # Operation: TEEI integration
 # Purpose: access for fp device and client device of TEEI
 type teei_fp_device, dev_type;
+#add tee sdk M:gouxinyue
+#type teei_client_device, dev_type;
+#end delete tee 
 type teei_config_device, dev_type;
 type teei_vfs_device, dev_type;
 type teei_rpmb_device, dev_type;
