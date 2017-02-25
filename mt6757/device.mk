@@ -645,6 +645,8 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   $(call inherit-product-if-exists, vendor/mediatek/proprietary/external/mtknfc/mtknfc.mk)
 endif
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
+endif
 
 ifeq ($(strip $(MTK_SPECIFIC_SM_CAUSE)), yes)
   PRODUCT_PROPERTY_OVERRIDES += ril.specific.sm_cause=1
