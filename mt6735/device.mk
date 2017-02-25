@@ -624,7 +624,9 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
 endif
 
 ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
+ifneq ($(TARGET_BUILD_VARIANT),user)
   PRODUCT_PACKAGES += MTKLogger
+endif
   PRODUCT_PACKAGES += BtTool
 endif
 
