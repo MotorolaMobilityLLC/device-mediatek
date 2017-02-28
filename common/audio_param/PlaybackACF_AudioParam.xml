@@ -9,11 +9,11 @@
       <Param name="ui_visible" value="1"/>
       <Param name="bes_loudness_L_hpf_fc" value="0x12C"/>
       <Param name="bes_loudness_L_hpf_order" value="0x2"/>
-      <Param name="bes_loudness_L_lpf_fc" value="0x0"/>
-      <Param name="bes_loudness_L_lpf_order" value="0x0"/>
-      <Param name="bes_loudness_L_bpf_fc" value="0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0"/>
-      <Param name="bes_loudness_L_bpf_bw" value="0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0"/>
-      <Param name="bes_loudness_L_bpf_gain" value="0,0,0,0,0,0,0,0"/>
+      <Param name="bes_loudness_L_lpf_fc" value="0x32C8"/>
+      <Param name="bes_loudness_L_lpf_order" value="0x1"/>
+      <Param name="bes_loudness_L_bpf_fc" value="0x352,0x5DC,0x189C,0xFA,0x1FE,0x1194,0x0,0x0"/>
+      <Param name="bes_loudness_L_bpf_bw" value="0x1F4,0x1F4,0x5DC,0xB4,0xB4,0x320,0x0,0x0"/>
+      <Param name="bes_loudness_L_bpf_gain" value="-1532,512,-1532,512,512,-1534,0,0"/>
       <Param name="bes_loudness_R_hpf_fc" value="0x0"/>
       <Param name="bes_loudness_R_hpf_order" value="0x0"/>
       <Param name="bes_loudness_R_lpf_fc" value="0x0"/>
