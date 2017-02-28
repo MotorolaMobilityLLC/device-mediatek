@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
-   Lenovo SPN version: V5.5
+   Lenovo SPN version: V5.7
 -->
 <spnOverrides version="1">
 <spnOverride numeric="3100" spn="NEPW"/>
@@ -655,7 +655,7 @@
 <spnOverride numeric="62004" spn="Expresso"/>
 <spnOverride numeric="62006" spn="Airtel"/>
 <spnOverride numeric="62100" spn="Capcom"/>
-<spnOverride numeric="62120" spn="Airtel"/>
+<spnOverride numeric="62120" spn="Airtel NG"/>
 <spnOverride numeric="62124" spn="Spectranet"/>
 <spnOverride numeric="62125" spn="Visafone"/>
 <spnOverride numeric="62126" spn="Swift"/>
@@ -773,7 +773,7 @@
 <spnOverride numeric="71610" spn="CLARO"/>
 <spnOverride numeric="71617" spn="entel"/>
 <spnOverride numeric="72207" spn="AR - Movistar"/>
-<spnOverride numeric="72234" spn="AR TP"/>
+<spnOverride numeric="72234" spn="PERSONAL"/>
 <spnOverride numeric="72236" spn="Telecom Personal SA"/>
 <spnOverride numeric="72400" spn="Nextel Brasil"/>
 <spnOverride numeric="72402" spn="TIM BRA"/>
