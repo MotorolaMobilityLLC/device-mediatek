@@ -1368,8 +1368,8 @@ sub GenPGPTFile
    print FH pack("Q",$FirstUsableLBA);
    seek(FH,0x48,0);
    print FH pack("C8",0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00);
-   seek(FH,0x50,0);
-   print FH pack("L",$MAX_GPT_PARTITION_NUM);
+   #seek(FH,0x50,0);
+   #print FH pack("L",$MAX_GPT_PARTITION_NUM);
    seek(FH,0x54,0);
    print FH pack("L",$GPT_ENTRY_SIZE);
 
@@ -1428,7 +1428,10 @@ sub GenPGPTFile
          $Wide_Partition_Name .= "\0";
       }
       print FH pack("a72",$Wide_Partition_Name);
+      $MAX_GPT_PARTITION_NUM++;
    }
+   seek(FH,0x50,0); #notice not 128 for D1
+   print FH pack("L",$MAX_GPT_PARTITION_NUM);
 
    close(FH);
 }
