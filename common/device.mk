@@ -109,14 +109,15 @@ ifeq ($(strip $(MTK_BSP_PACKAGE)), yes)
     endif
 endif
 
+#begin lenovo niejl1, remove Mtk apps
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
         ifneq ($(strip $(MTK_A1_FEATURE)), yes)
             ifndef MTK_TB_WIFI_3G_MODE
-                PRODUCT_PACKAGES += MtkMms
+                #PRODUCT_PACKAGES += MtkMms
             else
                 ifeq ($(strip $(MTK_TB_WIFI_3G_MODE)), 3GDATA_SMS)
-                    PRODUCT_PACKAGES += MtkMms
+                    #PRODUCT_PACKAGES += MtkMms
                 endif
             endif
         endif
@@ -125,12 +126,13 @@ endif
 
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
     ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
-        PRODUCT_PACKAGES += MtkCalendar
-        PRODUCT_PACKAGES += MtkBrowser
-        PRODUCT_PACKAGES += MtkQuickSearchBox
+        #PRODUCT_PACKAGES += MtkCalendar
+        #PRODUCT_PACKAGES += MtkBrowser
+        #PRODUCT_PACKAGES += MtkQuickSearchBox
         PRODUCT_PACKAGES += MtkWebView
     endif
 endif
+#begin lenovo niejl1, remove Mtk apps
 
 # Telephony begin
 PRODUCT_PACKAGES += muxreport
@@ -1671,7 +1673,8 @@ ifeq ($(strip $(OPTR_SPEC_SEG_DEF)),NONE)
 endif
 
 #For 3rd party NLP provider
-PRODUCT_PACKAGES += Baidu_Location
+#lenovo niejl1, remove Mtk apps
+#PRODUCT_PACKAGES += Baidu_Location
 PRODUCT_PACKAGES += liblocSDK6c
 PRODUCT_PACKAGES += libnetworklocation
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
@@ -1945,7 +1948,8 @@ ifeq ($(strip $(MTK_MULTICORE_OBSERVER_APP)), yes)
 endif
 
 # for Search, ApplicationsProvider provides apps search
-PRODUCT_PACKAGES += ApplicationsProvider
+#lenovo niejl1, remove Mtk apps
+#PRODUCT_PACKAGES += ApplicationsProvider
 
 # Live wallpaper configurations
 # #workaround: disable it directly since device.mk can't get the value of TARGET_BUILD_PDK
