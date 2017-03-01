@@ -93,7 +93,7 @@ def WriteRawImage2(script, partition, fn, info_dict, mapfn=None):
         raise ValueError(
             "don't know how to write \"%s\" partitions" % p.fs_type)
 
-def AddOTAImage_Items(input_zip, output_zip, info_dict, script):
+def AddOTAImage_Items(input_zip, output_zip, info_dict, script, source_zip=None):
   try:
     output = input_zip.read("OTA/ota_update_list.txt")
   except:
@@ -116,16 +116,37 @@ def AddOTAImage_Items(input_zip, output_zip, info_dict, script):
     if not line: continue
     columns = line.split()
 
-    if not common.OPTIONS.mtk_loader_udpate:
+    if not common.OPTIONS.mtk_loader_update:
       if columns[0].startswith('preloader_') or columns[0].startswith('lk.'):
         print "[MAT] skipping "+columns[0]
         continue
-
     try:
       img_read = input_zip.read("IMAGES/%s" % columns[0])
     except:
       print "read image %s fail, remove from update list" % columns[0]
       continue
+
+    if source_zip != None:
+      #print "[MAT] This is delta patch, need compare with source image"
+      try:
+        src_img_read = None
+        src_img_read = source_zip.read("IMAGES/%s" % columns[0])
+      except:
+        print "[MAT] read source image  %s fail, remove from update list" % columns[0]
+        
+      if src_img_read == None:
+        print "[MAT] did not find source image"
+      else:
+        if len(img_read) != len(src_img_read):
+          print "[MAT] source image and target image size not same for "+columns[0]
+        elif img_read != src_img_read:
+          print "[MAT] source and target diff for "+columns[0]
+        else:
+          print "[MAT] source and target SAME for "+columns[0] +" Will not generate diff patch"
+          continue
+
+
+
     common.ZipWriteStr(output_zip, columns[0], img_read)
     if len(columns) == 2:
       general_img_list.append(columns[:2])
@@ -206,4 +227,4 @@ def IncrementalOTA_InstallEnd(self):
   AddOTA_Items(target_zip, output_zip, 0)
 
   # add extra images to upgrade
-  AddOTAImage_Items(target_zip, output_zip, tgt_info_dict, script)
+  AddOTAImage_Items(target_zip, output_zip, tgt_info_dict, script, source_zip=source_zip)
