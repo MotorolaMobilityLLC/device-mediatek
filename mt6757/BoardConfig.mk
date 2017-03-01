@@ -142,6 +142,9 @@ BOARD_SEPOLICY_DIRS += \
 endif
 endif
 
+BOARD_SEPOLICY_DIRS += \
+	device/moto/mot6757/sepolicy
+
 MTK_GPU_VERSION := mali midgard r12p1
 
 MTK_CAM_FRAMEWORK_DEFAULT_CODE := yes

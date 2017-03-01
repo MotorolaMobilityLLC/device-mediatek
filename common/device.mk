@@ -631,21 +631,21 @@ ifeq ($(strip $(MTK_NUM_MODEM_PROTOCOL)), 4)
   PRODUCT_PROPERTY_OVERRIDES += ro.num_md_protocol=4
 endif
 
-ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), ss)
-  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=ss
-endif
-ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsds)
-  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsds
-endif
-ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsda)
-  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsda
-endif
-ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), tsts)
-  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=tsts
-endif
-ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), qsqs)
-  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=qsqs
-endif
+#ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), ss)
+#  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=ss
+#endif
+#ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsds)
+#  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsds
+#endif
+#ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), dsda)
+#  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=dsda
+#endif
+#ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), tsts)
+#  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=tsts
+#endif
+#ifeq ($(strip $(MTK_MULTI_SIM_SUPPORT)), qsqs)
+#  PRODUCT_PROPERTY_OVERRIDES += persist.radio.multisim.config=qsqs
+#endif
 
 ifeq ($(strip $(MTK_AUDIO_PROFILES)), yes)
   PRODUCT_PROPERTY_OVERRIDES += ro.mtk_audio_profiles=1
@@ -2959,3 +2959,8 @@ else ifeq ($(strip $(MTK_LOG_CUSTOMER_SUPPORT)),yes)
     PRODUCT_PACKAGES += emdlogger3
   endif
 endif
+PRODUCT_PACKAGES += mbm_spy
+PRODUCT_COPY_FILES +=device/moto/mot6757/init.oem.hw.sh:root/init.oem.hw.sh
+
+PRODUCT_PACKAGES += \
+    flashall_mtk
