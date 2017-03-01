@@ -387,7 +387,8 @@ PRODUCT_PACKAGES += dpfd
 PRODUCT_PACKAGES += libaal
 PRODUCT_PACKAGES += aal
 PRODUCT_PACKAGES += libaal_cust
-PRODUCT_PACKAGES += SchedulePowerOnOff
+# Lenovo wuzb1 2017-02-28 INDRIYAPRO-366 Disable MTK SchedulePowerOnOff app
+#PRODUCT_PACKAGES += SchedulePowerOnOff
 PRODUCT_PACKAGES += BatteryWarning
 PRODUCT_PACKAGES += pq
 PRODUCT_PACKAGES += libpq_cust_base
