@@ -115,6 +115,12 @@ def AddOTAImage_Items(input_zip, output_zip, info_dict, script):
   for line in output.split("\n"):
     if not line: continue
     columns = line.split()
+
+    if not common.OPTIONS.mtk_loader_udpate:
+      if columns[0].startswith('preloader_') or columns[0].startswith('lk.'):
+        print "[MAT] skipping "+columns[0]
+        continue
+
     try:
       img_read = input_zip.read("IMAGES/%s" % columns[0])
     except:
