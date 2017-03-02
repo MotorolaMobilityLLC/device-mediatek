@@ -129,7 +129,8 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         #PRODUCT_PACKAGES += MtkCalendar
         #PRODUCT_PACKAGES += MtkBrowser
         #PRODUCT_PACKAGES += MtkQuickSearchBox
-        PRODUCT_PACKAGES += MtkWebView
+        #Lenovo wuzb1 2017-03-02 INDRIYAPRO-426 Disable MtkWebView
+        #PRODUCT_PACKAGES += MtkWebView
     endif
 endif
 #begin lenovo niejl1, remove Mtk apps
@@ -1675,8 +1676,9 @@ endif
 #For 3rd party NLP provider
 #lenovo niejl1, remove Mtk apps
 #PRODUCT_PACKAGES += Baidu_Location
-PRODUCT_PACKAGES += liblocSDK6c
-PRODUCT_PACKAGES += libnetworklocation
+#Lenovo wuzb1 2017-03-02 INDRIYAPRO-426 Disable BaiduLocation Lib
+#PRODUCT_PACKAGES += liblocSDK6c
+#PRODUCT_PACKAGES += libnetworklocation
 ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
   ifneq ($(strip $(MTK_BSP_PACKAGE)), yes)
     PRODUCT_PROPERTY_OVERRIDES += persist.mtk_nlp_switch_support=1
