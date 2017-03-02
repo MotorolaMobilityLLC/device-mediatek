@@ -1201,8 +1201,10 @@ ifeq ($(strip $(MTK_AGPS_APP)), yes)
                       LocationEM2 \
                       mtk_agpsd \
                       libssladp \
-                      cacerts_supl \
-                      AutoDialer
+                      cacerts_supl
+
+#lenovo niejl1, rm AutoDialer
+                      #AutoDialer
   PRODUCT_COPY_FILES += device/mediatek/common/agps/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/agps_profiles_conf2.xml:mtk
 endif
 
