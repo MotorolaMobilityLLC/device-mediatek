@@ -62,7 +62,7 @@
       <Param name="ul_pga_l_mixer_name" value="Audio_PGA1_Setting"/>
       <Param name="ul_pga_r_mixer_name" value="Audio_PGA2_Setting"/>
       <Param name="stf_gain_map" value="32767,29204,26027,23196,20674,18426,16422,14636,13044,11625,10361,9234,8230,7335,6537,5826,5193,4628,4125,3676,3276,2919,2602,2319,2066,1841,1641,1463,1304,1162,1035,923,822,733,653,582,519,462,412,367,327,291,260,231,206,183,163,145"/>
-      <Param name="hp_impedance_enable" value="1"/>
+      <Param name="hp_impedance_enable" value="0"/>
       <Param name="hp_impedance_onboard_resistor" value="33"/>
       <Param name="hp_impedance_default_idx" value="1"/>
       <Param name="hp_impedance_threshold_list" value="24,48,96,192"/>
@@ -123,7 +123,7 @@
       <Param name="ul_pga_l_mixer_name" value="Audio_PGA1_Setting"/>
       <Param name="ul_pga_r_mixer_name" value="Audio_PGA2_Setting"/>
       <Param name="stf_gain_map" value="32767,29204,26027,23196,20674,18426,16422,14636,13044,11625,10361,9234,8230,7335,6537,5826,5193,4628,4125,3676,3276,2919,2602,2319,2066,1841,1641,1463,1304,1162,1035,923,822,733,653,582,519,462,412,367,327,291,260,231,206,183,163,145"/>
-      <Param name="hp_impedance_enable" value="1"/>
+      <Param name="hp_impedance_enable" value="0"/>
       <Param name="hp_impedance_onboard_resistor" value="33"/>
       <Param name="hp_impedance_default_idx" value="1"/>
       <Param name="hp_impedance_threshold_list" value="24,48,96,192"/>
@@ -184,7 +184,7 @@
       <Param name="ul_pga_l_mixer_name" value="Audio_PGA1_Setting"/>
       <Param name="ul_pga_r_mixer_name" value="Audio_PGA2_Setting"/>
       <Param name="stf_gain_map" value="32767,29204,26027,23196,20674,18426,16422,14636,13044,11625,10361,9234,8230,7335,6537,5826,5193,4628,4125,3676,3276,2919,2602,2319,2066,1841,1641,1463,1304,1162,1035,923,822,733,653,582,519,462,412,367,327,291,260,231,206,183,163,145"/>
-      <Param name="hp_impedance_enable" value="1"/>
+      <Param name="hp_impedance_enable" value="0"/>
       <Param name="hp_impedance_onboard_resistor" value="33"/>
       <Param name="hp_impedance_default_idx" value="1"/>
       <Param name="hp_impedance_threshold_list" value="24,48,96,192"/>
@@ -245,7 +245,7 @@
       <Param name="ul_pga_l_mixer_name" value="Audio_PGA1_Setting"/>
       <Param name="ul_pga_r_mixer_name" value="Audio_PGA2_Setting"/>
       <Param name="stf_gain_map" value="32767,29204,26027,23196,20674,18426,16422,14636,13044,11625,10361,9234,8230,7335,6537,5826,5193,4628,4125,3676,3276,2919,2602,2319,2066,1841,1641,1463,1304,1162,1035,923,822,733,653,582,519,462,412,367,327,291,260,231,206,183,163,145"/>
-      <Param name="hp_impedance_enable" value="1"/>
+      <Param name="hp_impedance_enable" value="0"/>
       <Param name="hp_impedance_onboard_resistor" value="33"/>
       <Param name="hp_impedance_default_idx" value="1"/>
       <Param name="hp_impedance_threshold_list" value="24,48,96,192"/>
