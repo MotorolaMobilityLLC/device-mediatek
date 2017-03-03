@@ -605,7 +605,11 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
 endif
 
 ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
+#Lenovo-sw weimh1 mod 2017-3-2 begin:no support MTKLogger for user build
+ifneq ($(TARGET_BUILD_VARIANT),user)
   PRODUCT_PACKAGES += MTKLogger
+endif
+#Lenovo-sw weimh1 mod 2017-3-2 end
   PRODUCT_PACKAGES += BtTool
 endif
 
