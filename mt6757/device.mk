@@ -1410,7 +1410,7 @@ endif
 ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
 PRODUCT_COPY_FILES += 	device/mediatek/mt6757/init.microtrust.rc:root/init.microtrust.rc
 PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/soter.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.raw:mtk
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
+#PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
 #PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
 PRODUCT_PACKAGES   += 	keystore.mt6757
 PRODUCT_PACKAGES   += 	gatekeeper.mt6757
