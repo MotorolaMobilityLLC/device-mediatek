@@ -468,6 +468,8 @@ on post-fs-data
     chown system camera /dev/MAIN2AF
     chown system camera /dev/SUBAF
     chown system camera /dev/CAM_CAL_DRV
+	chmod 0660 /dev/GT24c64_CAM_CAL_DRV
+    chown system camera /dev/GT24c64_CAM_CAL_DRV
 
     #VOW
     chmod 0640 /dev/vow
@@ -565,6 +567,15 @@ on boot
     chmod 0660 /sys/power/autosleep
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
+#lenovo.sw START huangsh4 config kungfu camera
+    chmod 0664 /sys/class/leds/flash/brightness
+    chmod 0664 /sys/class/leds/torch/brightness
+    chown system system /sys/class/leds/torch/brightness
+    chown system system /sys/class/leds/flash/brightness
+    restorecon /sys/class/leds/torch/brightness
+    restorecon /sys/class/leds/flash/brightness
+    restorecon /sys/devices/platform/kd_camera_flashlight.0/leds/torch/brightness
+#lenovo.sw END huangsh4 config kungfu camera
 
     chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
