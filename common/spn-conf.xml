@@ -663,7 +663,7 @@
 <spnOverride numeric="62130" spn="MTN"/>
 <spnOverride numeric="62140" spn="Ntel"/>
 <spnOverride numeric="62150" spn="Glo"/>
-<spnOverride numeric="62160" spn="EMTS"/>
+<spnOverride numeric="62160" spn="Etisalat"/>
 <spnOverride numeric="62201" spn="CELTEL"/>
 <spnOverride numeric="62302" spn="Telecel"/>
 <spnOverride numeric="62304" spn="NationLink"/>
