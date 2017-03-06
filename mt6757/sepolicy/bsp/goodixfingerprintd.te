@@ -52,13 +52,22 @@ allow goodixfingerprintd goodixfingerprintd_data_file:file create_file_perms;
 allow goodixfingerprintd mobicore:unix_stream_socket connectto;
 allow goodixfingerprintd mobicore_user_device:chr_file rw_file_perms;
 
+# for beanpod teei_fp_device
+allow goodixfingerprintd teei_fp_device:chr_file rw_file_perms;
+allow factory teei_fp_device:chr_file { read write ioctl open };
+
 #for netlink use
 allow goodixfingerprintd self:netlink_socket { read bind create write getattr setopt };
 
 #for factory test
-#allow factory goodixfingerprintd_device:chr_file rw_file_perms;
+allow factory goodixfingerprintd_device:chr_file { read write ioctl open };
+allow factory self:netlink_socket { read bind create write getattr setopt };
 
 allow system_app goodix_fingerprint_service:service_manager { add find };
 allow untrusted_app goodix_fingerprint_service:service_manager { find };
 binder_call(system_app, goodixfingerprintd);
 binder_call(goodixfingerprintd, system_app);
+
+# allow sdcard access right
+allow goodixfingerprintd media_rw_data_file:dir { search write add_name };
+allow goodixfingerprintd media_rw_data_file:file { create write open read getattr };

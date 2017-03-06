@@ -10,5 +10,5 @@
 
 # for MTK fingerprint(Goodix solution),define fingerprint device (Goodix solution) SContext
 /dev/goodix_fp                 u:object_r:goodixfingerprintd_device:s0
-/system/vendor/bin/goodixfingerprintd u:object_r:goodixfingerprintd_exec:s0
+/system/bin/goodixfingerprintd u:object_r:goodixfingerprintd_exec:s0
 
