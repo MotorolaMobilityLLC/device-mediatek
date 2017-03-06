@@ -5,3 +5,6 @@
 # For MAL MFI
 allow mtkrild mtkmal:unix_stream_socket connectto;
 set_prop(mtkrild, persist_mtk_main_attach);
+
+#=============allow Rild ctrl ePDG PDN interface prop=============
+set_prop(mtkrild, ril_epdg_interface_ctrl_prop)
