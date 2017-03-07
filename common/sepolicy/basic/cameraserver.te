@@ -166,7 +166,8 @@ allow cameraserver uhid_device:chr_file rw_file_perms;
 allow cameraserver CAM_CAL_DRV_device:chr_file rw_file_perms;
 allow cameraserver CAM_CAL_DRV1_device:chr_file rw_file_perms;
 allow cameraserver CAM_CAL_DRV2_device:chr_file rw_file_perms;
-
+allow cameraserver GT24c64_CAM_CAL_DRV_device:chr_file rw_file_perms;
+allow cameraserver GT24c32_CAM_CAL_DRV_device:chr_file rw_file_perms;
 # Date : WK14.43
 # Operation : Migration
 # Purpose : VOW

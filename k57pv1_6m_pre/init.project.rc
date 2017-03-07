@@ -9,6 +9,9 @@ on init
 on post-fs-data
 
 #Camera
+    chmod 0660 /dev/GT24c64_CAM_CAL_DRV
+    chown system camera /dev/GT24c64_CAM_CAL_DRV
+
     chmod 0660 /dev/MAINAF
     chown system camera /dev/MAINAF
 
