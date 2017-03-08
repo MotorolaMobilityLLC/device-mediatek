@@ -52,26 +52,26 @@
       <Param name="amp" value="0,0,0,0,0,0,0,0,0,0"/>
     </ParamUnit>
     <ParamUnit param_id="5">
-      <Param name="headset_pga" value="6"/>
+      <Param name="headset_pga" value="8"/>
       <Param name="speaker_pga" value="-1"/>
       <Param name="receiver_pga" value="-1"/>
       <Param name="amp" value="0,0,0,0,0,0,0,0,0,0"/>
     </ParamUnit>
     <ParamUnit param_id="6">
       <Param name="headset_pga" value="-1"/>
-      <Param name="speaker_pga" value="12"/>
+      <Param name="speaker_pga" value="9"/>
       <Param name="receiver_pga" value="-1"/>
       <Param name="amp" value="0,0,0,0,0,0,0,0,0,0"/>
     </ParamUnit>
     <ParamUnit param_id="7">
-      <Param name="headset_pga" value="6"/>
-      <Param name="speaker_pga" value="8"/>
+      <Param name="headset_pga" value="8"/>
+      <Param name="speaker_pga" value="9"/>
       <Param name="receiver_pga" value="-1"/>
       <Param name="amp" value="0,0,0,0,0,0,0,0,0,0"/>
     </ParamUnit>
     <ParamUnit param_id="8">
       <Param name="headset_pga" value="-1"/>
-      <Param name="speaker_pga" value="8"/>
+      <Param name="speaker_pga" value="9"/>
       <Param name="receiver_pga" value="-1"/>
       <Param name="amp" value="0,0,0,0,0,0,0,0,0,0"/>
     </ParamUnit>

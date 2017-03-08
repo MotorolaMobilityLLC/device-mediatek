@@ -10,7 +10,7 @@
   </ParamTree>
   <ParamUnitPool>
     <ParamUnit param_id="0">
-      <Param name="dl_gain" value="22,19,16,13,10,7,4"/>
+      <Param name="dl_gain" value="20,17,14,11,8,5,2"/>
       <Param name="ul_gain" value="34"/>
     </ParamUnit>
     <ParamUnit param_id="2">

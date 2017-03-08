@@ -2733,3 +2733,6 @@ endif
 
 # Add WallpaperPicker
 PRODUCT_PACKAGES += WallpaperPicker
+
+# Add AudioParaVer
+include device/mediatek/common/audio_param/AudioParaVer.mk
