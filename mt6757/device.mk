@@ -645,7 +645,10 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   $(call inherit-product-if-exists, vendor/mediatek/proprietary/external/mtknfc/mtknfc.mk)
 endif
 
+ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
 ifneq ($(TARGET_BUILD_VARIANT),user)
+  PRODUCT_PACKAGES += MTKLogger
+endif
 endif
 
 ifeq ($(strip $(MTK_SPECIFIC_SM_CAUSE)), yes)
