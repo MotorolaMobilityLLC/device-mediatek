@@ -30,3 +30,5 @@ isubtedongle                u:object_r:radio_service:s0
 simphonebooktedongle        u:object_r:radio_service:s0
 ismstedongle                u:object_r:radio_service:s0
 tedongleservice             u:object_r:radio_service:s0
+
+CapSensorObserver           u:object_r:CapSensorObserver_service:s0

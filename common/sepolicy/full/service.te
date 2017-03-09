@@ -21,3 +21,5 @@ type vtservice_service, service_manager_type;
 type vie_command_service, service_manager_type;
 type mtk_usp_service, app_api_service, system_server_service, service_manager_type;
 type mtk_permcontrol_service, service_manager_type;
+
+type CapSensorObserver_service, system_server_service, service_manager_type;
