@@ -2529,8 +2529,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sys.sdcardfs=1
 # Telephony RIL log configurations
 ifeq ($(strip $(MTK_TELEPHONY_CONN_LOG_CTRL_SUPPORT)), yes)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.tel_log_ctrl=1
-ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
-  # user/userdebug load
+# BEGIN Lenovo lubm1 20170309 IKANGEROW-2366 enable Telephony log in userdebug.
+ifeq ($(strip $(TARGET_BUILD_VARIANT)),user)
+  # user load
+# END IKANGEROW-2366
   # V/D/(I/W/E)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=I
@@ -2636,7 +2638,7 @@ ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.ProxyController=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.SpnOverride=I
 else
-  # eng load
+  # userdebug/eng load
   # V/(D/I/W/E)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=D
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=D
