@@ -2413,8 +2413,10 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RfxController=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RILC-RP=I
 endif
-ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
-  # user/userdebug load
+# BEGIN Lenovo lubm1 20170309 IKANGEROW-2366 enable Telephony log in userdebug.
+ifeq ($(strip $(TARGET_BUILD_VARIANT)),user)
+  # user load
+# END IKANGEROW-2366
   # V/D/(I/W/E)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=I
@@ -2533,7 +2535,7 @@ ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpFOUtils=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.C2K_RIL-SIM=I
 else
-  # eng load
+  # userdebug/eng load
   # V/(D/I/W/E)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.DCT=D
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RIL-DATA=D
