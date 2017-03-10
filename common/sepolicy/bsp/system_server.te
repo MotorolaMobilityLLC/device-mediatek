@@ -79,3 +79,6 @@ allow system_app netd_socket:sock_file write;
 # Operation : Migration
 # Purpose : Add permission for gpu access
 allow system_server dri_device:chr_file { read write open ioctl };
+
+#IKANGEROW-2443 allow system_server to access pq service
+allow system_server pq_service:service_manager { find };
