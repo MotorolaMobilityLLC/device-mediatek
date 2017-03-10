@@ -69,6 +69,7 @@ my $PART_SIZE_LOCATION = "$configs_out_prefix/partition_size.mk";
 my $COMBO_NAND_KERNELH = "$custom_out_prefix/common/combo_nand.h";
 
 my $SCAT_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_scatter.txt";
+my $SCAT_FACTORY_EFUSE_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_efuse_only.txt";
 my $PGPT_FILE = "$PRODUCT_OUT/PGPT";
 
 #****************************************************************************
@@ -91,6 +92,7 @@ print "###################Final Data###################\n";
 print Dump(\@partition_layout_cooked);
 
 &GenYAMLScatFile();
+&GenYAMLScatFactoryefuseFile();
 
 if ($ArgList{EMMC_SUPPORT} eq "yes" || $ArgList{NAND_UBIFS_SUPPORT} eq "yes")
 {
@@ -527,14 +529,6 @@ sub ProcessRawPartitionLayoutData
                 $partition_idx--;
             }
         }
-        if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "efuse")
-        {
-            if ($ArgList{EFUSE_WRITER_SUPPORT} ne "yes")
-            {
-                splice @partition_layout_process, $partition_idx, 1;
-                $partition_idx--;
-            }
-        }
         if ($partition_layout_process[$partition_idx]->{Partition_Name} eq "scp1")
         {
             if ($ArgList{TINYSYS_SCP_SUPPORT} ne "yes")
@@ -859,22 +853,243 @@ __TEMPLATE
     print $ScatterFileFH $Head2;
     foreach my $part (@partition_layout_cooked)
     {
-        print $ScatterFileFH "${FirstDashes}partition_index${colon}SYS$Scatter_Info{$part->{Partition_Name}}{partition_index}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}partition_name${colon}$part->{Partition_Name}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}file_name${colon}$Scatter_Info{$part->{Partition_Name}}{file_name}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}is_download${colon}$Scatter_Info{$part->{Partition_Name}}{is_download}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}type${colon}$Scatter_Info{$part->{Partition_Name}}{type}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}linear_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{linear_start_addr}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}physical_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{physical_start_addr}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}partition_size${colon}$Scatter_Info{$part->{Partition_Name}}{partition_size}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}region${colon}$Scatter_Info{$part->{Partition_Name}}{region}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}storage${colon}$Scatter_Info{$part->{Partition_Name}}{storage}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}boundary_check${colon}$Scatter_Info{$part->{Partition_Name}}{boundary_check}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}is_reserved${colon}$Scatter_Info{$part->{Partition_Name}}{is_reserved}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}operation_type${colon}$Scatter_Info{$part->{Partition_Name}}{operation_type}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}is_upgradable${colon}$Scatter_Info{$part->{Partition_Name}}{is_upgradable}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}empty_boot_needed${colon}$Scatter_Info{$part->{Partition_Name}}{empty_boot_needed}\n";
-        print $ScatterFileFH "${FirstSpaceSymbol}reserve${colon}0x00\n\n";
+        if ($part->{Partition_Name} eq "efuse")
+	{
+            print $ScatterFileFH "${FirstDashes}partition_index${colon}SYS$Scatter_Info{$part->{Partition_Name}}{partition_index}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_name${colon}$part->{Partition_Name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}file_name${colon}$Scatter_Info{$part->{Partition_Name}}{file_name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_download${colon}false\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}type${colon}$Scatter_Info{$part->{Partition_Name}}{type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}linear_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{linear_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}physical_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{physical_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_size${colon}$Scatter_Info{$part->{Partition_Name}}{partition_size}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}region${colon}$Scatter_Info{$part->{Partition_Name}}{region}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}storage${colon}$Scatter_Info{$part->{Partition_Name}}{storage}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}boundary_check${colon}$Scatter_Info{$part->{Partition_Name}}{boundary_check}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_reserved${colon}$Scatter_Info{$part->{Partition_Name}}{is_reserved}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}operation_type${colon}$Scatter_Info{$part->{Partition_Name}}{operation_type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_upgradable${colon}$Scatter_Info{$part->{Partition_Name}}{is_upgradable}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}empty_boot_needed${colon}$Scatter_Info{$part->{Partition_Name}}{empty_boot_needed}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}reserve${colon}0x00\n\n";
+        }
+        else
+        {
+            print $ScatterFileFH "${FirstDashes}partition_index${colon}SYS$Scatter_Info{$part->{Partition_Name}}{partition_index}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_name${colon}$part->{Partition_Name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}file_name${colon}$Scatter_Info{$part->{Partition_Name}}{file_name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_download${colon}$Scatter_Info{$part->{Partition_Name}}{is_download}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}type${colon}$Scatter_Info{$part->{Partition_Name}}{type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}linear_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{linear_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}physical_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{physical_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_size${colon}$Scatter_Info{$part->{Partition_Name}}{partition_size}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}region${colon}$Scatter_Info{$part->{Partition_Name}}{region}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}storage${colon}$Scatter_Info{$part->{Partition_Name}}{storage}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}boundary_check${colon}$Scatter_Info{$part->{Partition_Name}}{boundary_check}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_reserved${colon}$Scatter_Info{$part->{Partition_Name}}{is_reserved}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}operation_type${colon}$Scatter_Info{$part->{Partition_Name}}{operation_type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_upgradable${colon}$Scatter_Info{$part->{Partition_Name}}{is_upgradable}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}empty_boot_needed${colon}$Scatter_Info{$part->{Partition_Name}}{empty_boot_needed}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}reserve${colon}0x00\n\n";
+        }
+    }
+    close $ScatterFileFH;
+}
+
+sub GenYAMLScatFactoryefuseFile()
+{
+    my $ScatterFileFH = &open_for_rw($SCAT_FACTORY_EFUSE_FILE);
+    my %Scatter_Info;
+    my $iter;
+    for ($iter = 0 ; $iter < @partition_layout_cooked ; $iter++)
+    {
+        my $part = $partition_layout_cooked[$iter];
+        $Scatter_Info{$part->{Partition_Name}} = {
+                                                  partition_index     => $iter,
+                                                  physical_start_addr => $part->{Start_Addr_Text},
+                                                  linear_start_addr   => $part->{Start_Addr_Text},
+                                                  partition_size      => sprintf("0x%x", $part->{Size_KB} * 1024),
+                                                  file_name           => $part->{Download_File},
+                                                  operation_type      => $part->{Operation_Type}
+                                                 };
+
+        if ($ArgList{EMMC_SUPPORT} eq "yes")
+        {
+            if ($part->{Type} eq "Raw data")
+            {
+                $Scatter_Info{$part->{Partition_Name}}{type} = "NORMAL_ROM";
+            }
+            else
+            {
+                $Scatter_Info{$part->{Partition_Name}}{type} = "EXT4_IMG";
+            }
+        }
+        else
+        {
+            if ($part->{Type} eq "Raw data")
+            {
+                $Scatter_Info{$part->{Partition_Name}}{type} = "NORMAL_ROM";
+            }
+            else
+            {
+                if ($ArgList{NAND_UBIFS_SUPPORT} eq "yes")
+                {
+                    $Scatter_Info{$part->{Partition_Name}}{type} = "UBI_IMG";
+                }
+                else
+                {
+                    $Scatter_Info{$part->{Partition_Name}}{type} = "YAFFS_IMG";
+                }
+            }
+        }
+        if ($part->{Partition_Name} eq "preloader")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{type} = "SV5_BL_BIN";
+        }
+
+        if ($ArgList{EMMC_SUPPORT} eq "yes")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{region} = $part->{Region};
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{region} = "NONE";
+        }
+
+        if ($ArgList{EMMC_SUPPORT} eq "yes")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{storage} = "HW_STORAGE_EMMC";
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{storage} = "HW_STORAGE_NAND";
+        }
+
+        if ($part->{Reserved} eq "Y")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{boundary_check} = "false";
+            $Scatter_Info{$part->{Partition_Name}}{is_reserved}    = "true";
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{boundary_check} = "true";
+            $Scatter_Info{$part->{Partition_Name}}{is_reserved}    = "false";
+        }
+
+        if ($part->{Download} eq "N")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{is_download} = "false";
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{is_download} = "true";
+        }
+
+        if ($part->{OTA_Update} eq "N")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{is_upgradable} = "false";
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{is_upgradable} = "true";
+        }
+
+        if ($part->{EmptyBoot_Needed} eq "N")
+        {
+            $Scatter_Info{$part->{Partition_Name}}{empty_boot_needed} = "false";
+        }
+        else
+        {
+            $Scatter_Info{$part->{Partition_Name}}{empty_boot_needed} = "true";
+        }
+    }
+    my $Head1 = <<"__TEMPLATE";
+############################################################################################################
+#
+#  General Setting
+#
+############################################################################################################
+__TEMPLATE
+
+    my $Head2 = <<"__TEMPLATE";
+############################################################################################################
+#
+#  Layout Setting
+#
+############################################################################################################
+__TEMPLATE
+
+    my ${FirstDashes}       = "- ";
+    my ${FirstSpaceSymbol}  = "  ";
+    my ${SecondSpaceSymbol} = "      ";
+    my ${SecondDashes}      = "    - ";
+    my ${colon}             = ": ";
+    print $ScatterFileFH $Head1;
+    print $ScatterFileFH "${FirstDashes}general${colon}MTK_PLATFORM_CFG\n";
+    print $ScatterFileFH "${FirstSpaceSymbol}info${colon}\n";
+    print $ScatterFileFH "${SecondDashes}config_version${colon}V1.1.2\n";
+	if ($ArgList{CAM_SW_VERSION} eq "ver2")
+	{
+		print $ScatterFileFH "${SecondSpaceSymbol}platform${colon}$ArgList{PLATFORM}D\n";
+	}
+	else
+	{
+	    print $ScatterFileFH "${SecondSpaceSymbol}platform${colon}$ArgList{PLATFORM}\n";
+	}
+    print $ScatterFileFH "${SecondSpaceSymbol}project${colon}$ArgList{FULL_PROJECT}\n";
+
+    if ($ArgList{EMMC_SUPPORT} eq "yes")
+    {
+        print $ScatterFileFH "${SecondSpaceSymbol}storage${colon}EMMC\n";
+        print $ScatterFileFH "${SecondSpaceSymbol}boot_channel${colon}MSDC_0\n";
+        printf $ScatterFileFH ("${SecondSpaceSymbol}block_size${colon}0x%x\n", 2 * 64 * 1024);
+    }
+    else
+    {
+        print $ScatterFileFH "${SecondSpaceSymbol}storage${colon}NAND\n";
+        print $ScatterFileFH "${SecondSpaceSymbol}boot_channel${colon}NONE\n";
+        printf $ScatterFileFH ("${SecondSpaceSymbol}block_size${colon}0x%x\n", $ArgList{PAGE_SIZE} * 64 * 1024);
+    }
+    print $ScatterFileFH $Head2;
+    foreach my $part (@partition_layout_cooked)
+    {
+        if (($part->{Partition_Name} ne "efuse") && ($part->{Partition_Name} ne "preloader"))
+	{
+            print $ScatterFileFH "${FirstDashes}partition_index${colon}SYS$Scatter_Info{$part->{Partition_Name}}{partition_index}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_name${colon}$part->{Partition_Name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}file_name${colon}$Scatter_Info{$part->{Partition_Name}}{file_name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_download${colon}false\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}type${colon}$Scatter_Info{$part->{Partition_Name}}{type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}linear_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{linear_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}physical_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{physical_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_size${colon}$Scatter_Info{$part->{Partition_Name}}{partition_size}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}region${colon}$Scatter_Info{$part->{Partition_Name}}{region}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}storage${colon}$Scatter_Info{$part->{Partition_Name}}{storage}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}boundary_check${colon}$Scatter_Info{$part->{Partition_Name}}{boundary_check}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_reserved${colon}$Scatter_Info{$part->{Partition_Name}}{is_reserved}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}operation_type${colon}$Scatter_Info{$part->{Partition_Name}}{operation_type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_upgradable${colon}$Scatter_Info{$part->{Partition_Name}}{is_upgradable}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}empty_boot_needed${colon}$Scatter_Info{$part->{Partition_Name}}{empty_boot_needed}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}reserve${colon}0x00\n\n";
+        }
+        else
+        {
+            print $ScatterFileFH "${FirstDashes}partition_index${colon}SYS$Scatter_Info{$part->{Partition_Name}}{partition_index}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_name${colon}$part->{Partition_Name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}file_name${colon}$Scatter_Info{$part->{Partition_Name}}{file_name}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_download${colon}$Scatter_Info{$part->{Partition_Name}}{is_download}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}type${colon}$Scatter_Info{$part->{Partition_Name}}{type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}linear_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{linear_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}physical_start_addr${colon}$Scatter_Info{$part->{Partition_Name}}{physical_start_addr}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}partition_size${colon}$Scatter_Info{$part->{Partition_Name}}{partition_size}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}region${colon}$Scatter_Info{$part->{Partition_Name}}{region}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}storage${colon}$Scatter_Info{$part->{Partition_Name}}{storage}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}boundary_check${colon}$Scatter_Info{$part->{Partition_Name}}{boundary_check}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_reserved${colon}$Scatter_Info{$part->{Partition_Name}}{is_reserved}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}operation_type${colon}$Scatter_Info{$part->{Partition_Name}}{operation_type}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}is_upgradable${colon}$Scatter_Info{$part->{Partition_Name}}{is_upgradable}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}empty_boot_needed${colon}$Scatter_Info{$part->{Partition_Name}}{empty_boot_needed}\n";
+            print $ScatterFileFH "${FirstSpaceSymbol}reserve${colon}0x00\n\n";
+        }
     }
     close $ScatterFileFH;
 }
