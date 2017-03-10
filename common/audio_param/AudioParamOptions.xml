@@ -1,3 +1,4 @@
+<!-- this file is modified by HQ,MTK's patch only need to modify-->
 <?xml version="1.0" encoding="UTF-8"?>
 <AudioParamOptions>
  <Param name="MTK_WB_SPEECH_SUPPORT" value="yes" />
