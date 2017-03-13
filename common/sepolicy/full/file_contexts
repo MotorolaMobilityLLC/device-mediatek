@@ -41,7 +41,9 @@
 #gouxinyue for tp 
 /proc/hotknot u:object_r:hotknot_file:s0
 /proc/ftxxxx-debug u:object_r:ftxxxx:s0
-	
+
+#liujiashan add for marino frontflash
+/sys/devices/platform/flashlights_dummy_gpio/leds/torch/brightness u:object_r:front_flash:s0
 
 #############################
 # Data files

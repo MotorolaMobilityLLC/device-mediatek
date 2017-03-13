@@ -33,6 +33,9 @@ type vibrator_file, fs_type,sysfs_type;
 type hotknot_file, fs_type,sysfs_type;
 type ftxxxx, fs_type,sysfs_type;
 
+#liujiashan for marino frontflash
+type front_flash, fs_type, sysfs_type;
+
 # ==============================================
 # MTK Policy Rule
 # ==============================================

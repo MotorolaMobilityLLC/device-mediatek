@@ -173,3 +173,6 @@ allow system_app ftxxxx:file { write read open};
 
 #add by wangshuai for gyro cali
 allow system_app em_svr:unix_stream_socket { connectto };
+
+#liujiashan add for marino frontflash
+allow system_app front_flash:file rw_file_perms;
