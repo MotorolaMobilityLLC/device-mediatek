@@ -22,7 +22,6 @@ on fs
 on post-fs-data
     write /proc/bootprof "start teei cfg (on post-fs-data)"
     mkdir /data/thh
-    mkdir /data/thh/system
 #add gouxinyue for tee sdk    
     mkdir /data/thh/tee_00
     mkdir /data/thh/tee_01
@@ -31,11 +30,12 @@ on post-fs-data
     mkdir /data/thh/tee_04
     mkdir /data/thh/tee_05
     mkdir /data/thh/tee_06
+    mkdir /data/thh/tee_07
+    mkdir /data/thh/tee
+    mkdir /data/thh/tee/tas
 #end
     chmod 0755 /data/thh
     chown system system /data/thh
-    chmod 0755 /data/thh/system
-    chown system system /data/thh/system
 #add gouxinyue for tee sdk 
     chmod 0755 /data/thh/tee_00
     chown system system /data/thh/tee_00
@@ -51,6 +51,12 @@ on post-fs-data
     chown system system /data/thh/tee_05
     chmod 0755 /data/thh/tee_06
     chown system system /data/thh/tee_06
+    chmod 0755 /data/thh/tee_07
+    chown system system /data/thh/tee_07
+    chmod 0755 /data/thh/tee
+    chown system system /data/thh/tee
+    chmod 0755 /data/thh/tee/tas
+    chown system system /data/thh/tee/tas
 #end
     write /proc/bootprof "start teei cfg end (on post-fs-data)"
     setprop soter.encrypt.state OK
@@ -61,19 +67,21 @@ on post-fs-data
 #end
 
 # teei service daemon
+#add zhuhailin for tee sdk 
 service teei_daemon /vendor/bin/teei_daemon
     class core
-    user root
+    user system
     group system
     disabled
    # oneshot
-
+#add zhuhailin for tee sdk end
 on property:soter.teei.init=INIT_OK
     start init_thh_service
 
+#add zhuhailin for tee sdk 
 service init_thh_service /vendor/bin/init_thh startload
     class core
-    user root
+    user system
     group system
     disabled
     oneshot
