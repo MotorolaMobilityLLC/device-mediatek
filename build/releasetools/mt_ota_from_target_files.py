@@ -228,3 +228,18 @@ def IncrementalOTA_InstallEnd(self):
 
   # add extra images to upgrade
   AddOTAImage_Items(target_zip, output_zip, tgt_info_dict, script, source_zip=source_zip)
+
+#Start, lenovo-sw, miaotao1, add scatter.txt and type.txt for verify package
+def VerifyOTA_Assertions(self):
+  input_zip = self.input_zip
+  input_version= self.input_version
+  output_zip = self.output_zip
+  script = self.script
+  input_tmp = self.input_tmp
+  metadata = self.metadata
+  info_dict = self.info_dict
+
+  # add OTA information
+  AddOTA_Items(input_zip, output_zip, 1)
+
+#End, lenovo-sw, miaotao1, add scatter.txt and type.txt for verify package
