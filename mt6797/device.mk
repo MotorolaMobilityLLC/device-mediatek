@@ -1365,6 +1365,7 @@ ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6797/teei/soter.raw:$(TARGET_COPY_OUT_VENDOR)/thh/soter.raw:mtk
   #PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6797/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
   PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6797/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
+  PRODUCT_COPY_FILES += vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6797/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent:mtk
   #PRODUCT_PACKAGES += libteei_fp
   #PRODUCT_PACKAGES += libfingerprint_tac
   PRODUCT_PACKAGES   += keystore.mt6797

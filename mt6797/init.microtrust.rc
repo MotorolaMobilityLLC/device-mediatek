@@ -69,16 +69,15 @@ service teei_daemon /vendor/bin/teei_daemon
     disabled
    # oneshot
 
-#on property:soter.teei.init=INIT_OK
-#    start init_thh_service
-#    start utr_tui_daemon
+on property:soter.teei.init=INIT_OK
+    start init_thh_service
 
-#service init_thh_service /vendor/bin/init_thh init
-#    class core
-#    user system
-#    group system
-#    disabled
-#    oneshot
+service init_thh_service /vendor/bin/init_thh startload
+    class core
+    user system
+    group system
+    disabled
+    oneshot
 
 #service utr_tui_daemon /system/bin/utr_tui_daemon
 #    class core
