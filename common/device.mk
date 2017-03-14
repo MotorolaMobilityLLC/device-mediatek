@@ -2728,7 +2728,7 @@ endif
 PRODUCT_PACKAGES += WallpaperPicker
 
 PRODUCT_PACKAGES += mbm_spy
-PRODUCT_COPY_FILES +=device/moto/mot6737/init.oem.hw.sh:root/init.oem.hw.sh
+PRODUCT_COPY_FILES +=device/moto/common/utags_mtk/init.oem.hw.sh:root/init.oem.hw.sh
 
 PRODUCT_PACKAGES += \
     flashall_mtk
