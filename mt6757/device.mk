@@ -421,6 +421,7 @@ PRODUCT_PACKAGES += boot_logo_updater
 PRODUCT_PACKAGES += boot_logo
 PRODUCT_PACKAGES += bootanimation
 PRODUCT_PACKAGES += kpoc_charger
+PRODUCT_PACKAGES += charge_only_mode
 PRODUCT_PACKAGES += libtvoutjni
 PRODUCT_PACKAGES += libtvoutpattern
 PRODUCT_PACKAGES += libmtkhdmi_jni
