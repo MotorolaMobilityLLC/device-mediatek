@@ -75,7 +75,7 @@ on charger
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
     start fuelgauged
-    start kpoc_charger
+    start charge_only_mode
     start servicemanager
 
 on fs
@@ -1552,7 +1552,6 @@ on property:persist.mediatek.fg.log.enable=1
 
 service kpoc_charger /vendor/bin/kpoc_charger
     class charger
-###########add for 3Gdongle
 
 on boot
 #
