@@ -1271,4 +1271,5 @@
 <spnOverride numeric="334090" spn="AT&amp;T"/>
 <spnOverride numeric="51009" spn="Smartfren"/>
 <spnOverride numeric="51088" spn="BoltSuper4G"/>
+<spnOverride numeric="51028" spn="Smartfren"/>
 </spnOverrides>
