@@ -627,7 +627,11 @@ ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
 ifneq ($(TARGET_BUILD_VARIANT),user)
   PRODUCT_PACKAGES += MTKLogger
 endif
+#Lenovo-sw wulb1 [IKANGEROW-2643] begin, disable BtTool for user
+ifneq ($(TARGET_BUILD_VARIANT),user)
   PRODUCT_PACKAGES += BtTool
+endif
+#Lenovo-sw wulb1 [IKANGEROW-2643] end
 endif
 
 ifeq ($(strip $(MTK_SPECIFIC_SM_CAUSE)), yes)
