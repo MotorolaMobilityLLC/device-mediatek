@@ -1269,4 +1269,6 @@
 <spnOverride numeric="65514" spn="Noetel"/>
 <spnOverride numeric="65519" spn="iburst"/>
 <spnOverride numeric="334090" spn="AT&amp;T"/>
+<spnOverride numeric="51009" spn="Smartfren"/>
+<spnOverride numeric="51088" spn="BoltSuper4G"/>
 </spnOverrides>
