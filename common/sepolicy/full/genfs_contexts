@@ -19,4 +19,5 @@ genfscon proc /BoardId u:object_r:proc_boardid_info:s0
 
 #Added by dingying for camera flash
 genfscon proc /flashlight_fac u:object_r:proc_camera_flash:s0
-
+####
+genfscon proc /mtk_battery_cmd/current_cmd u:object_r:battery_cmd:s0

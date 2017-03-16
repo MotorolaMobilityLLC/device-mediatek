@@ -176,3 +176,5 @@ allow system_app em_svr:unix_stream_socket { connectto };
 
 #liujiashan add for marino frontflash
 allow system_app front_flash:file rw_file_perms;
+###
+allow system_app battery_cmd:file { read open write getattr };

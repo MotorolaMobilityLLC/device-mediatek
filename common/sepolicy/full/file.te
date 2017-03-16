@@ -47,3 +47,5 @@ type rild_embms_socket, file_type, mlstrustedobject;
 
 # eMBMS VzW SDK file
 type embms_library_file, file_type, data_file_type;
+#####
+type battery_cmd, fs_type,sysfs_type;
