@@ -38,7 +38,11 @@ endif
 
 # Telephony
 #PRODUCT_COPY_FILES += device/mediatek/common/apns-conf.xml:system/etc/apns-conf.xml:mtk
+ifeq ($(MTK_GT_SUPPORT),true)
+PRODUCT_COPY_FILES += device/mediatek/common/spn-conf-default.xml:system/etc/spn-conf.xml:mtk
+else
 PRODUCT_COPY_FILES += device/mediatek/common/spn-conf.xml:system/etc/spn-conf.xml:mtk
+endif
 
 # Audio
 ifeq ($(findstring maxim, $(MTK_AUDIO_SPEAKER_PATH)), maxim)
