@@ -31,6 +31,10 @@ upgrade_list_specific_sequence = {"preloader", "preloader2"}
 upgrade_list_mount_map = {"lk" : "bootloader", "lk2" : "bootloader2"}
 partition_map = {}
 
+
+#lenovo-sw, miaotao1, always use MTK_LOADER_UPDATE
+always_use_loader_update = True
+
 def addPartMap(part_map, part_name, file_name, storage_type):
   if not partition_map.has_key(file_name):
      partition_map[file_name] = []
@@ -51,7 +55,7 @@ def generate_updatelist(scatter_file, update_list):
   print "[OTA Preprocess] Generate %s from %s" %(update_list, scatter_file)
 
   # processu default update list include
-  if os.getenv("MTK_LOADER_UPDATE") is not None and os.getenv("MTK_LOADER_UPDATE") == "yes":
+  if always_use_loader_update or (os.getenv("MTK_LOADER_UPDATE") is not None and os.getenv("MTK_LOADER_UPDATE") == "yes"):
     if "lk" not in upgrade_list_include:
       upgrade_list_include.append("lk")
     if "preloader" not in upgrade_list_include:
