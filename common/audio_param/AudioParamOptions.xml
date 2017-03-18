@@ -10,7 +10,7 @@
  <Param name="MTK_TB_WIFI_3G_MODE" value="" />
  <Param name="MTK_DISABLE_EARPIECE" value="" />
  <Param name="MTK_ASR_SUPPORT" value="no" />
- <Param name="MTK_VOIP_NORMAL_DMNR" value="no" />
+ <Param name="MTK_VOIP_NORMAL_DMNR" value="yes" />
  <Param name="MTK_VOIP_HANDSFREE_DMNR" value="no" />
  <Param name="MTK_INCALL_NORMAL_DMNR" value="yes" />
  <Param name="MTK_VOICE_UNLOCK_SUPPORT" value="" />
@@ -32,7 +32,7 @@
  <Param name="VIR_WIFI_ONLY_SUPPORT" value="no" />
  <Param name="VIR_3G_DATA_ONLY_SUPPORT" value="no" />
  <Param name="VIR_ASR_SUPPORT" value="no" />
- <Param name="VIR_VOIP_NORMAL_DMNR_SUPPORT" value="no" />
+ <Param name="VIR_VOIP_NORMAL_DMNR_SUPPORT" value="yes" />
  <Param name="VIR_VOIP_HANDSFREE_DMNR_SUPPORT" value="no" />
  <Param name="VIR_NO_SPEECH" value="no" />
  <Param name="VIR_INCALL_NORMAL_DMNR_SUPPORT" value="yes" />
