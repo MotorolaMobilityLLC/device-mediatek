@@ -70,7 +70,7 @@ on post-fs-data
 #add zhuhailin for tee sdk 
 service teei_daemon /vendor/bin/teei_daemon
     class core
-    user system
+    user root
     group system
     disabled
    # oneshot
@@ -81,7 +81,7 @@ on property:soter.teei.init=INIT_OK
 #add zhuhailin for tee sdk 
 service init_thh_service /vendor/bin/init_thh startload
     class core
-    user system
+    user root
     group system
     disabled
     oneshot
