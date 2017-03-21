@@ -85,6 +85,8 @@ on fs
     mount_all /fstab.mt6735
     write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
+    wait /dev/block/bootdevice/by-name/hw
+    start oem-hw-sh
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
@@ -602,6 +604,11 @@ on post-fs-data
     # Setup folder for aplogd
     mkdir /data/aplogd 0750 log log
     #end qiaoshan enable moto bug2go-bugreport
+
+    # Utags
+    mkdir /persist/utags
+    wait /dev/block/bootdevice/by-name/utags 
+    start utags_check
 
 # End of adding by MTK drivers
 # -----------------------
@@ -1584,14 +1591,15 @@ service mbm_spy /system/bin/mbm_spy
     class late_start
     user root
     oneshot
-    disabled
-
-on property:sys.boot_completed=1
-    start mbm_spy
-    start oem-hw-sh
 
 service oem-hw-sh /init.oem.hw.sh
     seclabel u:r:init_hw:s0
+    class core
+    user root
+    oneshot
+    disabled
+
+service utags_check /system/bin/utags_check
     class core
     user root
     oneshot

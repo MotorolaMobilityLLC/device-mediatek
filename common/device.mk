@@ -2735,7 +2735,10 @@ endif
 # Add WallpaperPicker
 PRODUCT_PACKAGES += WallpaperPicker
 
-PRODUCT_PACKAGES += mbm_spy
+PRODUCT_PACKAGES += \
+    mbm_spy \
+    utags_check
+
 PRODUCT_COPY_FILES +=device/moto/common/utags_mtk/init.oem.hw.sh:root/init.oem.hw.sh
 
 PRODUCT_PACKAGES += \
