@@ -1252,8 +1252,12 @@ ifeq ($(strip $(MTK_TELEPHONY_MODE)),8)
 endif
 
 ifeq ($(strip $(MTK_AGPS_APP)), yes)
+#Lenovo-sw panzh2 [IKANGEROW-429] IKANGEROW-436] begin, disable LocationEM2 for user
+ifneq ($(TARGET_BUILD_VARIANT),user)
+  PRODUCT_PACKAGES += LocationEM2
+endif
+
   PRODUCT_PACKAGES += LocationEM \
-                      LocationEM2 \
                       mtk_agpsd \
                       libssladp \
                       cacerts_supl 
