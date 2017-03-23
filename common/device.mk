@@ -560,6 +560,11 @@ ifeq ($(strip $(MTK_MDM_APP)),yes)
     PRODUCT_PACKAGES += MediatekDM
 endif
 
+# CTM
+ifeq ($(strip $(MTK_CTM_SUPPORT)),yes)
+PRODUCT_PACKAGES += ctm
+PRODUCT_PROPERTY_OVERRIDES += ro.mtk_ctm_flag=0
+endif
 # SmsReg package
 ifeq ($(strip $(MTK_SMSREG_APP)),yes)
     PRODUCT_PACKAGES += SmsReg
@@ -1404,6 +1409,10 @@ ifeq ($(strip $(MTK_CAM_MFB_SUPPORT)), 3)
 endif
 ifeq ($(strip $(MTK_CAM_MFB_SUPPORT)), 4)
   PRODUCT_PROPERTY_OVERRIDES += ro.mtk_cam_mfb_support=4
+endif
+
+ifeq ($(strip $(MTK_CAM_STEREO_DENOISE_SUPPORT)), yes)
+  PRODUCT_PROPERTY_OVERRIDES += ro.mtk_cam_dualdenoise_support=1
 endif
 
 ifeq ($(strip $(MTK_CLEARMOTION_SUPPORT)), yes)
@@ -2517,6 +2526,7 @@ ifneq ($(strip $(TARGET_BUILD_VARIANT)),eng)
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpMDCtrl=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpCdmaRadioCtrl=I
   PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.RpFOUtils=I
+  PRODUCT_PROPERTY_OVERRIDES += persist.log.tag.C2K_RIL-SIM=I
 else
   # eng load
   # V/(D/I/W/E)
