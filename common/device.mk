@@ -137,6 +137,10 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
 endif
 #end lenovo jiangyy3 remove Mtk apps
 
+ifeq($(MTK_GT_SUPPORT), true)
+     PRODUCT_PACKAGES += MtkBrowser
+endif
+
 # Telephony begin
 PRODUCT_PACKAGES += muxreport
 PRODUCT_PACKAGES += mtkrild
