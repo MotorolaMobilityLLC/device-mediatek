@@ -1013,6 +1013,7 @@ ifeq ($(strip $(MTK_GPU_SUPPORT)), yes)
     PRODUCT_PACKAGES += libRSDriver_mtk
     PRODUCT_PACKAGES += rs2spir
     PRODUCT_PACKAGES += spir2cl
+    PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
   endif
 endif
 
