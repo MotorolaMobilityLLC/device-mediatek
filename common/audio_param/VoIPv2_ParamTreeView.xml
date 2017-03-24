@@ -112,7 +112,7 @@
 				<Field audio_type="VoIPv2" param="speech_mode_para" name="Stationary noise weight"/>
 			</FieldList>
 			<CategoryPathList>
-				<Category path="Handset"/>
+				<Category path="Handset 2mic NR"/>
 			</CategoryPathList>
 		</Feature>
 		
