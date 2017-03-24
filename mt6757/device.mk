@@ -1425,9 +1425,9 @@ PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/p
 PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/fp_server:$(TARGET_COPY_OUT_VENDOR)/thh/fp_server:mtk
 PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/init_thh:$(TARGET_COPY_OUT_VENDOR)/bin/init_thh:mtk
 PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/uTAgent:$(TARGET_COPY_OUT_VENDOR)/thh/uTAgent
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.cfg:data/thh/tee_00/thh_mt6757_lenovo_indriya.cfg
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.cfg:data/local/tmp/thh_mt6757_lenovo_indriya.cfg
-PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.certs:data/thh/tee_00/thh_mt6757_lenovo_indriya.certs
+PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.cfg:cache/thh/tee_00/thh_mt6757_lenovo_indriya.cfg
+PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.cfg:cache/local/tmp/thh_mt6757_lenovo_indriya.cfg
+PRODUCT_COPY_FILES += 	vendor/mediatek/proprietary/trustzone/microtrust/source/platform/mt6757/teei/thh_mt6757_lenovo_indriya.certs:cache/thh/tee_00/thh_mt6757_lenovo_indriya.certs
 
 PRODUCT_PACKAGES   += 	keystore.mt6757
 PRODUCT_PACKAGES   += 	gatekeeper.mt6757
