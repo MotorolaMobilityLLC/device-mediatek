@@ -13533,6 +13533,14 @@
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
   />
+  <apn carrier="Yes Internet"
+        mcc="502"
+        mnc="152"
+        apn="yesnet"
+        type="default,supl,xcap"
+        protocol="IPV4V6"
+        roaming_protocol="IPV4V6"
+    />
 
   <apn carrier="hos"
       mcc="505"
