@@ -141,7 +141,10 @@ BOARD_SEPOLICY_DIRS += \
         device/mediatek/mt6797/sepolicy/full
 endif
 endif
-
+#add for goodix fingerprint begin
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/mt6797/sepolicy/goodix
+#add for goodix fingerprint end
 MTK_GPU_VERSION := mali midgard r12p1
 
 MTK_CAM_FRAMEWORK_DEFAULT_CODE := yes
