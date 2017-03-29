@@ -232,6 +232,19 @@
   />
 
   <!-- Begin zhangsx10, IKANGEROW-480 IUSACELL/NIIMX SUPL config -->
+  <!-- Begin zhangsx10, IKANGEROW-2475 treat old sim card mccmnc 33405 same as 334050 -->
+  <!-- IUSACELL 33405 -->
+  <supl_profile name="IUSACELL 33405"
+      addr="supl.iusacell.com"
+      port="7275"
+      tls="true"
+      mcc_mnc="33405"
+      supl_version="1"
+      tls_version="1"
+      sha_version="0"
+  />
+  <!-- End IKANGEROW-2475 -->
+
   <!-- IUSACELL 334050 -->
   <supl_profile name="IUSACELL 334050"
       addr="supl.iusacell.com"
@@ -544,6 +557,7 @@
         enable/disable tls session reuse mode
         available value: true, false (default)
   -->
+  <!-- zhangsx10, IKANGEROW-2475 enable the dedicated SUPL APN flow -->
   <up_setting
     ca_enable="false"
     ni_request="true"
@@ -565,7 +579,7 @@
     qop_loc_age="0"
     qop_delay="0"
     udp_port_enable="false"
-    dedicated_apn_enable="false"
+    dedicated_apn_enable="true"
     preferred_2g3g_cell_age="300"
     lpp_enable="true"
     cert_from_sdcard="true"
