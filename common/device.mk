@@ -37,7 +37,7 @@ endif
 endif
 
 # Telephony
-PRODUCT_COPY_FILES += device/mediatek/common/apns-conf.xml:system/etc/apns-conf.xml:mtk
+#PRODUCT_COPY_FILES += device/mediatek/common/apns-conf.xml:system/etc/apns-conf.xml:mtk
 PRODUCT_COPY_FILES += device/mediatek/common/spn-conf.xml:system/etc/spn-conf.xml:mtk
 
 # Audio
