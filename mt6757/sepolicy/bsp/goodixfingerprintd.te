@@ -71,3 +71,6 @@ binder_call(goodixfingerprintd, system_app);
 # allow sdcard access right
 allow goodixfingerprintd media_rw_data_file:dir { search write add_name };
 allow goodixfingerprintd media_rw_data_file:file { create write open read getattr };
+#lcsh tqq add
+allow goodixfingerprintd fingerprint_service:service_manager find;
+allow goodixfingerprintd power_service:service_manager find;
