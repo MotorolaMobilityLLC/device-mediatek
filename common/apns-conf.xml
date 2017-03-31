@@ -2284,13 +2284,14 @@
       protocol="IP"
       roaming_protocol="IP"
   />
-  
+
   <apn carrier="IMS"
       mcc="234"
       mnc="33"
       apn="ims"
       type="ims"
       protocol="IPV6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
  <apn carrier="MMS"
@@ -2333,10 +2334,11 @@
 
   <apn carrier="IMS"
       mcc="234"
-      mnc="33"
+      mnc="34"
       apn="ims"
       type="ims"
       protocol="IPV6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
  <apn carrier="MMS"
@@ -2456,6 +2458,7 @@
       apn="ims"
       type="ims"
       protocol="IPV6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
  <apn carrier="MMS"
@@ -3462,6 +3465,15 @@
       mnc="20"
       apn="internet.tele2.ru"
       type="default,supl"
+  />
+
+  <apn carrier="XCAP"
+      mcc="250"
+      mnc="20"
+      apn="hos"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
   <apn carrier="TELE2 Wap"
@@ -11907,6 +11919,18 @@
       mnc="02"
       apn="etisalat.ae"
       type="default,supl"
+
+  />
+
+  <apn carrier="Etisalat ims"
+      mcc="424"
+      mnc="02"
+      apn="ims"
+      type="ims"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+
   />
 
   <apn carrier="Etisalat MMS"
@@ -11917,6 +11941,15 @@
       mmsproxy="10.12.0.32"
       mmsport="8080"
       type="mms"
+  />
+
+  <apn carrier="Etisalat XCAP"
+      mcc="424"
+      mnc="02"
+      apn="ut"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
   <apn carrier="Du"
