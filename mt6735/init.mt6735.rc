@@ -31,7 +31,7 @@ on init
     # if primary storage is physical, set ro.vold.primary_physical to 1
     # setprop ro.vold.primary_physical 1
 
-	write /proc/sys/vm/swappiness 200
+	write /proc/sys/vm/swappiness 160
 
     # BATTERY proc
     chown shell system /proc/mtk_battery_cmd/current_cmd
