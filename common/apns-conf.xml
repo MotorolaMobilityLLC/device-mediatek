@@ -3455,7 +3455,25 @@
       mmsport="8080"
       type="mms"
   />
-  
+
+  <apn carrier="IMS"
+      mcc="250"
+      mnc="20"
+      apn="ims.tele2.ru"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="XCAP"
+      mcc="250"
+      mnc="20"
+      apn="hos"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+  />
+
   <apn carrier="МТС-интернет"
       mcc="250"
       mnc="39"
@@ -13804,6 +13822,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="DTAC Internet"
@@ -13839,6 +13858,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="tot internet"
