@@ -9,6 +9,9 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:syste
 
 ifneq ($(strip $(CUSTOM_KERNEL_STEP_COUNTER)),)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml
+endif
+
+ifeq ($(strip $(CUSTOM_KERNEL_STEP_DETECTOR)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 endif
 
