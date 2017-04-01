@@ -7,6 +7,7 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.bluetooth_le.x
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
+# lenovo-sw caoyi1 fix for cts test begin 20170401
 ifneq ($(strip $(CUSTOM_KERNEL_STEP_COUNTER)),)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml
 endif
@@ -14,6 +15,7 @@ endif
 ifeq ($(strip $(CUSTOM_KERNEL_STEP_DETECTOR)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 endif
+# lenovo-sw caoyi1 fix for cts test end 20170401
 
 ifeq ($(strip $(MTK_IRTX_SUPPORT)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
