@@ -447,7 +447,6 @@ PRODUCT_PACKAGES += libpq_cust
 PRODUCT_PACKAGES += librgbwlightsensor
 PRODUCT_PACKAGES += libPQjni
 PRODUCT_PACKAGES += libPQDCjni
-PRODUCT_PACKAGES += MiraVision
 PRODUCT_PACKAGES += libMiraVision_jni
 PRODUCT_PACKAGES += hald
 PRODUCT_PACKAGES += tiny_mkswap
