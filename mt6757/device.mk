@@ -9,6 +9,9 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.touchscreen.xm
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
+#LCSH ADD by tqq for add new kl for goodix
+PRODUCT_COPY_FILES += device/mediatek/mt6757/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl
+
 ifeq ($(strip $(CUSTOM_KERNEL_ACCELEROMETER)),yes)
   PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml
 endif
