@@ -247,6 +247,9 @@ allow factory gps_data_file:file create_file_perms;
 #Purpose: For fingerprint test
 allow factory goodixfingerprintd_device:chr_file { read ioctl open };
 
+allow factory sysfs_ledwhite:file rw_file_perms;
+allow factory selinuxfs:file w_file_perms;
+
 # Date: WK16.33
 #Purpose: for unmount sdcardfs and stop services which are using data partition
 allow factory sdcard_type:filesystem unmount;
