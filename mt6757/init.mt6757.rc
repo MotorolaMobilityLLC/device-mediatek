@@ -1550,6 +1550,11 @@ on property:persist.mediatek.fg.log.enable=1
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
     write /proc/sys/kernel/printk 4
 
+service charge_only_mode /system/bin/charge_only_mode
+     user root
+     group graphics system input
+     disabled
+
 service kpoc_charger /vendor/bin/kpoc_charger
     class charger
 
