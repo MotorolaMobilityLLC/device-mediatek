@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
-   Lenovo SPN version: V5.9
+   Lenovo SPN version: V6.0
 -->
 <spnOverrides version="1">
 <spnOverride numeric="3100" spn="NEPW"/>
@@ -229,7 +229,7 @@
 <spnOverride numeric="28802" spn="VODAFONE"/>
 <spnOverride numeric="29001" spn="TELE GRL"/>
 <spnOverride numeric="29266" spn="SMT"/>
-<spnOverride numeric="29340" spn="Si.mobil"/>
+<spnOverride numeric="29340" spn="A1"/>
 <spnOverride numeric="29341" spn="Mobitel"/>
 <spnOverride numeric="29364" spn="T-2"/>
 <spnOverride numeric="29370" spn="TELEMACH"/>
