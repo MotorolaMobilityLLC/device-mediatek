@@ -1208,10 +1208,14 @@ endif
 
 ifeq ($(strip $(MTK_AGPS_APP)), yes)
   PRODUCT_PACKAGES += LocationEM \
-                      LocationEM2 \
                       mtk_agpsd \
                       libssladp \
                       cacerts_supl
+
+#lenovo liubin7, NOT include LocationEM2 in user build to comply with security requirement, INDRIYAPRO-680
+ifneq ($(TARGET_BUILD_VARIANT),user)
+  PRODUCT_PACKAGES += LocationEM2
+endif
 
 #lenovo niejl1, rm AutoDialer
                       #AutoDialer
