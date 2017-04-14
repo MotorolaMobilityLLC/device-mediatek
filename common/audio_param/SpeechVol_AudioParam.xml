@@ -77,7 +77,7 @@
     </ParamUnit>
     <ParamUnit param_id="8">
       <Param name="dl_gain" value="19,16,13,9,7,4,1"/>
-      <Param name="ul_gain" value="27"/>
+      <Param name="ul_gain" value="29"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
   </ParamUnitPool>

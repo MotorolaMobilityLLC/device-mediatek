@@ -79,7 +79,7 @@
       <Param name="digital_gain" value="-64,-42,-39,-36,-33,-30,-27,-24,-21,-18,-15,-12,-9,-6,-3,0"/>
     </ParamUnit>
     <ParamUnit param_id="1">
-      <Param name="digital_gain" value="-64,-42,-39,-36,-33,-30,-27,-25,-23,-21,-19,-17,-15,-10,-5,0"/>
+      <Param name="digital_gain" value="-64,-42,-39,-36,-33,-30,-27,-24,-21,-18,-15,-12,-9,-6,-3,0"/>
     </ParamUnit>
     <ParamUnit param_id="2">
       <Param name="digital_gain" value="-64,-39,-30,-24,-18,-12,-6,0,-21,-18,-15,-12,-9,-6,-3,0"/>
