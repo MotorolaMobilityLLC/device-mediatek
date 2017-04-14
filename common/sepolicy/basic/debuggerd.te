@@ -78,8 +78,11 @@ allow debuggerd domain:lnk_file getattr;
 #core-pattern
 allow debuggerd usermodehelper:file r_file_perms;
 
+#Lenovo wuzb1 2017-04-14 Prevent debuggerd from reading security info on user build for CTS
 #suid_dumpable
+userdebug_or_eng(`
 allow debuggerd proc_security:file r_file_perms;
+')
 
 #dmesg
 allow debuggerd kernel:system syslog_read;
