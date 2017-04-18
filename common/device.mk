@@ -2800,7 +2800,9 @@ else ifeq ($(strip $(MTK_LOG_CUSTOMER_SUPPORT)),yes)
     PRODUCT_PROPERTY_OVERRIDES += ro.mtk_log_hide_gps=1
   endif
   ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)),yes)
-    PRODUCT_PACKAGES += MTKLogger
+    ifneq ($(TARGET_BUILD_VARIANT),user)
+       PRODUCT_PACKAGES += MTKLogger
+    endif
     ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
       PRODUCT_PACKAGES += BtTool
     endif
