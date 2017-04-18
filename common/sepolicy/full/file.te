@@ -27,5 +27,3 @@ type rild_embms_socket, file_type, mlstrustedobject;
 
 # eMBMS VzW SDK file
 type embms_library_file, file_type, data_file_type;
-# CPUFREQ
-type sysfs_cpu_freq, fs_type, sysfs_type, mlstrustedobject;
