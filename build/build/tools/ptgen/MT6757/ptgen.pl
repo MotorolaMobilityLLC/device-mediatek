@@ -227,7 +227,15 @@ sub InitGlobalValue
     }
     else
     {
-        $Partition_layout_xls = "$ptgen_location/partition_table_$ArgList{PLATFORM}.xls";
+        # huangzq2: Support product specific partition table.
+        $Partition_layout_xls = "$ptgen_location/partition_table_$ArgList{PROJECT}.xls";
+        if(!-e "$Partition_layout_xls")
+        {
+            $Partition_layout_xls = "$ptgen_location/partition_table_$ArgList{PLATFORM}.xls";
+        }
+
+        print "Using partition table: $Partition_layout_xls\n";
+
         if ($ArgList{EMMC_SUPPORT} eq "yes")
         {
             $ArgList{SHEET_NAME} = "emmc";
