@@ -183,3 +183,8 @@ allow radio audiocmdservice_atci_exec:file getattr;
 # Operation: IT
 # Purpose: for InCall Log Setting in EM
 allow radio log_tag_prop:property_service set;
+
+# Date : W1650 2016/12/06
+# Operation : IT
+# Purpose: set epdg config
+allow radio epdg_wod:unix_stream_socket connectto;

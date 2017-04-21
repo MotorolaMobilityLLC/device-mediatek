@@ -142,3 +142,8 @@ allow mediacodec MJC_device:chr_file { read write ioctl open };
 allow mediacodec mtk_codec_service_service:service_manager find;
 allow mediacodec MtkCodecService:binder call;
 allow mediacodec MtkCodecService:binder transfer;
+
+# Date : WK17.12
+# Operation : AVC decoder dump more log
+# Purpose : dynamically set property of android log level
+allow mediacodec log_tag_prop:property_service set;

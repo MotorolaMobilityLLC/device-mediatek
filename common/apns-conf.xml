@@ -170,6 +170,17 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="204"
+      mnc="04"
+      apn="IMS"
+      type="ims"
+      mvno_type="spn"
+      mvno_match_data="中国电信"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
 ﻿  <apn carrier="CTNET"
       mcc="204"
       mnc="04"
@@ -526,14 +537,7 @@
       mcc="208"
       mnc="10"
       apn="sl2sfr"
-      type="default,supl,xcap"
-  />
-
-  <apn carrier="SFR Illimytics"
-      mcc="208"
-      mnc="10"
-      apn="wapsfr"
-      type="default,supl"
+      type="default,supl,xcap,mms"
   />
 
   <apn carrier="ACCESS DATA"
@@ -746,6 +750,16 @@
       user="orange"
       password="orange"
       type="dun"
+  />
+
+  <apn carrier="IMS"
+      mcc="214"
+      mnc="03"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Euskaltel Internet"
@@ -3216,6 +3230,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="250"
+      mnc="01"
+      apn="ims"
+      type="ims"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Megafon internet"
       mcc="250"
       mnc="02"
@@ -3244,6 +3268,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="NCC"
@@ -6759,6 +6784,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="02"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="404"
       mnc="03"
@@ -6774,6 +6809,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="03"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="IDEA"
@@ -6885,7 +6930,17 @@
       mmsport="8799"
       type="mms"
   />
-  
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="10"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Vodafone MMS"
       mcc="404"
       mnc="11"
@@ -7013,6 +7068,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="16"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="AIRCEL NE MMS"
@@ -7284,6 +7349,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="31"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="AIRCEL NE MMS"
       mcc="404"
       mnc="33"
@@ -7403,6 +7478,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="40"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="AIRCEL TN"
       mcc="404"
       mnc="41"
@@ -7497,6 +7582,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="45"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Vodafone MMS"
       mcc="404"
       mnc="46"
@@ -7538,6 +7633,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="49"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Reliance RTel MMS"
@@ -7903,6 +8008,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="70"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="CellOne_South MMS"
       mcc="404"
       mnc="71"
@@ -8258,6 +8373,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="90"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="AIRCEL NE MMS"
       mcc="404"
       mnc="91"
@@ -8292,6 +8417,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="92"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="404"
       mnc="93"
@@ -8307,6 +8442,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="93"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Airtel"
@@ -8326,6 +8471,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="94"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="404"
       mnc="95"
@@ -8341,6 +8496,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="95"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Airtel"
@@ -8360,6 +8525,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="96"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="404"
       mnc="97"
@@ -8377,6 +8552,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="97"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="404"
       mnc="98"
@@ -8392,6 +8577,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="404"
+      mnc="98"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Reliance RCOM MMS"
@@ -9177,6 +9372,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="51"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="405"
       mnc="52"
@@ -9192,6 +9397,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="52"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Airtel"
@@ -9211,6 +9426,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="53"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="405"
       mnc="54"
@@ -9226,6 +9451,16 @@
       mmsproxy="100.1.201.172"
       mmsport="8799"
       type="mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="54"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Airtel"
@@ -9245,6 +9480,16 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="55"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Airtel"
       mcc="405"
       mnc="56"
@@ -9261,6 +9506,17 @@
       mmsport="8799"
       type="mms"
   />
+
+  <apn carrier="IMS"
+      mcc="405"
+      mnc="56"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
 <apn carrier="Vodafone MMS"
       mcc="405"
       mnc="66"
@@ -11913,6 +12169,8 @@
       user="user@au.au-net.ne.jp"
       password="au"
       type="default"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="KDDI"
@@ -11920,6 +12178,8 @@
       mnc="51"
       apn="IMS"
       type="ia,ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="KDDI"
@@ -11929,6 +12189,8 @@
       user="user@au.au-net.ne.jp"
       password="au"
       type="default"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="KDDI"
@@ -11936,6 +12198,8 @@
       mnc="54"
       apn="IMS"
       type="ia,ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="SKT LTE"
@@ -12135,6 +12399,17 @@
       type="ims"
   />
 
+  <apn carrier="IMS"
+      mcc="454"
+      mnc="03"
+      apn="IMS"
+      type="ims"
+      mvno_type="spn"
+      mvno_match_data="中国电信"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET"
       mcc="454"
       mnc="03"
@@ -12142,7 +12417,18 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
+      mvno_type="spn"
+      mvno_match_data="中国电信"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="IMS"
+      mcc="454"
+      mnc="04"
+      apn="IMS"
+      type="ims"
       mvno_type="spn"
       mvno_match_data="中国电信"
       protocol="IPV4V6"
@@ -12156,7 +12442,7 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
       mvno_type="spn"
       mvno_match_data="中国电信"
       protocol="IPV4V6"
@@ -12329,6 +12615,15 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="455"
+      mnc="02"
+      apn="IMS"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET"
       mcc="455"
       mnc="02"
@@ -12336,7 +12631,7 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
       ppp="#777"
@@ -12395,6 +12690,15 @@
       type="mms"
   />
 
+  <apn carrier="IMS"
+      mcc="455"
+      mnc="07"
+      apn="IMS"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET"
       mcc="455"
       mnc="07"
@@ -12402,7 +12706,7 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
   />
@@ -12700,6 +13004,15 @@
       roaming_protocol="IPV4V6"
   />
 
+  <apn carrier="IMS"
+      mcc="460"
+      mnc="03"
+      apn="IMS"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET"
       mcc="460"
       mnc="03"
@@ -12707,7 +13020,7 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
       ppp="#777"
@@ -12728,6 +13041,15 @@
       ppp="#777"
   />
 
+  <apn carrier="IMS"
+      mcc="460"
+      mnc="11"
+      apn="IMS"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET"
       mcc="460"
       mnc="11"
@@ -12735,7 +13057,7 @@
       authtype="3"
       user="ctnet@mycdma.cn"
       password="vnet.mobi"
-      type="default,dun"
+      type="default,dun,xcap"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
       ppp="#777"
@@ -12809,13 +13131,22 @@
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
+  <apn carrier="IMS"
+      mcc="460"
+      mnc="12"
+      apn="IMS"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier="CTNET" 
       mcc="460" 
       mnc="12" 
       apn="ctnet" 
       user="ctnet@mycdma.cn" 
       password="vnet.mobi" 
-      type="default,dun"
+      type="default,dun,xcap"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
   />
@@ -14133,7 +14464,7 @@
       mnc="01" 
       apn="mobinilmms" 
       mmsc="http://10.7.13.24:8002" 
-      mmsproxy="62.241.155.54" 
+      mmsproxy="62.241.155.45" 
       mmsport="8080" 
       type="mms" 
   />
@@ -15935,6 +16266,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Claro xcap"
