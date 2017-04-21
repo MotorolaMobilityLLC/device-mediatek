@@ -379,6 +379,9 @@ on post-fs-data
     chmod 0664 /proc/cpu_ss/cpu_ss_period
     chmod 0664 /proc/cpu_ss/cpu_ss_period_mode
 
+    #gaochunbo 2017/04/21 capsensor
+    chmod 777 /sys/bus/platform/drivers/cap_touch/reg
+
     #EM eint
     chown root diag /sys/bus/platform/drivers/eint/current_eint
 
