@@ -78,8 +78,9 @@ allow debuggerd domain:lnk_file getattr;
 #core-pattern
 allow debuggerd usermodehelper:file r_file_perms;
 
+# Lenovo lubm1 20170426 IKANGEROW-4661 for CTS 7.1r4 since Google update neverallow rule.
 #suid_dumpable
-allow debuggerd proc_security:file r_file_perms;
+#allow debuggerd proc_security:file r_file_perms;
 
 #dmesg
 allow debuggerd kernel:system syslog_read;
