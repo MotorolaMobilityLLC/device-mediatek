@@ -2803,9 +2803,11 @@ else ifeq ($(strip $(MTK_LOG_CUSTOMER_SUPPORT)),yes)
     ifneq ($(TARGET_BUILD_VARIANT),user)
        PRODUCT_PACKAGES += MTKLogger
     endif
-    ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
-      PRODUCT_PACKAGES += BtTool
-    endif
+# Lenovo-sw wulb1 [INDRIYA-758] begin, rm BtTool apk for user
+#    ifeq ($(strip $(MTK_BTLOGGER_SUPPORT)),yes)
+#      PRODUCT_PACKAGES += BtTool
+#    endif
+# Lenovo-sw wulb1 [INDRIYA-758] end
   endif
   ifeq ($(strip $(MTK_NETWORK_LOG_SUPPORT)),yes)
     PRODUCT_PACKAGES += netdiag
