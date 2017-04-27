@@ -70,7 +70,7 @@ my $COMBO_NAND_KERNELH = "$custom_out_prefix/common/combo_nand.h";
 
 my $SCAT_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_scatter.txt";
 my $SCAT_FACTORY_EFUSE_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_efuse_only.txt";
-my $SCAT_FACTORY_Full_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_factory_only.txt";
+my $SCAT_FACTORY_Full_FILE = "$PRODUCT_OUT/$ArgList{PLATFORM}_Android_factory_only_for_efuse.txt";
 my $PGPT_FILE = "$PRODUCT_OUT/PGPT";
 
 #****************************************************************************
