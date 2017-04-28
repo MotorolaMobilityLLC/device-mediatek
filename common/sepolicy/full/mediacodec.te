@@ -6,3 +6,8 @@
 # Operation : Migration
 # Purpose : Play tone for alert
 allow mediacodec custom_file:dir search;
+
+# DOLBY_START
+allow mediacodec audioserver_service:service_manager find;
+set_prop(mediacodec, dolby_prop)
+# DOLBY_END
