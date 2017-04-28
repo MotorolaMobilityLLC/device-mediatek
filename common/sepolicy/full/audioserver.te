@@ -38,3 +38,9 @@ allow audioserver audio_ipi_device:chr_file { read write ioctl open };
 # Operation : Migration
 # Purpose : WFD and MET Latency measurement
 allow audioserver media_wfd_prop:property_service set;
+
+# DOLBY_START
+allow audioserver activity_service:service_manager find;
+allow audioserver audio_prop:property_service {set};
+set_prop(audioserver, dolby_prop)
+# DOLBY_END
