@@ -3,6 +3,7 @@ type goodixfingerprintd_exec, exec_type, file_type;
 type goodixfingerprintd_data_file, file_type, data_file_type;
 type goodixfingerprintd_service,service_manager_type;
 type goodixfingerprintd_device, dev_type;
+allow goodixfingerprintd rootfs:lnk_file getattr;
 
 type goodix_fingerprint_service,service_manager_type;
 
