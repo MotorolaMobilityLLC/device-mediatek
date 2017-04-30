@@ -33,6 +33,3 @@ tedongleservice             u:object_r:radio_service:s0
 
 CapSensorObserver           u:object_r:CapSensorObserver_service:s0
 
-# DOLBY_START
-media.dolby_memoryservice                      u:object_r:audioserver_service:s0
-# DOLBY_END
