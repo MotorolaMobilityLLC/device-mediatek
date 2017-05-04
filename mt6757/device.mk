@@ -1152,20 +1152,21 @@ else
   PRODUCT_PROPERTY_OVERRIDES += fmradio.driver.enable=0
 endif
 
-ifeq ($(strip $(MTK_CAM_IMAGE_REFOCUS_SUPPORT)),yes)
-    PRODUCT_PACKAGES += libjni_stereoapplication
-    PRODUCT_PACKAGES += libjni_depthgenerator
-    PRODUCT_PACKAGES += libjni_fancycolor
-    PRODUCT_PACKAGES += libjni_freeview
-    PRODUCT_PACKAGES += libjni_imagerefocus
-    PRODUCT_PACKAGES += libjni_imagesegment
-    PRODUCT_PACKAGES += Gallery2StereoCopyPaste
-    PRODUCT_PACKAGES += Gallery2StereoBackground
-    PRODUCT_PACKAGES += Gallery2StereoFancyColor
-    PRODUCT_PACKAGES += Gallery2StereoRefocus
-    PRODUCT_PACKAGES += Gallery2PhotoPicker
-    PRODUCT_PACKAGES += Gallery2StereoFreeview3D
-endif
+# INDRIYA-856 lixh8 rm MTK Gallery2
+#ifeq ($(strip $(MTK_CAM_IMAGE_REFOCUS_SUPPORT)),yes)
+#    PRODUCT_PACKAGES += libjni_stereoapplication
+#    PRODUCT_PACKAGES += libjni_depthgenerator
+#    PRODUCT_PACKAGES += libjni_fancycolor
+#    PRODUCT_PACKAGES += libjni_freeview
+#    PRODUCT_PACKAGES += libjni_imagerefocus
+#    PRODUCT_PACKAGES += libjni_imagesegment
+#    PRODUCT_PACKAGES += Gallery2StereoCopyPaste
+#    PRODUCT_PACKAGES += Gallery2StereoBackground
+#    PRODUCT_PACKAGES += Gallery2StereoFancyColor
+#    PRODUCT_PACKAGES += Gallery2StereoRefocus
+#    PRODUCT_PACKAGES += Gallery2PhotoPicker
+#    PRODUCT_PACKAGES += Gallery2StereoFreeview3D
+#endif
 
 
 ifeq ($(strip $(HAVE_SRSAUDIOEFFECT_FEATURE)),yes)
