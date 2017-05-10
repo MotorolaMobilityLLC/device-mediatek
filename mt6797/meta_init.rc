@@ -516,4 +516,7 @@ on property:ro.boot.usbconfig=1
     write /sys/class/android_usb/android0/functions acm
     write /sys/class/android_usb/android0/bDeviceClass 02
     write /sys/class/android_usb/android0/enable 1
+
+on property:ro.lenovo.factory_reset=1
+    rm /cache/ctsflag
 #INTERNAL_END
