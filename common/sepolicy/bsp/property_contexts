@@ -38,3 +38,6 @@ net.ipv6 u:object_r:mtk_net_ipv6_prop:s0
 
 #=============allow md_monitor set prop==============
 persist.mdmmonitor u:object_r:mdmmonitor_prop:s0
+
+#==============allow set property====================
+ro.lenovo.factory_reset u:object_r:factory_prop:s0

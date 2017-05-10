@@ -36,3 +36,6 @@ allow meta_tst teei_thh_data_file:file rw_file_perms;
 allow meta_tst camera_tsf_device:chr_file rw_file_perms;
 allow meta_tst camera_isp_device:chr_file { read write ioctl open };
 
+# Set properties
+set_prop(meta_tst, factory_prop)
+

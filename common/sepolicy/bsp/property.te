@@ -35,3 +35,6 @@ type mtk_net_ipv6_prop, property_type, mtk_core_property_type;
 
 #=============allow md_init property==============
 type mdmmonitor_prop, property_type, mtk_core_property_type;
+
+#==============allow set property=================
+type factory_prop, property_type, core_property_type;
