@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AudioParam version="1.0">
   <ParamTree>
-    <Param path="Sound recording,Handset" param_id="0"/>
-    <Param path="Sound recording,Headset" param_id="0"/>
+    <Param path="Sound recording,Handset" param_id="5"/>
+    <Param path="Sound recording,Headset" param_id="4"/>
     <Param path="Sound recording,HS5POLE" param_id="3"/>
     <Param path="Sound recording,HS5POLE_ANC" param_id="3"/>
-    <Param path="Camera recording,Handset" param_id="2"/>
-    <Param path="Camera recording,Headset" param_id="2"/>
+    <Param path="Camera recording,Handset" param_id="6"/>
+    <Param path="Camera recording,Headset" param_id="7"/>
     <Param path="Camera recording,HS5POLE" param_id="3"/>
     <Param path="Camera recording,HS5POLE_ANC" param_id="3"/>
     <Param path="CUSTOMIZATION1,Handset" param_id="2"/>
@@ -47,6 +47,18 @@
     </ParamUnit>
     <ParamUnit param_id="3">
       <Param name="ul_gain" value="24"/>
+    </ParamUnit>
+    <ParamUnit param_id="4">
+      <Param name="ul_gain" value="26"/>
+    </ParamUnit>
+    <ParamUnit param_id="5">
+      <Param name="ul_gain" value="26"/>
+    </ParamUnit>
+    <ParamUnit param_id="6">
+      <Param name="ul_gain" value="26"/>
+    </ParamUnit>
+    <ParamUnit param_id="7">
+      <Param name="ul_gain" value="26"/>
     </ParamUnit>
   </ParamUnitPool>
 </AudioParam>

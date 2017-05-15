@@ -8,5 +8,9 @@
 #  2017-03-30 主要优化免提上下行通话和降噪效
 #  2017-04-05 解决联想所报音阶调整为7阶后音量变小问题
 #  2017-04-14 本次参数主要调试联想所报免提上行不清晰等问题
-AUDIO_PARA_VER := MANNING-DVT2-2017-4-14
+#  2017-05-15 本次参数主要调试联想所报主观问题:
+#				1、录音录像底噪偏大，人声失真，调试Audio Record,增益和NR参数；
+#				2、免提通话效果稍差，调试handfree -NB 模式NR参数；
+#				3、耳机通话底噪大稍大，调试headset 模式 NR参数。
+AUDIO_PARA_VER := MANNING-DVT2-2017-5-15
 PRODUCT_PROPERTY_OVERRIDES += persist.audio.lenovo.version=$(AUDIO_PARA_VER)

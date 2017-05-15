@@ -9,11 +9,11 @@
     <Param path="WB,LPBK_SPK" param_id="3"/>
     <Param path="NB,RCV" param_id="5"/>
     <Param path="NB,HAC" param_id="5"/>
-    <Param path="NB,HS" param_id="6"/>
-    <Param path="NB,HP" param_id="6"/>
-    <Param path="NB,SPK" param_id="8"/>
-    <Param path="WB,RCV" param_id="15"/>
-    <Param path="WB,HAC" param_id="15"/>
+    <Param path="NB,HS" param_id="10"/>
+    <Param path="NB,HP" param_id="10"/>
+    <Param path="NB,SPK" param_id="6"/>
+    <Param path="WB,RCV" param_id="18"/>
+    <Param path="WB,HAC" param_id="18"/>
     <Param path="WB,HS" param_id="1"/>
     <Param path="WB,HP" param_id="1"/>
     <Param path="WB,SPK" param_id="20"/>
@@ -21,7 +21,7 @@
     <Param path="WB,HS5POLE" param_id="4"/>
     <Param path="NB,HS5POLE_ANC" param_id="4"/>
     <Param path="WB,HS5POLE_ANC" param_id="4"/>
-    <Param path="NB,TTY" param_id="8"/>
+    <Param path="NB,TTY" param_id="6"/>
     <Param path="WB,TTY" param_id="20"/>
   </ParamTree>
   <ParamUnitPool>
@@ -55,16 +55,6 @@
       <Param name="ul_gain" value="20"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
-    <ParamUnit param_id="6">
-      <Param name="dl_gain" value="18,15,12,9,6,3,0"/>
-      <Param name="ul_gain" value="29"/>
-      <Param name="stf_gain" value="0"/>
-    </ParamUnit>
-    <ParamUnit param_id="15">
-      <Param name="dl_gain" value="22,19,16,13,10,6,3"/>
-      <Param name="ul_gain" value="20"/>
-      <Param name="stf_gain" value="0"/>
-    </ParamUnit>
     <ParamUnit param_id="1">
       <Param name="dl_gain" value="18,15,12,9,6,3,0"/>
       <Param name="ul_gain" value="29"/>
@@ -75,8 +65,18 @@
       <Param name="ul_gain" value="28"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
-    <ParamUnit param_id="8">
-      <Param name="dl_gain" value="19,16,13,9,7,4,1"/>
+    <ParamUnit param_id="18">
+      <Param name="dl_gain" value="22,19,16,13,10,6,3"/>
+      <Param name="ul_gain" value="23"/>
+      <Param name="stf_gain" value="0"/>
+    </ParamUnit>
+    <ParamUnit param_id="10">
+      <Param name="dl_gain" value="18,15,12,9,6,3,0"/>
+      <Param name="ul_gain" value="29"/>
+      <Param name="stf_gain" value="0"/>
+    </ParamUnit>
+    <ParamUnit param_id="6">
+      <Param name="dl_gain" value="19,16,13,9,7,5,3"/>
       <Param name="ul_gain" value="29"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
