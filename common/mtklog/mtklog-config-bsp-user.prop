@@ -1,5 +1,5 @@
 mtklog_path = internal_sd
-com.mediatek.log.mobile.enabled = false
+com.mediatek.log.mobile.enabled = true
 com.mediatek.log.mobile.maxsize = 500
 com.mediatek.log.mobile.totalmaxsize = 1000
 com.mediatek.log.modem.enabled = false
