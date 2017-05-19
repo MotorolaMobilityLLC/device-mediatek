@@ -135,7 +135,11 @@ allow atci_service mtk_em_prop:property_service set;
 # Date : 2016/03/02
 # Operation : M-Migration
 # Purpose : to support ATCI touch tool
-allow atci_service shell_exec:file { read execute open execute_no_trans };
+# Lenovo wuzb1 2017-05-19 Prevent it from executing shell and toolbox on USER build
+userdebug_or_eng(`
+allow atci_service shell_exec:file rx_file_perms;
+allow atci_service toolbox_exec:file rx_file_perms;
+')
 
 # Date : WK16.33
 # Purpose: Allow to access ged for gralloc_extra functions
