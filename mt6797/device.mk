@@ -610,11 +610,19 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
 endif
 
 ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
-#Lenovo-sw weimh1 mod 2017-3-10 begin:no support MTKLogger for secure build
-ifneq ($(strip $(SECURE_BOOT)), yes)
-  PRODUCT_PACKAGES += MTKLogger
-endif
-#Lenovo-sw weimh1 mod 2017-3-10 end
+#Lenovo-sw weimh1 mod 2017-5-22 begin:no support MTKLogger for secure+user+not df build
+  ifeq ($(LENOVO_RADIO_SECURE), yes)
+    ifeq ($(TARGET_BUILD_VARIANT), user)
+      ifneq ($(findstring df, $(TARGET_PRODUCT)), )
+        PRODUCT_PACKAGES += MTKLogger
+      endif
+    else
+      PRODUCT_PACKAGES += MTKLogger
+    endif
+  else
+    PRODUCT_PACKAGES += MTKLogger
+  endif
+#Lenovo-sw weimh1 mod 2017-5-22 end
   PRODUCT_PACKAGES += BtTool
 endif
 
@@ -709,7 +717,19 @@ else
 endif
 
 ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
-  PRODUCT_PACKAGES += EngineerMode
+#Lenovo-sw weimh1 mod 2017-5-22 begin:no support EngineerMode for secure+user+not df build
+  ifeq ($(LENOVO_RADIO_SECURE), yes)
+    ifeq ($(TARGET_BUILD_VARIANT), user)
+      ifneq ($(findstring df, $(TARGET_PRODUCT)), )
+        PRODUCT_PACKAGES += EngineerMode
+      endif
+    else
+      PRODUCT_PACKAGES += EngineerMode
+    endif
+  else
+    PRODUCT_PACKAGES += EngineerMode
+  endif
+#Lenovo-sw weimh1 mod 2017-5-22 end
   PRODUCT_PACKAGES += EngineerModeSim
   PRODUCT_PACKAGES += libem_bt_jni
   PRODUCT_PACKAGES += libem_platform32_dummy
@@ -888,7 +908,7 @@ ifeq ($(strip $(MTK_ACWFDIALOG_APP)), yes)
 endif
 
 ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
-  PRODUCT_PACKAGES += EngineerMode
+#  PRODUCT_PACKAGES += EngineerMode  //duplicate up
   PRODUCT_PACKAGES += MobileLog
 endif
 
