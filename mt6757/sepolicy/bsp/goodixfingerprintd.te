@@ -75,3 +75,6 @@ allow goodixfingerprintd media_rw_data_file:file { create write open read getatt
 #lcsh tqq add
 allow goodixfingerprintd fingerprint_service:service_manager find;
 allow goodixfingerprintd power_service:service_manager find;
+
+# Lenovo, yangy19, 05/22/2017, goodix fingerprint
+allow platform_app goodix_fingerprint_service:service_manager find;
