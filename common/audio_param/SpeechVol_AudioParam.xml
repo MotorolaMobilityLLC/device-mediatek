@@ -11,7 +11,7 @@
     <Param path="NB,HAC" param_id="5"/>
     <Param path="NB,HS" param_id="10"/>
     <Param path="NB,HP" param_id="10"/>
-    <Param path="NB,SPK" param_id="6"/>
+    <Param path="NB,SPK" param_id="7"/>
     <Param path="WB,RCV" param_id="18"/>
     <Param path="WB,HAC" param_id="18"/>
     <Param path="WB,HS" param_id="1"/>
@@ -21,7 +21,7 @@
     <Param path="WB,HS5POLE" param_id="4"/>
     <Param path="NB,HS5POLE_ANC" param_id="4"/>
     <Param path="WB,HS5POLE_ANC" param_id="4"/>
-    <Param path="NB,TTY" param_id="6"/>
+    <Param path="NB,TTY" param_id="7"/>
     <Param path="WB,TTY" param_id="20"/>
   </ParamTree>
   <ParamUnitPool>
@@ -75,8 +75,8 @@
       <Param name="ul_gain" value="29"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
-    <ParamUnit param_id="6">
-      <Param name="dl_gain" value="19,16,13,9,7,5,3"/>
+    <ParamUnit param_id="7">
+      <Param name="dl_gain" value="19,16,13,9,7,5,1"/>
       <Param name="ul_gain" value="29"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
