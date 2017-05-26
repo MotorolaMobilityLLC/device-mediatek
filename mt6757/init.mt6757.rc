@@ -150,6 +150,9 @@ on post-fs-data
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /nvdata
 
+    # restorecon /persist to set SEPolicy label.
+    restorecon_recursive /persist
+
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
 
     #give system access to rfkill device node
