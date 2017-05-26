@@ -143,7 +143,7 @@ endif
 endif
 
 BOARD_SEPOLICY_DIRS += \
-	device/moto/mot6757/sepolicy
+	device/moto/common/utags_mtk/sepolicy
 
 MTK_GPU_VERSION := mali midgard r12p1
 
