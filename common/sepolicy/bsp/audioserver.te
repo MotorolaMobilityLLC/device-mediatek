@@ -51,3 +51,5 @@ allow audioserver ancservice_device:chr_file { read write ioctl open };
 # Operation : Migration
 # Purpose : perf service for cpu control and rt thread
 allow audioserver mtk_perf_service:service_manager find;
+
+allow audioserver proc_ged:file r_file_perms; 
