@@ -25,7 +25,7 @@ import os
 import shutil
 import re
 
-upgrade_list_include = ["tee1","tee2"]
+upgrade_list_include = ["tee1","tee2",'logo']
 upgrade_list_exclude = ["boot","system","android","recovery"]
 upgrade_list_specific_sequence = {"preloader", "preloader2"}
 upgrade_list_mount_map = {"lk" : "bootloader", "lk2" : "bootloader2"}
