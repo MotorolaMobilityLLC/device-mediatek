@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
-   Lenovo SPN version: V6.0
+   Lenovo SPN version: V6.1
 -->
 <spnOverrides version="1">
 <spnOverride numeric="3100" spn="NEPW"/>
@@ -559,7 +559,7 @@
 <spnOverride numeric="51505" spn="SUN"/>
 <spnOverride numeric="51511" spn="ACeS"/>
 <spnOverride numeric="51518" spn="CURE"/>
-<spnOverride numeric="52000" spn="TRUE-H"/>
+<spnOverride numeric="52000" spn="TH 3G+"/>
 <spnOverride numeric="52001" spn="AIS GSM"/>
 <spnOverride numeric="52003" spn="AIS"/>
 <spnOverride numeric="52004" spn="TRUE-H"/>
@@ -570,7 +570,7 @@
 <spnOverride numeric="52020" spn="ACeS"/>
 <spnOverride numeric="52023" spn="TH GSM 1800"/>
 <spnOverride numeric="52025" spn="WE PCT"/>
-<spnOverride numeric="52099" spn="TRUE"/>
+<spnOverride numeric="52099" spn="TRUE-H"/>
 <spnOverride numeric="52501" spn="Singtel"/>
 <spnOverride numeric="52502" spn="Singtel"/>
 <spnOverride numeric="52503" spn="M1"/>
@@ -748,7 +748,7 @@
 <spnOverride numeric="65310" spn="SwaziMTN"/>
 <spnOverride numeric="65501" spn="VodaCom-SA"/>
 <spnOverride numeric="65502" spn="TelkomSA"/>
-<spnOverride numeric="65507" spn="Cell C"/>
+<spnOverride numeric="65507" spn="FNB"/>
 <spnOverride numeric="65510" spn="MTN-SA"/>
 <spnOverride numeric="70267" spn="BTL"/>
 <spnOverride numeric="70401" spn="ClaroGTM"/>
