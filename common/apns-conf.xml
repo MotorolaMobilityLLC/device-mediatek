@@ -1467,6 +1467,16 @@
       type="default"
   />
 
+  <apn carrier="Orange IMS"
+      mcc="226"
+      mnc="10"
+      apn="ims"
+      type="ims"
+      protocol="IPV6"
+      roaming_protocol="IPV6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="Swisscom-MMS"
       mcc="228"
       mnc="01"
@@ -1559,37 +1569,64 @@
       type="mms"
   />
 
-  <apn carrier="T-Mobile CZ"
+  <apn carrier="T-Mobile Internet"
       mcc="230"
       mnc="01"
       apn="internet.t-mobile.cz"
-      user="wap"
-      password="wap"
-      server="*" 
-      mmsproxy="10.0.0.10" 
-      mmsport="80" 
-      mmsc="http://mms" 
-      type="default,supl"
+      type="default,supl,xcap"
+      authtype="1"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
-  <apn carrier="T-Mobile CZ MMS"
+  <apn carrier="T-Mobile MMS"
       mcc="230"
       mnc="01"
       apn="mms.t-mobile.cz"
       user="mms"
       password="mms"
-      server="*"
       mmsc="http://mms"
       mmsproxy="10.0.0.10"
       mmsport="80"
       type="mms"
+      authtype="1"
+      protocol="IP"
+      roaming_protocol="IP"
   />
 
-  <apn carrier="T-Mobile CZ"
+  <apn carrier="HOS"
       mcc="230"
       mnc="01"
-      apn=""
-      type="ia"
+      apn="hos"
+      mmsc="http://mms"
+      mmsproxy="10.0.0.10"
+      mmsport="80"
+      type="mms"
+      authtype="1"
+      protocol="IPV4V6"
+      roaming_protocol="IP"
+      bearer_bitmask ="18"
+  />
+
+  <apn carrier="ims"
+      mcc="230"
+      mnc="01"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="TMO Czech XCAP"
+      mcc="230"
+      mnc="01"
+      apn="hos"
+      type="xcap"
+      authtype="1"
+      protocol="IPV4V6"
+      roaming_protocol="IP"
+      bearer_bitmask ="18"
   />
 
   <apn carrier="O2 internet"
@@ -2166,6 +2203,16 @@
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="30"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
+  />
+
   <apn carrier="EE Internet"
       mcc="234"
       mnc="31"
@@ -2212,6 +2259,16 @@
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="31"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
+  />
+
   <apn carrier="EE Internet"
       mcc="234"
       mnc="32"
@@ -2259,6 +2316,16 @@
       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="32"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
+  />
+
   <apn carrier="EE Internet"
       mcc="234"
       mnc="33"
@@ -2304,6 +2371,16 @@
       type="fast"
       protocol="IP"
       roaming_protocol="IP"
+  />
+
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="33"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
   />
 
   <apn carrier="EE Internet"
@@ -2351,6 +2428,16 @@
       type="fast"
       protocol="IP"
       roaming_protocol="IP"
+  />
+
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="34"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
   />
 
   <apn carrier="Jersey Telecom"
@@ -2471,6 +2558,36 @@
       type="fast"
       protocol="IP"
       roaming_protocol="IP"
+  />
+
+  <apn carrier="EE Xcap"
+      mcc="234"
+      mnc="86"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
+  />
+
+  <apn carrier="EE Xcap"
+      mcc="235"
+      mnc="01"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
+  />
+
+  <apn carrier="EE Xcap"
+      mcc="235"
+      mnc="02"
+      apn="eezone"
+      type="xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19"
   />
 
   <apn carrier="3 UK Xcap"
@@ -3217,6 +3334,7 @@
       type="ims"
       protocol="IP"
       roaming_protocol="IP"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Megafon internet"
@@ -3247,6 +3365,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Megafon XCAP1"
@@ -12831,6 +12950,24 @@
       type="wap"
   />
 
+  <apn carrier="Seatel"
+      mcc="456"
+      mnc="11"
+      apn="seatel"
+      type="default,supl,xcap"
+      protocol="IP"
+      roaming_protocol="IP"
+  />
+
+  <apn carrier="IMS"
+      mcc="456"
+      mnc="11"
+      apn="ims"
+      type="ims"
+      protocol="IP"
+      roaming_protocol="IP"
+  />
+
   <apn carrier="CMNET"
       mcc="460"
       mnc="00"
@@ -13529,7 +13666,27 @@
   	password="digi" 
   	type="default,supl" 
   />
-  
+
+  <apn carrier="IMS"
+    mcc="502"
+    mnc="16"
+    apn="ims"
+    type="ims"
+    protocol="IPV6"
+    roaming_protocol="IPV6"
+    bearer_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="hos"
+    mcc="502"
+    mnc="16"
+    apn="hos"
+    type="xcap"
+    protocol="IPV6"
+    roaming_protocol="IPV6"
+    bearer_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="U Mobile Internet" 
   	mcc="502" 
   	mnc="18" 
@@ -13566,13 +13723,42 @@
   	type="mms" 
   />
 
-  <apn carrier="YTL"
+  <apn carrier="Yes Internet"
+      mcc="502"
+      mnc="152"
+      apn="yesnet"
+      type="default,supl,xcap"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="IMS"
       mcc="502"
       mnc="152"
       apn="ims"
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
+  <apn carrier="Webe Internet"
+      mcc="502"
+      mnc="153"
+      apn="webe"
+      type="default,xcap"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
+  <apn carrier="IMS"
+      mcc="502"
+      mnc="153"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer_bitmask="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="hos"
@@ -13642,6 +13828,15 @@
       mmsproxy="10.202.2.60"
       mmsport="8080"
       type="default,supl,mms"
+  />
+
+  <apn carrier="IMS"
+      mcc="505"
+      mnc="03"
+      apn="ims"
+      type="ims"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
   />
 
   <apn carrier="3Internet"
@@ -15733,6 +15928,25 @@
        bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
+  <apn carrier="Entel PE"
+       mcc="716"
+       mnc="17"
+       apn="entel.pe"
+       type="default,dun"
+       protocol="IP"
+       roaming_protocol="IP"
+  />
+
+  <apn carrier="IMS"
+       mcc="716"
+       mnc="17"
+       apn="ims"
+       type="ims"
+       protocol="IP"
+       roaming_protocol="IP"
+       bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
+  />
+
   <apn carrier="MOVISTAR MMS"
       mcc="722"
       mnc="07"
@@ -16368,6 +16582,7 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
+      bearer_bitmask ="1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18"
   />
 
   <apn carrier="Claro xcap"
