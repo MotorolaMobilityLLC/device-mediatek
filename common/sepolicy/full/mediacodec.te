@@ -9,5 +9,6 @@ allow mediacodec custom_file:dir search;
 
 # DOLBY_START
 allow mediacodec audioserver_service:service_manager find;
+allow mediacodec audio_prop:property_service set;
 set_prop(mediacodec, dolby_prop)
 # DOLBY_END
