@@ -638,20 +638,21 @@ else
   PRODUCT_PACKAGES += Gallery2
 endif
 
-ifeq ($(strip $(MTK_CAM_IMAGE_REFOCUS_SUPPORT)),yes)
-    PRODUCT_PACKAGES += libjni_stereoapplication
-    PRODUCT_PACKAGES += libjni_depthgenerator
-    PRODUCT_PACKAGES += libjni_fancycolor
-    PRODUCT_PACKAGES += libjni_freeview
-    PRODUCT_PACKAGES += libjni_imagerefocus
-    PRODUCT_PACKAGES += libjni_imagesegment
-    PRODUCT_PACKAGES += Gallery2StereoCopyPaste
-    PRODUCT_PACKAGES += Gallery2StereoBackground
-    PRODUCT_PACKAGES += Gallery2StereoFancyColor
-    PRODUCT_PACKAGES += Gallery2StereoRefocus
-    PRODUCT_PACKAGES += Gallery2PhotoPicker
-    PRODUCT_PACKAGES += Gallery2StereoFreeview3D
-endif
+# INDRIYAPRO-2597 guzy2 rm Gallery2 and its filter apks
+#ifeq ($(strip $(MTK_CAM_IMAGE_REFOCUS_SUPPORT)),yes)
+#    PRODUCT_PACKAGES += libjni_stereoapplication
+#    PRODUCT_PACKAGES += libjni_depthgenerator
+#    PRODUCT_PACKAGES += libjni_fancycolor
+#    PRODUCT_PACKAGES += libjni_freeview
+#    PRODUCT_PACKAGES += libjni_imagerefocus
+#    PRODUCT_PACKAGES += libjni_imagesegment
+#    PRODUCT_PACKAGES += Gallery2StereoCopyPaste
+#    PRODUCT_PACKAGES += Gallery2StereoBackground
+#    PRODUCT_PACKAGES += Gallery2StereoFancyColor
+#    PRODUCT_PACKAGES += Gallery2StereoRefocus
+#    PRODUCT_PACKAGES += Gallery2PhotoPicker
+#    PRODUCT_PACKAGES += Gallery2StereoFreeview3D
+#endif
 
 ifneq ($(strip $(MTK_EMULATOR_SUPPORT)),yes)
   PRODUCT_PACKAGES += Provision
