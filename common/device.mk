@@ -134,7 +134,7 @@ ifneq ($(strip $(MTK_BASIC_PACKAGE)), yes)
         #PRODUCT_PACKAGES += MtkCalendar
         #PRODUCT_PACKAGES += MtkBrowser
         #PRODUCT_PACKAGES += MtkQuickSearchBox
-        PRODUCT_PACKAGES += MtkWebView
+        #PRODUCT_PACKAGES += MtkWebView
     endif
 endif
 #end lenovo jiangyy3 remove Mtk apps
