@@ -865,13 +865,13 @@ on property:vold.decrypt=trigger_reset_main
     start stop_modem
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
+    setprop service.nvram_init 0
 
 on property:vold.decrypt=trigger_post_fs_data
     write /proc/bootprof "INIT:vold.decrypt=trigger_post_fs_data"
 
 on property:vold.decrypt=trigger_restart_min_framework
     write /proc/bootprof "INIT:vold.decrypt=trigger_restart_min_framework"
-    setprop service.nvram_init 0
     start nvram_daemon
     start sysenv_daemon
     start start_modem
@@ -881,7 +881,6 @@ on property:vold.decrypt=trigger_restart_min_framework
 
 on property:vold.decrypt=trigger_restart_framework
     write /proc/bootprof "INIT:vold.decrypt=trigger_restart_framework"
-    setprop service.nvram_init 0
     start nvram_daemon
     start sysenv_daemon
     start start_modem
@@ -895,6 +894,7 @@ on property:vold.decrypt=trigger_shutdown_framework
     stop stp_dump
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
+    setprop service.nvram_init 0
 
 service stop_modem /vendor/bin/md_ctrl 0
     class main
