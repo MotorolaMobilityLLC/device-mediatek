@@ -10,6 +10,7 @@ extern "C" {
 #define MTK_VDEC_PROP_WAITKEYFRAME                 "mtk.vdec.waitkeyframeforplay"
 #define MTK_VDEC_VALUE_WAITKEYFRAME_AT_START       (1)
 #define MTK_VDEC_VALUE_WAITKEYFRAME_FOR_SEEK       (1 << 1)
+#define MTK_VDEC_VALUE_WAITKEYFRAME_FOR_NO_REORDER (1 << 2)
 
 /**
  * @par Enumeration
