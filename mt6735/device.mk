@@ -550,8 +550,10 @@ else
     endif
 endif
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
 ifeq ($(strip $(MTK_CDS_EM_SUPPORT)), yes)
   PRODUCT_PACKAGES += CDS_INFO
+endif
 endif
 
 #
