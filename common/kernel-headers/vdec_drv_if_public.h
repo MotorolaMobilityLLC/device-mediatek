@@ -333,7 +333,8 @@ typedef enum _VDEC_DRV_GET_TYPE_T {
 	VDEC_DRV_GET_TYPE_QUERY_VIDEO_INTERLACING,      /* /< query video interlace information */
 	VDEC_DRV_GET_TYPE_QUERY_VIDEO_DPB_SIZE,         /* /< query video DPB size */
 	VDEC_DRV_GET_TYPE_CODEC_PROPERTY,                /* /< get teh codec specific property for decode flow*/
-        VDEC_DRV_GET_TYPE_ERRORMB_MAP
+	VDEC_DRV_GET_TYPE_ERRORMB_MAP,
+	VDEC_DRV_GET_TYPE_PROFILEORLEVELCHANGED
 } VDEC_DRV_GET_TYPE_T;
 
 typedef enum _VDEC_DRV_CODEC_PROPERTY_T {
