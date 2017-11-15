@@ -37,5 +37,8 @@ allow ipsec_mon init:unix_stream_socket connectto;
 allow ipsec_mon self:capability { net_admin dac_override };
 allow ipsec_mon self:key_socket { write read create setopt };
 
-
-
+allow ipsec_mon self:capability net_raw;
+allow ipsec_mon self:udp_socket { create ioctl };
+allow ipsec_mon netd:unix_stream_socket connectto;
+allow ipsec_mon netd_socket:sock_file write;
+allow ipsec_mon self:netlink_route_socket { write read create nlmsg_read bind};
