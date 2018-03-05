@@ -460,10 +460,29 @@ else
 endif
 
 PRODUCT_PACKAGES += libjni_koreanime.so
-PRODUCT_PACKAGES += atcid
-PRODUCT_PACKAGES += atci_service
-PRODUCT_PACKAGES += libatciserv_jni
-PRODUCT_PACKAGES += AtciService
+
+# Only build ATCI when it's eng/userdebug load, internal user load, or EM ATCI forcely enabled
+ifneq ($(TARGET_BUILD_VARIANT),user)
+    PRODUCT_PACKAGES += atcid
+    PRODUCT_PACKAGES += atci_service
+    PRODUCT_PACKAGES += libatciserv_jni
+    PRODUCT_PACKAGES += AtciService
+else
+    ifeq ($(MTK_INTERNAL), yes)
+        PRODUCT_PACKAGES += atcid
+        PRODUCT_PACKAGES += atci_service
+        PRODUCT_PACKAGES += libatciserv_jni
+        PRODUCT_PACKAGES += AtciService
+    else
+        ifeq ($(strip $(MTK_CUSTOM_USERLOAD_ENGINEERMODE)), yes)
+            PRODUCT_PACKAGES += atcid
+            PRODUCT_PACKAGES += atci_service
+            PRODUCT_PACKAGES += libatciserv_jni
+            PRODUCT_PACKAGES += AtciService
+        endif
+    endif
+endif
+
 PRODUCT_PACKAGES += wpa_supplicant
 PRODUCT_PACKAGES += wpa_cli
 PRODUCT_PACKAGES += wpa_supplicant.conf

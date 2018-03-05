@@ -8,6 +8,7 @@ type mtk_hdmi_service, app_api_service, system_server_service, service_manager_t
 type mtk_data_shaping_service, app_api_service, system_server_service, service_manager_type;
 type mtk_running_booster_service, app_api_service, system_server_service, service_manager_type;
 type mtk_test_ampolicymaker_service, app_api_service, system_server_service, service_manager_type;
+type mtk_fullscreen_switch_service, app_api_service, system_server_service, service_manager_type;
 
 # Other Services
 type mtk_crossmount_service, service_manager_type;

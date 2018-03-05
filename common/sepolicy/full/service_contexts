@@ -6,6 +6,7 @@
 anrmanager                  u:object_r:mtk_anrmanager_service:s0
 search_engine               u:object_r:search_service:s0
 mtkhdmi                     u:object_r:mtk_hdmi_service:s0
+FullscreenSwitchService     u:object_r:mtk_fullscreen_switch_service:s0
 audioprofile                u:object_r:audio_service:s0
 uniservice-pack             u:object_r:mtk_usp_service:s0
 data_shaping                u:object_r:mtk_data_shaping_service:s0

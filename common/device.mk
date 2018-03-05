@@ -556,9 +556,6 @@ ifdef MTK_CARRIEREXPRESS_PACK
   endif
 endif
 
-# add for ATCI JAVA layer service
-PRODUCT_PACKAGES += AtciService
-
 PRODUCT_PACKAGES += DataTransfer
 
 # add for OMA DM, common module used by MediatekDM & red bend DM
@@ -2748,3 +2745,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mkfs.exfat \
     fsck.exfat
+ifeq ($(strip $(MTK_FULLSCREEN_SWITCH_SUPPORT)), yes)
+  PRODUCT_PROPERTY_OVERRIDES += ro.mtk_fullscreen_switch=1
+  PRODUCT_PACKAGES += FullscreenSwitchService
+  PRODUCT_PACKAGES += FullscreenMode
+  PRODUCT_PACKAGES += FullscreenSwitchProvider
+endif
